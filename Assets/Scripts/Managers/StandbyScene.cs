@@ -20,7 +20,7 @@ public class StandbyScene : MonoBehaviour
         StartCoroutine(FadeIn());
         StartCoroutine(BirdComing());   // 오리가 걸어옴
         StartCoroutine(CameraMoving()); // 카메라 움직임
-        //StartCoroutine(ButtonsIn()); -> 이거 주석 풀면 실행이 안 됨.. 왤까
+        StartCoroutine(ButtonsIn());
     }
 
     IEnumerator BirdComing()
@@ -66,15 +66,15 @@ public class StandbyScene : MonoBehaviour
 
     IEnumerator ButtonsIn()
     {
-        /// 버튼들 화면 "밖에서" 안으로 들어오는 함수
-        while (buttons[0].transform.position.x > -250)
+		/// 버튼들 화면 "밖에서" 안으로 들어오는 함수
+        while (buttons[0].GetComponent<RectTransform>().anchoredPosition.x > -200)
         {
             foreach (GameObject btn in buttons)
             {
-                btn.transform.position = new Vector3(btn.transform.position.x + Time.deltaTime, btn.transform.position.y);
+                btn.GetComponent<RectTransform>().anchoredPosition = new Vector3(btn.GetComponent<RectTransform>().anchoredPosition.x - 2, btn.GetComponent<RectTransform>().anchoredPosition.y);
             }
+			yield return new WaitForEndOfFrame();
         }
-        yield return new WaitForEndOfFrame();
     }
 
     IEnumerator ButtonsAway()
