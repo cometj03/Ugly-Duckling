@@ -26,11 +26,16 @@ public class RunningScene : MonoBehaviour
 			floor.transform.position += new Vector3(9.6f, 0, 0);
 		}
 
-		bird.transform.position += Vector3.right * speed;
-		moon.transform.position += Vector3.right * speed * 0.8f;
-		background.transform.position += Vector3.right * speed * 0.9f;
+		bird.transform.position += Vector3.right * speed * (maincamera.transform.position.x - 4 > bird.transform.position.x ? 2 : 1);
+		moon.transform.position += Vector3.right * speed * 0.9f;
+		background.transform.position += Vector3.right * speed * 0.95f;
 		mountin.transform.position += Vector3.right * speed * 0.7f;
 		mountincloud.transform.position += Vector3.right * speed * 0.6f;
 		maincamera.transform.position += Vector3.right * speed;
+
+		if (Input.GetKeyDown(KeyCode.Space))
+		{
+			bird.GetComponent<Rigidbody2D>().AddForce(Vector2.up * 130);
+		}
 	}
 }
