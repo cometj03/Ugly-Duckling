@@ -526,8 +526,8 @@ GameObject:
   - component: {fileID: 171026793}
   - component: {fileID: 171026792}
   m_Layer: 0
-  m_Name: Block
-  m_TagString: Untagged
+  m_Name: Block4
+  m_TagString: PuzzleBlock
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -701,8 +701,8 @@ GameObject:
   - component: {fileID: 516151323}
   - component: {fileID: 516151322}
   m_Layer: 0
-  m_Name: Block
-  m_TagString: Untagged
+  m_Name: Block1
+  m_TagString: PuzzleBlock
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -951,7 +951,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -1
+  m_SortingOrder: -2
   m_Sprite: {fileID: 21300000, guid: 1de6ae176e2f4084c9a1c3d318463363, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1019,8 +1019,8 @@ GameObject:
   - component: {fileID: 906881420}
   - component: {fileID: 906881419}
   m_Layer: 0
-  m_Name: Block
-  m_TagString: Untagged
+  m_Name: Block2
+  m_TagString: PuzzleBlock
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1201,7 +1201,7 @@ GameObject:
   - component: {fileID: 1002008805}
   - component: {fileID: 1002008804}
   m_Layer: 0
-  m_Name: Grid
+  m_Name: Puzzle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1421,7 +1421,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: 21300000, guid: aed28d1e75fdfc3419e49600f6a7ed11, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1532,6 +1532,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d80be6b81b8f35740b8ebee1ed136128, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maincamera: {fileID: 1187097882}
+  mainpuzzle: {fileID: 0}
 --- !u!1 &1682607388
 GameObject:
   m_ObjectHideFlags: 0
@@ -1601,7 +1603,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: 21300000, guid: ea4c9173c6f849444925b7798ec3aace, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1694,7 +1696,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: 21300000, guid: 632f8e887b7a13c4790233e0da3566d6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1719,8 +1721,8 @@ GameObject:
   - component: {fileID: 1830071436}
   - component: {fileID: 1830071435}
   m_Layer: 0
-  m_Name: Block
-  m_TagString: Untagged
+  m_Name: Block3
+  m_TagString: PuzzleBlock
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
