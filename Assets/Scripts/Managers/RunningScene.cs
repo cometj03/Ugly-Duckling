@@ -14,6 +14,8 @@ public class RunningScene : MonoBehaviour
 
 	public float speed = 0.1f;
 
+	public bool can_jump = true;
+
 	private void Awake()
 	{
 		bird.GetComponent<Animator>().SetBool("is_walk", true);
@@ -36,6 +38,10 @@ public class RunningScene : MonoBehaviour
 
 	public void Jump()
 	{
-		bird.GetComponent<Rigidbody2D>().AddForce(Vector2.up * 250);
+		if (can_jump)
+		{
+			bird.GetComponent<Rigidbody2D>().AddForce(Vector2.up * 350);
+			can_jump = false;
+		}
 	}
 }
