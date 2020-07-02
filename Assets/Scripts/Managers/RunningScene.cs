@@ -32,10 +32,10 @@ public class RunningScene : MonoBehaviour
 		mountin.transform.position += Vector3.right * speed * 0.7f;
 		mountincloud.transform.position += Vector3.right * speed * 0.6f;
 		maincamera.transform.position += Vector3.right * speed;
+	}
 
-		if (Input.GetKeyDown(KeyCode.Space))
-		{
-			bird.GetComponent<Rigidbody2D>().AddForce(Vector2.up * 130);
-		}
+	public void Jump()
+	{
+		bird.GetComponent<Rigidbody2D>().AddForce(Vector2.up * 250);
 	}
 }
