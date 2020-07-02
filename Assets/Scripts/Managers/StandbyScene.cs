@@ -82,7 +82,7 @@ public class StandbyScene : MonoBehaviour
             btn.GetComponent<RectTransform>().anchoredPosition = new Vector3(350f, btn.GetComponent<RectTransform>().anchoredPosition.y);
         }
 
-        while (buttons[0].GetComponent<RectTransform>().anchoredPosition.x > -330)
+        while (buttons[0].GetComponent<RectTransform>().anchoredPosition.x > -450)
         {
             foreach (GameObject btn in buttons)
             {
