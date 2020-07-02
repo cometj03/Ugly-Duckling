@@ -16,6 +16,12 @@ public class MainScene : MonoBehaviour
 
 	private bool fade = true;   // touch to start 가 흐려지게 하건지 뚜렷해지게 할건지 여부
 
+	private void Awake()
+    {
+		Screen.sleepTimeout = SleepTimeout.NeverSleep;
+		Screen.SetResolution(1920, 1080, true);
+    }
+
     private void Start()
     {
 		panel.color = new Color(0, 0, 0, 0);
