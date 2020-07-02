@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 61809944}
   - component: {fileID: 61809945}
   - component: {fileID: 61809947}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Outline
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -212,7 +212,7 @@ EdgeCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -570,7 +570,7 @@ GameObject:
   - component: {fileID: 97941524}
   - component: {fileID: 97941523}
   - component: {fileID: 97941522}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Block
   m_TagString: PuzzleBlock
   m_Icon: {fileID: 0}
@@ -813,7 +813,7 @@ GameObject:
   - component: {fileID: 415124538}
   - component: {fileID: 415124537}
   - component: {fileID: 415124536}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Block
   m_TagString: PuzzleBlock
   m_Icon: {fileID: 0}
@@ -1044,7 +1044,7 @@ GameObject:
   - component: {fileID: 503716650}
   - component: {fileID: 503716649}
   - component: {fileID: 503716648}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Block
   m_TagString: PuzzleBlock
   m_Icon: {fileID: 0}
@@ -1250,7 +1250,7 @@ GameObject:
   - component: {fileID: 516151323}
   - component: {fileID: 516151322}
   - component: {fileID: 516151325}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Block
   m_TagString: PuzzleBlock
   m_Icon: {fileID: 0}
@@ -1686,7 +1686,7 @@ GameObject:
   - component: {fileID: 906881420}
   - component: {fileID: 906881419}
   - component: {fileID: 906881422}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Block
   m_TagString: PuzzleBlock
   m_Icon: {fileID: 0}
@@ -1883,7 +1883,7 @@ GameObject:
   - component: {fileID: 936856956}
   - component: {fileID: 936856955}
   - component: {fileID: 936856954}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Outline
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1935,7 +1935,7 @@ EdgeCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -2319,7 +2319,7 @@ GameObject:
   - component: {fileID: 975513014}
   - component: {fileID: 975513013}
   - component: {fileID: 975513012}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Outline
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2371,7 +2371,7 @@ EdgeCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -2982,7 +2982,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1189714391}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Blocks
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3131,7 +3131,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1345373170}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Blocks
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3502,7 +3502,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1700257532}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Blocks
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3603,7 +3603,7 @@ GameObject:
   - component: {fileID: 1830071436}
   - component: {fileID: 1830071435}
   - component: {fileID: 1830071438}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Block
   m_TagString: PuzzleBlock
   m_Icon: {fileID: 0}
@@ -3946,6 +3946,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: bird
+      objectReference: {fileID: 0}
+    - target: {fileID: 4828437648805022385, guid: 98ab9a0b69ac7114290970651e3c61c9,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4828437648805022391, guid: 98ab9a0b69ac7114290970651e3c61c9,
         type: 3}
