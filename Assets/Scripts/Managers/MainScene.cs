@@ -18,8 +18,8 @@ public class MainScene : MonoBehaviour
 
 	private void Awake()
     {
-		Screen.sleepTimeout = SleepTimeout.NeverSleep;
-		Screen.SetResolution(1920, 1080, true);
+		Screen.SetResolution(Screen.height * 16 / 9, Screen.height, true);
+		// Debug.Log(Screen.width + ", " + Screen.height);
     }
 
     private void Start()
@@ -44,7 +44,7 @@ public class MainScene : MonoBehaviour
 		}
 
 		/// 프레이어가 화면 터치시 오리가 화면 밖으로 나가고 다음 씬으로 넘어감
-		if (Input.touchCount > 0 || Input.anyKeyDown)
+		if (Input.touchCount > 0 || Input.anyKeyDown) 
 		{
 			StartCoroutine(TouchToStart());
 		}
@@ -58,9 +58,16 @@ public class MainScene : MonoBehaviour
 		while (player.transform.position.x < 6)
 		{
 			player.transform.Translate(new Vector3(birdSpeed, 0, 0) * Time.deltaTime);
+			
 			/// 가는 도중 한 번 더 화면 터치하면 속도 증가
-			if (Input.touchCount > 0 || Input.anyKeyDown)
+			if (Input.touchCount > 0)
+			{
+				Touch touch = Input.GetTouch(0);
+				if (touch.phase == TouchPhase.Began)
+					birdSpeed = 2.5f;
+			} else if (Input.anyKeyDown)
 				birdSpeed = 2.5f;
+
 			yield return new WaitForEndOfFrame();
 		}
 		/// FadeIn 후, 다음 씬으로 넘어감
