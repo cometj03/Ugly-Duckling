@@ -15,7 +15,7 @@ public class Tile : MonoBehaviour
 	int x = 0;
 	int y = 0;
 
-	Tile(int x, int y)
+	public Tile(int x, int y)
 	{
 		this.x = x;
 		this.y = y;
@@ -55,21 +55,12 @@ public class Tile : MonoBehaviour
 	{
 		string src = "Sprites/Tiles/Tiles/tile";
 
-		if (links["right"] != null)
+		foreach(var pair in links)
 		{
-			src += "_right";
-		}
-		if (links["down"] != null)
-		{
-			src += "_down";
-		}
-		if (links["left"] != null)
-		{
-			src += "_left";
-		}
-		if (links["up"] != null)
-		{
-			src += "_up";
+			if(pair.Value != null)
+			{
+				src += pair.Key;
+			}
 		}
 
 		Debug.Log(src);

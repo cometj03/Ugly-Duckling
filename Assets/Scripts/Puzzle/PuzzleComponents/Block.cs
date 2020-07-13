@@ -5,6 +5,4 @@ using UnityEngine;
 public class Block : MonoBehaviour
 {
 	List<Tile> tiles;
-
-
 }
