@@ -14,6 +14,8 @@ public class PuzzleManager : MonoBehaviour
 	Vector3 touch_vec;
 	RaycastHit2D hit;
 
+	Block drawing;
+
 	private void Awake()
 	{
 		late_position = transform.position;
