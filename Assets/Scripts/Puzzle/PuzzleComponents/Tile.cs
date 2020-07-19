@@ -15,12 +15,6 @@ public class Tile : MonoBehaviour
 	int x = 0;
 	int y = 0;
 
-	public Tile(int x, int y)
-	{
-		this.x = x;
-		this.y = y;
-	}
-
 	public Tile getLink(string key)
 	{
 		return links[key];
@@ -53,16 +47,16 @@ public class Tile : MonoBehaviour
 
 	public void updateShape()
 	{
-		string src = "Sprites/Tiles/Tiles/tile";
+		string src = "Tiles/tile";
 
 		foreach(var pair in links)
 		{
 			if(pair.Value != null)
 			{
-				src += pair.Key;
+				src += "_" + pair.Key;
 			}
 		}
 
-		Debug.Log(src);
+		GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>(src);
 	}
 }

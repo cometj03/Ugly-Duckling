@@ -10,7 +10,8 @@ public class PuzzleMaker : MonoBehaviour
 	Puzzle puzzle;
 	Block block;
 
-	public GameObject tile;
+	public GameObject tile_prefab;
+	public GameObject block_prefab;
 
 	enum PUZZLE_TYPE { OUTLINE, BLOCK };
 
@@ -18,7 +19,7 @@ public class PuzzleMaker : MonoBehaviour
 	{
 		per_touch_vec = Vector3.zero;
 		touch_vec = Vector3.zero;
-		puzzle = new Puzzle();
+		puzzle = GameObject.Find("Puzzle").GetComponent<Puzzle>();
 	}
 
 	private void Update()
@@ -29,7 +30,10 @@ public class PuzzleMaker : MonoBehaviour
 			touch_vec = Vector3Int.RoundToInt(touch_vec);
 			touch_vec.z = 0;
 
-			block = puzzle.pushBlock();
+			GameObject tmp = Instantiate(block_prefab);
+
+			tmp.transform.SetParent(puzzle.transform.GetChild(0));
+			block = tmp.GetComponent<Block>();
 		}
 		else if (Input.GetMouseButton(0))
 		{
@@ -41,11 +45,13 @@ public class PuzzleMaker : MonoBehaviour
 
 			if (touch_vec != per_touch_vec)
 			{
-				GameObject tmp = Instantiate(tile);
+				GameObject tmp = Instantiate(tile_prefab);
 
+				tmp.transform.SetParent(block.transform);
 				tmp.transform.position = touch_vec;
 				tmp.GetComponent<Tile>().setX((int)touch_vec.x);
 				tmp.GetComponent<Tile>().setY((int)touch_vec.y);
+				block.pushTile(tmp.GetComponent<Tile>());
 			}
 		}
 	}

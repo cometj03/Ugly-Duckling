@@ -7,12 +7,13 @@ public class Puzzle : MonoBehaviour
 	Outline outline;
 	List<Block> blocks = new List<Block>();
 
-	public Block pushBlock()
+	private void Awake()
 	{
-		Block block = new Block();
+		outline = transform.GetChild(1).GetComponent<Outline>();
+	}
 
+	public void pushBlock(Block block)
+	{
 		blocks.Add(block);
-
-		return block;
 	}
 }
