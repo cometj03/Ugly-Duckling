@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class Tile : MonoBehaviour
 {
+	public enum TILE_TYPE { OUTLINE, TILE };
+
+	public TILE_TYPE tile_type;
+
 	Dictionary<string, Tile> links = new Dictionary<string, Tile>()
 	{
 		{"right",null },
@@ -47,7 +51,16 @@ public class Tile : MonoBehaviour
 
 	public void updateShape()
 	{
-		string src = "Tiles/tile";
+		string src = "";
+
+		if (tile_type == TILE_TYPE.TILE)
+		{
+			src = "Tiles/tile";
+		}
+		else if(tile_type == TILE_TYPE.OUTLINE)
+		{
+			src = "OutLines/outline";
+		}
 
 		foreach(var pair in links)
 		{

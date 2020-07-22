@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PuzzleMaker : MonoBehaviour
 {
+	public enum PUZZLE_TYPE { OUTLINE, TILE };
+
 	Vector3 per_touch_vec;
 	Vector3 touch_vec;
 
@@ -13,13 +15,14 @@ public class PuzzleMaker : MonoBehaviour
 	public GameObject tile_prefab;
 	public GameObject block_prefab;
 
-	enum PUZZLE_TYPE { OUTLINE, BLOCK };
+	PUZZLE_TYPE puzzle_type;
 
 	private void Awake()
 	{
 		per_touch_vec = Vector3.zero;
 		touch_vec = Vector3.zero;
 		puzzle = GameObject.Find("Puzzle").GetComponent<Puzzle>();
+		puzzle_type = PUZZLE_TYPE.TILE;
 	}
 
 	private void Update()
@@ -30,10 +33,17 @@ public class PuzzleMaker : MonoBehaviour
 			touch_vec = Vector3Int.RoundToInt(touch_vec);
 			touch_vec.z = 0;
 
-			GameObject tmp = Instantiate(block_prefab);
+			if (puzzle_type == PUZZLE_TYPE.TILE)
+			{
+				GameObject tmp = Instantiate(block_prefab);
 
-			tmp.transform.SetParent(puzzle.transform.GetChild(0));
-			block = tmp.GetComponent<Block>();
+				tmp.transform.SetParent(puzzle.transform.GetChild(0));
+				block = tmp.GetComponent<Block>();
+			}
+			else if(puzzle_type == PUZZLE_TYPE.OUTLINE)
+			{
+
+			}
 		}
 		else if (Input.GetMouseButton(0))
 		{
@@ -45,14 +55,33 @@ public class PuzzleMaker : MonoBehaviour
 
 			if (touch_vec != per_touch_vec)
 			{
-				GameObject tmp = Instantiate(tile_prefab);
+				if (puzzle_type == PUZZLE_TYPE.TILE)
+				{
+					GameObject tmp = Instantiate(tile_prefab);
 
-				tmp.transform.SetParent(block.transform);
-				tmp.transform.position = touch_vec;
-				tmp.GetComponent<Tile>().setX((int)touch_vec.x);
-				tmp.GetComponent<Tile>().setY((int)touch_vec.y);
-				block.pushTile(tmp.GetComponent<Tile>());
+					tmp.GetComponent<Tile>().tile_type = Tile.TILE_TYPE.TILE;
+
+					tmp.transform.SetParent(block.transform);
+					tmp.transform.position = touch_vec;
+					tmp.GetComponent<Tile>().setX((int)touch_vec.x);
+					tmp.GetComponent<Tile>().setY((int)touch_vec.y);
+					block.pushTile(tmp.GetComponent<Tile>());
+				}
+				else if(puzzle_type == PUZZLE_TYPE.OUTLINE)
+				{
+
+				}
 			}
 		}
+	}
+
+	public void SetPuzzleTypeTile()
+	{
+		puzzle_type = PUZZLE_TYPE.TILE;
+	}
+
+	public void SetPuzzleTypeOutline()
+	{
+		puzzle_type = PUZZLE_TYPE.OUTLINE;
 	}
 }

@@ -4,5 +4,5 @@ using UnityEngine;
 
 public class Outline : MonoBehaviour
 {
-    List<Tile> tiles;
+    List<Tile> tiles = new List<Tile>();
 }
