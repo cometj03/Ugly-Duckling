@@ -12,22 +12,22 @@ public class Block : MonoBehaviour
 
 		foreach (var iter in tiles)
 		{
-			if (iter.getX() + 1 == tile.getX() && iter.getY() == tile.getY())
+			if (iter.x + 1 == tile.x && iter.y == tile.y)
 			{
 				iter.setLink("right", tile);
 				tile.setLink("left", iter);
 			}
-			else if (iter.getX() - 1 == tile.getX() && iter.getY() == tile.getY())
+			else if (iter.x - 1 == tile.x && iter.y == tile.y)
 			{
 				iter.setLink("left", tile);
 				tile.setLink("right", iter);
 			}
-			else if (iter.getX() == tile.getX() && iter.getY() + 1 == tile.getY())
+			else if (iter.x == tile.x && iter.y + 1 == tile.y)
 			{
 				iter.setLink("up", tile);
 				tile.setLink("down", iter);
 			}
-			else if (iter.getX() == tile.getX() && iter.getY() - 1 == tile.getY())
+			else if (iter.x == tile.x && iter.y - 1 == tile.y)
 			{
 				iter.setLink("down", tile);
 				tile.setLink("up", iter);

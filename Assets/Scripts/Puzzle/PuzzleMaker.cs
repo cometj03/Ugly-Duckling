@@ -39,10 +39,11 @@ public class PuzzleMaker : MonoBehaviour
 
 				tmp.transform.SetParent(puzzle.transform.GetChild(0));
 				block = tmp.GetComponent<Block>();
+				puzzle.blocks.Add(block);
 			}
 			else if(puzzle_type == PUZZLE_TYPE.OUTLINE)
 			{
-
+				puzzle.outline.Clear();
 			}
 		}
 		else if (Input.GetMouseButton(0))
@@ -55,21 +56,25 @@ public class PuzzleMaker : MonoBehaviour
 
 			if (touch_vec != per_touch_vec)
 			{
+				GameObject tmp = Instantiate(tile_prefab);
 				if (puzzle_type == PUZZLE_TYPE.TILE)
 				{
-					GameObject tmp = Instantiate(tile_prefab);
-
 					tmp.GetComponent<Tile>().tile_type = Tile.TILE_TYPE.TILE;
 
 					tmp.transform.SetParent(block.transform);
 					tmp.transform.position = touch_vec;
-					tmp.GetComponent<Tile>().setX((int)touch_vec.x);
-					tmp.GetComponent<Tile>().setY((int)touch_vec.y);
+					tmp.GetComponent<Tile>().x = (int)touch_vec.x;
+					tmp.GetComponent<Tile>().y = (int)touch_vec.y;
 					block.pushTile(tmp.GetComponent<Tile>());
 				}
 				else if(puzzle_type == PUZZLE_TYPE.OUTLINE)
 				{
+					tmp.GetComponent<Tile>().tile_type = Tile.TILE_TYPE.OUTLINE;
 
+					tmp.transform.SetParent(puzzle.outline.transform);
+					tmp.transform.position = touch_vec;
+					tmp.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Outlines/outline");
+					puzzle.outline.tiles.Add(tmp.GetComponent<Tile>());
 				}
 			}
 		}

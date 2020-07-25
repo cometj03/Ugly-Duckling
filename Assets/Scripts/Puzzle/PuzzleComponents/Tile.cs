@@ -6,7 +6,7 @@ public class Tile : MonoBehaviour
 {
 	public enum TILE_TYPE { OUTLINE, TILE };
 
-	public TILE_TYPE tile_type;
+	public TILE_TYPE tile_type { get; set; }
 
 	Dictionary<string, Tile> links = new Dictionary<string, Tile>()
 	{
@@ -16,8 +16,8 @@ public class Tile : MonoBehaviour
 		{"up",null },
 	};
 
-	int x = 0;
-	int y = 0;
+	public int x { get; set; } = 0;
+	public int y { get; set; } = 0;
 
 	public Tile getLink(string key)
 	{
@@ -27,26 +27,6 @@ public class Tile : MonoBehaviour
 	public void setLink(string key, Tile tile)
 	{
 		links[key] = tile;
-	}
-
-	public int getX()
-	{
-		return x;
-	}
-
-	public int getY()
-	{
-		return y;
-	}
-
-	public void setX(int x)
-	{
-		this.x = x;
-	}
-
-	public void setY(int y)
-	{
-		this.y = y;
 	}
 
 	public void updateShape()
