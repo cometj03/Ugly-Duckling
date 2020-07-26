@@ -18,6 +18,7 @@ public class Tile : MonoBehaviour
 
 	public int x { get; set; } = 0;
 	public int y { get; set; } = 0;
+	public bool reverse { get; set; } = false;
 
 	public Tile getLink(string key)
 	{
@@ -49,6 +50,8 @@ public class Tile : MonoBehaviour
 				src += "_" + pair.Key;
 			}
 		}
+
+		Debug.Log(src);
 
 		GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>(src);
 	}

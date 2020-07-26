@@ -78,6 +78,13 @@ public class PuzzleMaker : MonoBehaviour
 				}
 			}
 		}
+		else if (Input.GetMouseButtonUp(0))
+		{
+			if(puzzle_type == PUZZLE_TYPE.OUTLINE)
+			{
+				puzzle.outline.UpdateShape();
+			}
+		}
 	}
 
 	public void SetPuzzleTypeTile()
