@@ -34,16 +34,14 @@ public class MainScene : MonoBehaviour
 		if (fade)
 		{
 			var color = text.color;
-			color = new Color(color.r, color.g, color.b, color.a - Time.deltaTime * 0.8f);
-			text.color = color;
+			text.color = new Color(color.r, color.g, color.b, color.a - Time.deltaTime * 0.8f);
 			if (text.color.a <= 0)
 				fade = false;
 		}
 		else
 		{
 			var color = text.color;
-			color = new Color(color.r, color.g, color.b, color.a + Time.deltaTime * 0.8f);
-			text.color = color;
+			text.color = new Color(color.r, color.g, color.b, color.a + Time.deltaTime * 0.8f);
 			if (text.color.a >= 1)
 				fade = true;
 		}
@@ -63,15 +61,6 @@ public class MainScene : MonoBehaviour
 		while (player.transform.position.x < 6)
 		{
 			player.transform.Translate(new Vector3(birdSpeed, 0, 0) * Time.deltaTime);
-			
-			// 가는 도중 한 번 더 화면 터치하면 속도 증가
-			if (Input.touchCount > 0)
-			{
-				Touch touch = Input.GetTouch(0);
-				if (touch.phase == TouchPhase.Began)
-					birdSpeed = 2.5f;
-			} else if (Input.anyKeyDown)
-				birdSpeed = 2.5f;
 
 			yield return null;
 			// yield return new WaitForEndOfFrame();

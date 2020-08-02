@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class StandbyScene : MonoBehaviour
@@ -13,35 +11,33 @@ public class StandbyScene : MonoBehaviour
 
     public GameObject player;   // 오리 객체
     public GameObject _camera;
-    public Image panel; // fade in
-    public GameObject[] buttons;    // 버튼들 배열 저장
+    public GameObject buttons;    // 버튼들 배열 저장
 
-    private bool is_buttons_coming;
+    private bool _isButtonsComing;
+    private RectTransform _buttonsRect;
+    private Animator _playerAnimator;
 
     private void Start()
     {
-        is_buttons_coming = true;
-        StartCoroutine(FadeIn());
+        _playerAnimator = player.GetComponent<Animator>();
+        _buttonsRect = buttons.GetComponent<RectTransform>();
+        _isButtonsComing = true;
         StartCoroutine(BirdComing());   // 오리가 걸어옴
         StartCoroutine(CameraMoving()); // 카메라 움직임
         StartCoroutine(ButtonsIn());
     }
 
-    public void Clicked_PlayBtn()   // 플레이 버튼 누름
-    {
-        StartCoroutine(ButtonsAway("Play"));
-    }
 
     IEnumerator BirdComing()
     {
-        player.GetComponent<Animator>().SetBool("is_walk", true);   // 걷는 애니메이션
+        _playerAnimator.SetBool("is_walk", true);   // 걷는 애니메이션
         player.transform.position = new Vector3(-8, player.transform.position.y, 0);
         while (player.transform.position.x < -3)
         {
             player.transform.Translate(new Vector3(1f, 0, 0) * Time.deltaTime);
             yield return new WaitForEndOfFrame();
         }
-        player.GetComponent<Animator>().SetBool("is_walk", false);   // 애니메이션 멈춤
+        _playerAnimator.SetBool("is_walk", false);   // 애니메이션 멈춤
         player.transform.position = new Vector3(-3, player.transform.position.y, 0);
     }
 
@@ -61,51 +57,34 @@ public class StandbyScene : MonoBehaviour
         _camera.transform.position = new Vector3(0f, 0, -10);
     }
 
-    IEnumerator FadeIn()
-    {
-        /// 대충 FadeIn 하는 함수
-        panel.color = new Color(0, 0, 0, 0.9f);
-        while (panel.color.a > 0)
-        {
-            panel.color = new Color(0, 0, 0, panel.color.a - Time.deltaTime);
-            yield return new WaitForEndOfFrame();
-        }
-        panel.color = new Color(0, 0, 0, 0);
-    }
-
     IEnumerator ButtonsIn()
     {
-        /// 버튼들 화면 "밖에서" 안으로 들어오는 함수
+        // 버튼들 화면 "밖에서" 안으로 들어오는 함수
+        _buttonsRect.anchoredPosition = new Vector3(350f, _buttonsRect.anchoredPosition.y);
+        
 
-        foreach (GameObject btn in buttons)
+        while (_buttonsRect.anchoredPosition.x > -380)
         {
-            btn.GetComponent<RectTransform>().anchoredPosition = new Vector3(350f, btn.GetComponent<RectTransform>().anchoredPosition.y);
-        }
-
-        while (buttons[0].GetComponent<RectTransform>().anchoredPosition.x > -450)
-        {
-            foreach (GameObject btn in buttons)
-            {
-                btn.GetComponent<RectTransform>().anchoredPosition = new Vector3(btn.GetComponent<RectTransform>().anchoredPosition.x - 200 * Time.deltaTime, btn.GetComponent<RectTransform>().anchoredPosition.y);
-            }
-
-            if (is_buttons_coming == false)
+            _buttonsRect.anchoredPosition = new Vector3(_buttonsRect.anchoredPosition.x - 200 * Time.deltaTime, _buttonsRect.anchoredPosition.y);
+            
+            if (_isButtonsComing == false)
                 break;
 
 			yield return new WaitForEndOfFrame();
         }
+
+        _isButtonsComing = false;
     }
 
     IEnumerator ButtonsAway(String flag)
     {
-        is_buttons_coming = false;
-        /// 버튼들 화면 밖으로 나가는 함수
-        while (buttons[0].GetComponent<RectTransform>().anchoredPosition.x < 350)
+        // 버튼들 화면 밖으로 나가는 함수
+        float awaySpeed = 600;
+        _isButtonsComing = false;
+        while (_buttonsRect.anchoredPosition.x < 350)
         {
-            foreach (GameObject btn in buttons)
-            {
-                btn.GetComponent<RectTransform>().anchoredPosition = new Vector3(btn.GetComponent<RectTransform>().anchoredPosition.x + 450 * Time.deltaTime, btn.GetComponent<RectTransform>().anchoredPosition.y);
-            }
+            _buttonsRect.anchoredPosition = new Vector3(_buttonsRect.anchoredPosition.x + awaySpeed * Time.deltaTime, _buttonsRect.anchoredPosition.y);
+            
             yield return new WaitForEndOfFrame();
         }
 
@@ -113,4 +92,8 @@ public class StandbyScene : MonoBehaviour
             SceneManager.LoadScene("RunningScene");
     }
 
+    public void Clicked_PlayBtn()   // 플레이 버튼 누름
+    {
+        StartCoroutine(ButtonsAway("Play"));
+    }
 }
