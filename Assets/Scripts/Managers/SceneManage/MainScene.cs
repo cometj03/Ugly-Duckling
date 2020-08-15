@@ -11,7 +11,7 @@ public class MainScene : MonoBehaviour
 
 	public Text text;	// touch to start Text
 	public GameObject player;	// 오리 객체 
-	public GameObject canvas;	// FadeIn하는 이미지
+	public GameObject levelLoader;	// FadeIn하는 이미지
 
 	private bool fade = true;   // touch to start 가 흐려지게 하건지 뚜렷해지게 할건지 여부
 	private static readonly int IsWalk = Animator.StringToHash("is_walk");	// 애니메이션 is_walk 트리거 저장
@@ -66,6 +66,6 @@ public class MainScene : MonoBehaviour
 			// yield return new WaitForEndOfFrame();
 		}
 		// 다음 씬으로 넘어감
-		canvas.GetComponent<LevelLoader>().LoadNextLevel(SceneManager.GetActiveScene().buildIndex + 1);
+		levelLoader.GetComponent<LevelLoader>().LoadNextLevel(SceneManager.GetActiveScene().buildIndex + 1);
 	}
 }
