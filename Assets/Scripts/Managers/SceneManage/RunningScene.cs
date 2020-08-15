@@ -13,7 +13,8 @@ public class RunningScene : MonoBehaviour
 	public Camera maincamera;
 
 	public float speed = 0.1f;
-
+	public float birdDiff = 1.5f;
+	
 	public bool can_jump = true;
 
 	private void Awake()
@@ -28,20 +29,11 @@ public class RunningScene : MonoBehaviour
 			floor.transform.position += new Vector3(9.6f, 0, 0);
 		}
 
-		bird.transform.position += Vector3.right * speed * (maincamera.transform.position.x - 4 > bird.transform.position.x ? 2 : 1);
+		bird.transform.position += Vector3.right * speed * (maincamera.transform.position.x - birdDiff > bird.transform.position.x ? 2 : 1);
 		moon.transform.position += Vector3.right * speed * 0.9f;
 		background.transform.position += Vector3.right * speed * 0.95f;
 		mountin.transform.position += Vector3.right * speed * 0.7f;
 		mountincloud.transform.position += Vector3.right * speed * 0.6f;
 		maincamera.transform.position += Vector3.right * speed;
-	}
-
-	public void Jump()
-	{
-		if (can_jump)
-		{
-			bird.GetComponent<Rigidbody2D>().AddForce(Vector2.up * 350);
-			can_jump = false;
-		}
 	}
 }

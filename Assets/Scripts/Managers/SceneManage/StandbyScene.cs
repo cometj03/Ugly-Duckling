@@ -13,6 +13,8 @@ public class StandbyScene : MonoBehaviour
     public GameObject _camera;
     public GameObject levelLoader;
 
+    public bool isCamMoving;
+
     private Animator _playerAnimator;
 
     private void Start()
@@ -30,7 +32,7 @@ public class StandbyScene : MonoBehaviour
         while (player.transform.position.x < -3)
         {
             player.transform.Translate(new Vector3(1f, 0, 0) * Time.deltaTime);
-            yield return new WaitForEndOfFrame();
+            yield return null;
         }
         _playerAnimator.SetBool("is_walk", false);   // 애니메이션 멈춤
         player.transform.position = new Vector3(-3, player.transform.position.y, 0);
@@ -38,16 +40,20 @@ public class StandbyScene : MonoBehaviour
 
     IEnumerator CameraMoving()
     {
-        float cx = -2.5f;
-        _camera.transform.position = new Vector3(cx, 0, -10);
-        while (_camera.transform.position.x < 0)
+        isCamMoving = true;
+        float cameraFirstPos = -2.5f, cameraLerpSpeed = 0.4f;
+        float cameraPos = -2.5f;
+        
+        _camera.transform.position = new Vector3(cameraFirstPos, 0, -10);
+        
+        while (_camera.transform.position.x < -0.03f && isCamMoving)
         {
-            cx = Mathf.Lerp(cx, 0.1f, 0.0025f);
-            _camera.transform.position = new Vector3(cx, 0, -10);
-            yield return new WaitForEndOfFrame();
+            cameraPos = Mathf.Lerp(cameraPos, 0.05f, Time.deltaTime * cameraLerpSpeed);
+            _camera.transform.position = new Vector3(cameraPos, 0, -10);
+            yield return null;
         }
         // Debug.Log("카메라 움직임 끝");
-        _camera.transform.position = new Vector3(0f, 0, -10);
+        // _camera.transform.position = new Vector3(0f, 0, -10);
     }
 
     public void StartGame(String flag)

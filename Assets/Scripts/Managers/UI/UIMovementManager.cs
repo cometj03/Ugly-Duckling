@@ -2,11 +2,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UIMovementManager : MonoBehaviour
 {
     
-    public GameObject buttons;    // 버튼들 배열 저장
+    public GameObject buttons;
     
     private RectTransform _buttonsRect;
     private bool isButtonsCome;
@@ -16,7 +17,7 @@ public class UIMovementManager : MonoBehaviour
         _buttonsRect = buttons.GetComponent<RectTransform>();
         isButtonsCome = false;
 
-        StartCoroutine(ButtonsIn());
+        // StartCoroutine(ButtonsIn());
     }
     
     IEnumerator ButtonsIn()
@@ -26,14 +27,12 @@ public class UIMovementManager : MonoBehaviour
         // 버튼들 화면 밖에서 안으로 들어오는 함수
         _buttonsRect.anchoredPosition = new Vector3(350f, _buttonsRect.anchoredPosition.y);
 
-        while (_buttonsRect.anchoredPosition.x > -380)
+        while (_buttonsRect.anchoredPosition.x > -380 && isButtonsCome)
         {
-            _buttonsRect.anchoredPosition = new Vector3(_buttonsRect.anchoredPosition.x - 200 * Time.deltaTime, _buttonsRect.anchoredPosition.y);
-            
-            if (isButtonsCome == false)
-                break;
+            _buttonsRect.anchoredPosition = 
+                new Vector3(_buttonsRect.anchoredPosition.x - 200 * Time.deltaTime, _buttonsRect.anchoredPosition.y);
 
-            yield return new WaitForEndOfFrame();
+            yield return null;
         }
 
         isButtonsCome = false;
@@ -46,9 +45,10 @@ public class UIMovementManager : MonoBehaviour
         isButtonsCome = false;
         while (_buttonsRect.anchoredPosition.x < 400)
         {
-            _buttonsRect.anchoredPosition = new Vector3(_buttonsRect.anchoredPosition.x + awaySpeed * Time.deltaTime, _buttonsRect.anchoredPosition.y);
-            
-            yield return new WaitForEndOfFrame();
+            _buttonsRect.anchoredPosition = 
+                new Vector3(_buttonsRect.anchoredPosition.x + awaySpeed * Time.deltaTime, _buttonsRect.anchoredPosition.y);
+
+            yield return null;
         }
     }
 }
