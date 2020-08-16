@@ -10,7 +10,7 @@ public class CameraZoom : MonoBehaviour
     
     private float customizeZoom, originZoom;
     private float zoomLerpSpeed = 3.5f;
-    private Vector3 customizeCamPos = new Vector3(-0.7f, -0.9f, -10);
+    private Vector3 customizeCamPos = new Vector3(-0.5f, -1.1f, -10);
     private Vector3 originCamPos = new Vector3(0, 0, -10);
 
     private bool isCamZoomimg;
@@ -19,7 +19,7 @@ public class CameraZoom : MonoBehaviour
     {
         mainCamera = GetComponent<Camera>();
         originZoom = 2.7f;
-        customizeZoom = 1.8f;
+        customizeZoom = 1.6f;
     }
 
     public IEnumerator CustomizeZoomIn()

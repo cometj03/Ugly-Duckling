@@ -2364,7 +2364,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uBA54\uC778\uD654\uBA74"
+  m_Text: "\uB4A4\uB85C\uAC00\uAE30"
 --- !u!222 &1305240665
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2837,7 +2837,7 @@ GameObject:
   - component: {fileID: 1457547972}
   - component: {fileID: 1457547973}
   m_Layer: 0
-  m_Name: StandbySceneManager
+  m_Name: Manager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
