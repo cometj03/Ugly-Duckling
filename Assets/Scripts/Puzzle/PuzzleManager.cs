@@ -11,25 +11,49 @@ public class PuzzleManager : MonoBehaviour
 	public TILE_TYPE type;
 
 	public GameObject preview;
+	public GameObject puzzle;
 	public GameObject tile;
+	public GameObject block;
+
+	public GameObject writingblock;
 
 	public List<List<Tile>> grid;
+
+	Vector2 perPreviewPos;
 
 	public void TilePreview()
 	{
 		preview.transform.position = (Vector2)math.round((Vector2)Camera.main.ScreenToWorldPoint(Input.mousePosition));
 	}
 
+	public void WriteBlock()
+	{
+		if (Input.GetMouseButtonDown(0))
+		{
+			writingblock = Instantiate(block);
+		}
+		else if (Input.GetMouseButton(0))
+		{
+			if (perPreviewPos != (Vector2)preview.transform.position)
+			{
+
+			}
+		}
+		else if (Input.GetMouseButtonUp(0))
+		{
+
+		}
+	}
+
 	private void Update()
 	{
 		TilePreview();
 
-		if (Input.GetMouseButtonDown(0))
+		if (type == TILE_TYPE.BLOCK)
 		{
-			GameObject tmp = Instantiate(tile);
-
-			tmp.transform.position = preview.transform.position;
-			tmp.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Tiles/tile");
+			WriteBlock();
 		}
+
+		perPreviewPos = preview.transform.position;
 	}
 }
