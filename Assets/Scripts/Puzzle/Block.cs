@@ -17,6 +17,9 @@ public class Block : MonoBehaviour
 
 	public void UpdateShape()
 	{
-
+		foreach(var tile in tiles)
+		{
+			
+		}
 	}
 }
