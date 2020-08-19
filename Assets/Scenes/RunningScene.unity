@@ -208,43 +208,12 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 2116547676}
   m_PrefabAsset: {fileID: 0}
---- !u!50 &777402367
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+--- !u!4 &777402371 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4828437648805022391, guid: 98ab9a0b69ac7114290970651e3c61c9,
+    type: 3}
+  m_PrefabInstance: {fileID: 2116547676}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 777402366}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 2
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 4
---- !u!70 &777402368
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 777402366}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.51, y: 0.91}
-  m_Direction: 0
 --- !u!61 &777402372
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -364,6 +333,7 @@ GameObject:
   - component: {fileID: 1187097884}
   - component: {fileID: 1187097882}
   - component: {fileID: 1187097883}
+  - component: {fileID: 1187097885}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -436,6 +406,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1187097885
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1187097881}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f84efb80aaf9764da8d320cbbbd4811, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 777402371}
 --- !u!1 &1251587948
 GameObject:
   m_ObjectHideFlags: 0
@@ -587,11 +570,10 @@ MonoBehaviour:
   floor: {fileID: 1693883624}
   moon: {fileID: 1682607388}
   background: {fileID: 676328300}
-  mountin: {fileID: 1251587948}
-  mountincloud: {fileID: 1699725075}
+  mountain: {fileID: 1251587948}
+  mountaincloud: {fileID: 1699725075}
   maincamera: {fileID: 1187097882}
   speed: 0.01
-  birdDiff: 1.5
   can_jump: 1
 --- !u!4 &1616645437
 Transform:
@@ -1107,6 +1089,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3304110852046278954, guid: 98ab9a0b69ac7114290970651e3c61c9,
+        type: 3}
+      propertyPath: m_GravityScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4828437648805022385, guid: 98ab9a0b69ac7114290970651e3c61c9,
         type: 3}
       propertyPath: m_Name
@@ -1120,7 +1107,7 @@ PrefabInstance:
     - target: {fileID: 4828437648805022391, guid: 98ab9a0b69ac7114290970651e3c61c9,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -8
+      value: -6
       objectReference: {fileID: 0}
     - target: {fileID: 4828437648805022391, guid: 98ab9a0b69ac7114290970651e3c61c9,
         type: 3}

@@ -17,7 +17,7 @@ public class UIMovementManager : MonoBehaviour
         _buttonsRect = buttons.GetComponent<RectTransform>();
         isButtonsCome = false;
 
-        // StartCoroutine(ButtonsIn());
+        StartCoroutine(ButtonsIn());
     }
     
     IEnumerator ButtonsIn()

@@ -40,7 +40,7 @@ public class ButtonClick : MonoBehaviour
     {
         if (_runningScene.can_jump)
         {
-            _runningScene.bird.GetComponent<Rigidbody2D>().AddForce(Vector2.up * 350);
+            _runningScene.bird.GetComponent<Rigidbody2D>().AddForce(Vector2.up * 250);
             _runningScene.can_jump = false;
         }
     }
