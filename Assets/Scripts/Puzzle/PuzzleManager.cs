@@ -15,7 +15,8 @@ public class PuzzleManager : MonoBehaviour
 	public GameObject tile;
 	public GameObject block;
 
-	public GameObject writingblock;
+	GameObject writingpuzzle;
+	GameObject writingblock;
 
 	public List<List<Tile>> grid;
 
@@ -31,18 +32,25 @@ public class PuzzleManager : MonoBehaviour
 		if (Input.GetMouseButtonDown(0))
 		{
 			writingblock = Instantiate(block);
+			writingblock.transform.SetParent(writingpuzzle.transform);
 		}
 		else if (Input.GetMouseButton(0))
 		{
 			if (perPreviewPos != (Vector2)preview.transform.position)
 			{
+				GameObject tmp = Instantiate(tile);
 
+				tmp.transform.SetParent(writingblock.transform);
+				tmp.transform.position = preview.transform.position;
+
+				writingblock.GetComponent<Block>().Insert(tmp.GetComponent<Tile>());
 			}
 		}
-		else if (Input.GetMouseButtonUp(0))
-		{
+	}
 
-		}
+	private void Awake()
+	{
+		writingpuzzle = Instantiate(puzzle);
 	}
 
 	private void Update()
