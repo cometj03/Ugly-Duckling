@@ -5,15 +5,15 @@ using UnityEngine;
 
 public class ButtonClick : MonoBehaviour
 {
+    public GameObject bird;
+    public GameObject standbyCamera;
+    
     private CameraZoom _cameraZoom;
-    private RunningScene _runningScene;
 
     private void Start()
     {
-        if (GameObject.Find("Main Camera").GetComponent<CameraZoom>() != null)
-            _cameraZoom = GameObject.Find("Main Camera").GetComponent<CameraZoom>();
-        if (gameObject.GetComponent<RunningScene>() != null)
-            _runningScene = gameObject.GetComponent<RunningScene>();
+        if (standbyCamera != null)
+            _cameraZoom = standbyCamera.GetComponent<CameraZoom>();
     }
 
     //-------------StandbyScene-------------
@@ -38,10 +38,6 @@ public class ButtonClick : MonoBehaviour
     //-------------RunningScene-------------
     public void OnJumpBtnClicked()    // 점프 버튼 누름
     {
-        if (_runningScene.can_jump)
-        {
-            _runningScene.bird.GetComponent<Rigidbody2D>().AddForce(Vector2.up * 250);
-            _runningScene.can_jump = false;
-        }
+        bird.GetComponent<BirdControler>().BirdJump();
     }
 }

@@ -15,7 +15,6 @@ public class MainScene : MonoBehaviour
 
 	private bool fade = true;   // touch to start 가 흐려지게 하건지 뚜렷해지게 할건지 여부
 	private static readonly int IsWalk = Animator.StringToHash("is_walk");	// 애니메이션 is_walk 트리거 저장
-	private IEnumerator _touchToStart;
 
 	private void Awake()
     {
@@ -23,12 +22,7 @@ public class MainScene : MonoBehaviour
 		// Debug.Log(Screen.width + ", " + Screen.height);
     }
 
-    private void Start()
-    {
-	    _touchToStart = TouchToStart();
-    }
-
-    private void Update()
+	private void Update()
 	{
 		// touch to start가 깜박거리는 효과를 주는 코드
 		if (fade)
@@ -49,7 +43,7 @@ public class MainScene : MonoBehaviour
 		// 프레이어가 화면 터치시 오리가 화면 밖으로 나가고 다음 씬으로 넘어감
 		if (Input.touchCount > 0 || Input.anyKeyDown) 
 		{
-			StartCoroutine(_touchToStart);
+			StartCoroutine(TouchToStart());
 		}
 	}
 
@@ -63,7 +57,6 @@ public class MainScene : MonoBehaviour
 			player.transform.Translate(new Vector3(birdSpeed, 0, 0) * Time.deltaTime);
 
 			yield return null;
-			// yield return new WaitForEndOfFrame();
 		}
 		// 다음 씬으로 넘어감
 		levelLoader.GetComponent<LevelLoader>().LoadNextLevel(SceneManager.GetActiveScene().buildIndex + 1);

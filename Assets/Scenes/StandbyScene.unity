@@ -2903,6 +2903,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38315bb60234aa04cac8de0849c0fcc3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bird: {fileID: 0}
+  standbyCamera: {fileID: 167354203}
 --- !u!114 &1494571411 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7686591573715646494, guid: 075f50ff5823e3c4fa53ff29e107be09,
