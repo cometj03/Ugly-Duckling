@@ -5,19 +5,18 @@ using UnityEngine;
 
 public class Tile : MonoBehaviour
 {
-	public List<bool> isConnect = new List<bool>(4) { false, false, false, false };
+	public List<bool> isConnect;
 
-	public int x;
-	public int y;
-
-	public void UpdateShapde()
+	private void Awake()
 	{
-		for (int i = 0; i < 4	; i++)
+		isConnect = new List<bool> { false, false, false, false };
+	}
+
+	public void UpdateShape()
+	{
+		for (int i = 0; i < 4; i++)
 		{
-			if (isConnect[i])
-			{
-				transform.GetChild(i).gameObject.SetActive(isConnect[i]);
-			}
+			transform.GetChild(i).gameObject.SetActive(!isConnect[i]);
 		}
 	}
 }
