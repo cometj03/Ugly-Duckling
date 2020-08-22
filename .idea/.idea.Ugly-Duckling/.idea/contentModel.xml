@@ -7,31 +7,19 @@
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="Scripts" t="Include">
-          <e p="Manager" t="Include">
-            <e p="Camera" t="Include">
-              <e p="CameraMovement.cs" t="Include" />
-              <e p="CameraZoom.cs" t="Include" />
-            </e>
-            <e p="Controler" t="Include">
-              <e p="BirdControler.cs" t="Include" />
-            </e>
-            <e p="UI" t="Include">
-              <e p="ButtonClick.cs" t="Include" />
-              <e p="LevelLoader.cs" t="Include" />
-              <e p="SettingsMenu.cs" t="Include" />
-              <e p="UIMovementManager.cs" t="Include" />
-            </e>
+          <e p="Managers" t="Include">
+            <e p="MainScene.cs" t="Include" />
+            <e p="PlayerControler.cs" t="Include" />
+            <e p="RunningScene.cs" t="Include" />
+            <e p="StandbyScene.cs" t="Include" />
           </e>
-          <e p="Scene" t="Include">
-            <e p="GameScene" t="Include">
-              <e p="RunningScene.cs" t="Include" />
-            </e>
-            <e p="MainScene" t="Include">
-              <e p="MainScene.cs" t="Include" />
-            </e>
-            <e p="ReadyScene" t="Include">
-              <e p="StandbyScene.cs" t="Include" />
-            </e>
+          <e p="Puzzle" t="Include">
+            <e p="Block.cs" t="Include" />
+            <e p="Outline.cs" t="Include" />
+            <e p="OutlineTile.cs" t="Include" />
+            <e p="Puzzle.cs" t="Include" />
+            <e p="PuzzleManager.cs" t="Include" />
+            <e p="Tile.cs" t="Include" />
           </e>
         </e>
       </e>
