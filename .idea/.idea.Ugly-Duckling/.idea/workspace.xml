@@ -28,10 +28,6 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Puzzle/Block.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/23A7799D-A2E9-41B8-8C6D-B790C607D655/c6/9af54fec/Resources.cs" root0="SKIP_HIGHLIGHTING" />
-  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
@@ -39,8 +35,6 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Manager/Controler/BirdControler.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Manager/UI/ButtonClick.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Scene/MainScene/MainScene.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Puzzle/OutlineTile.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Puzzle/PuzzleManager.cs" />
       </list>
     </option>
   </component>
@@ -115,11 +109,5 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="635" y="262" width="672" height="678" key="search.everywhere.popup" timestamp="1598076077415">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="635" y="262" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1598076077415" />
   </component>
 </project>
