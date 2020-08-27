@@ -16,7 +16,7 @@ public class ButtonClick : MonoBehaviour
             _cameraZoom = standbyCamera.GetComponent<CameraZoom>();
     }
 
-    //-------------StandbyScene-------------
+    //-------------StandbyScene-------------//
     public void OnPlayBtnClicked()   // 플레이 버튼 누름
     {
         gameObject.GetComponent<StandbyScene>().StartGame("offline");
@@ -35,9 +35,9 @@ public class ButtonClick : MonoBehaviour
         StartCoroutine(_cameraZoom.CustomizeZoomOut());
     }
 
-    //-------------RunningScene-------------
+    //-------------RunningScene-------------//
     public void OnJumpBtnClicked()    // 점프 버튼 누름
     {
-        bird.GetComponent<BirdControler>().BirdJump();
+        bird.GetComponent<BirdController>().BirdJump();
     }
 }
