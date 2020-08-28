@@ -5,16 +5,16 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/MainScene.unity
     guid: 6cc1f1c7810d2df498e84cea70a53c89
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/StandbyScene.unity
     guid: 8822b3b88491a8f478fee0a0e541d08f
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/RunningScene.unity
     guid: ffcf0d6e34b71f9499fec4dacf995f64
-  - enabled: 1
-    path: Assets/Scenes/PuzzleMaker.unity
-    guid: c62f780c5cdaca44f8e3456dc9424d77
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   m_configObjects: {}
