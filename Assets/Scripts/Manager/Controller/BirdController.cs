@@ -5,10 +5,9 @@ using UnityEngine;
 
 public class BirdController : MonoBehaviour
 {
-	public GameObject manager;
-	
-	private RunningScene _runningScene;
-	
+	public CameraMovement _cameraMovement;
+	public HorizontalButton horizontalButton;
+
 	// bird property
 	private static readonly int IsWalk = Animator.StringToHash("is_walk");
 	private Transform _birdTransform;
@@ -20,8 +19,6 @@ public class BirdController : MonoBehaviour
 
 	private void Start()
 	{
-		_runningScene = manager.GetComponent<RunningScene>();
-		
 		_birdTransform = gameObject.transform;
 		_birdAnimator = GetComponent<Animator>();
 		_birdSpriteRenderer = GetComponent<SpriteRenderer>();
@@ -31,36 +28,32 @@ public class BirdController : MonoBehaviour
 
 	private void Update()
 	{
-		birdSpeed = Input.GetAxisRaw("Horizontal") * 2;
+		// birdSpeed = Input.GetAxisRaw("Horizontal") * 2;
+		birdSpeed = horizontalButton.getDir() * 2;
 		
-		if (birdSpeed > 0)
-			MoveRight();
-		else if (birdSpeed < 0)
-			MoveLeft();
-		else
+		if (birdSpeed == 0)
 			_birdAnimator.SetBool(IsWalk, false);
+		else
+		{
+			_birdTransform.position += new Vector3(birdSpeed * Time.deltaTime, 0, 0);
+			//_birdRigidbody2D.AddForce(new Vector3(birdSpeed, 0, 0));
+			_birdAnimator.SetBool(IsWalk, true);
+			
+			_birdSpriteRenderer.flipX = birdSpeed < 0;
+			
+			if (birdSpeed > 0)
+				MoveRight();
+		}
 	}
 
-	public void MoveRight()
+	private void MoveRight()
 	{
 		// 카메라 뒤로 물러남
-		if (_birdTransform.position.x - 1.5f > _runningScene.cameraTargetVector.x)
+		if (_birdTransform.position.x - 2 > _cameraMovement.cameraTargetVector.x)
 		{
-			_runningScene.cameraTargetVector = new Vector3(_birdTransform.position.x - 1.5f, _runningScene.cameraTargetVector.y, -10);
+			//_runningScene.cameraTargetVector = new Vector3(_birdTransform.position.x - 1.5f, _runningScene.cameraTargetVector.y, -10);
+			_cameraMovement.cameraTargetVector = new Vector3(_birdTransform.position.x + 1f, _cameraMovement.cameraTargetVector.y, -10);
 		}
-
-		_birdTransform.position += new Vector3(birdSpeed * Time.deltaTime, 0, 0);
-		//_birdRigidbody2D.AddForce(new Vector3(birdSpeed, 0, 0));
-		_birdAnimator.SetBool(IsWalk, true);
-		_birdSpriteRenderer.flipX = false;
-	}
-
-	public void MoveLeft()
-	{
-		_birdTransform.position += new Vector3(birdSpeed * Time.deltaTime, 0, 0);
-		//_birdRigidbody2D.AddForce(new Vector3(-birdSpeed, 0, 0));
-		_birdAnimator.SetBool(IsWalk, true);
-		_birdSpriteRenderer.flipX = true;
 	}
 
 	public void BirdJump()

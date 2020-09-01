@@ -6,7 +6,7 @@ public class Block : MonoBehaviour
 {
 	enum BLOCK_TYPE { NORMAL };
 
-	BLOCK_TYPE type = BLOCK_TYPE.NORMAL;
+	//BLOCK_TYPE type = BLOCK_TYPE.NORMAL;
 
 	List<Tile> tiles = new List<Tile>();
 
