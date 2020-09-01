@@ -14,11 +14,13 @@ public class BirdController : MonoBehaviour
 	private Animator _birdAnimator;
 	private SpriteRenderer _birdSpriteRenderer;
 	private Rigidbody2D _birdRigidbody2D;
+	private Vector3 localScale;
 	private float birdSpeed = 2f;
 	private bool can_jump = true;
 
 	private void Start()
 	{
+		localScale = gameObject.transform.localScale;
 		_birdTransform = gameObject.transform;
 		_birdAnimator = GetComponent<Animator>();
 		_birdSpriteRenderer = GetComponent<SpriteRenderer>();
@@ -38,11 +40,14 @@ public class BirdController : MonoBehaviour
 			_birdTransform.position += new Vector3(birdSpeed * Time.deltaTime, 0, 0);
 			//_birdRigidbody2D.AddForce(new Vector3(birdSpeed, 0, 0));
 			_birdAnimator.SetBool(IsWalk, true);
-			
-			_birdSpriteRenderer.flipX = birdSpeed < 0;
-			
+
 			if (birdSpeed > 0)
+			{
+				gameObject.transform.localScale = localScale;
 				MoveRight();
+			}
+			else
+				gameObject.transform.localScale = new Vector3(-localScale.x, localScale.y, 1);
 		}
 	}
 

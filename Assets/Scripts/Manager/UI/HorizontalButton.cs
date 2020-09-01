@@ -57,7 +57,7 @@ public class HorizontalButton : MonoBehaviour, IDragHandler, IPointerDownHandler
                     currentMousePos = touch.position;
             }
         }
-        Debug.Log(currentMousePos.x);
+        //Debug.Log(currentMousePos.x);
         btnImage.sprite = currentMousePos.x > btnPosX ? rightSprite : leftSprite;
         dir = currentMousePos.x > btnPosX ? 1 : -1;
     }
