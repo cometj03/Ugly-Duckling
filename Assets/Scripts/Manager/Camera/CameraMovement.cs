@@ -10,16 +10,17 @@ public class CameraMovement : MonoBehaviour
 	public GameObject background;
 	public GameObject mountain;
 	public GameObject mountaincloud;
-	public Camera maincamera;
 
 	public float speed;
 	
+	private Camera maincamera;
 	public Vector3 cameraTargetVector;
 	private bool isCloudUp = true;
-	public float smoothCameraSpeed;
+	private float smoothCameraSpeed;
 
 	private void Start()
 	{
+		maincamera = gameObject.GetComponent<Camera>();
 		cameraTargetVector = maincamera.transform.position;
 		speed = 0.01f;
 		smoothCameraSpeed = 0.025f;

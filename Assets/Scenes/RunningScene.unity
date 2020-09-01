@@ -450,8 +450,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85180ab296b59644d94471d62d3339b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _cameraMovement: {fileID: 1616645436}
+  _cameraMovement: {fileID: 1187097885}
   horizontalButton: {fileID: 602057744}
+--- !u!114 &952946402 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2724344071173644239, guid: dd4361d6e2de50542988797429929dbf,
+    type: 3}
+  m_PrefabInstance: {fileID: 295887809}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2169086d657644e4e8bea1452cfc8f28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1187097881
 GameObject:
   m_ObjectHideFlags: 0
@@ -463,6 +475,7 @@ GameObject:
   - component: {fileID: 1187097884}
   - component: {fileID: 1187097882}
   - component: {fileID: 1187097883}
+  - component: {fileID: 1187097885}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -535,6 +548,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1187097885
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1187097881}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ba636c788b07e54e9b2b5c6fd99e5f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  floor: {fileID: 1693883624}
+  moon: {fileID: 1682607388}
+  background: {fileID: 676328300}
+  mountain: {fileID: 1251587948}
+  mountaincloud: {fileID: 1699725075}
+  speed: 0.01
+  cameraTargetVector: {x: 0, y: 0, z: 0}
 --- !u!1 &1251587948
 GameObject:
   m_ObjectHideFlags: 0
@@ -1154,9 +1186,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1616645437}
-  - component: {fileID: 1616645436}
   - component: {fileID: 1616645439}
   - component: {fileID: 1616645438}
+  - component: {fileID: 1616645436}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Untagged
@@ -1173,18 +1205,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1616645435}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6ba636c788b07e54e9b2b5c6fd99e5f2, type: 3}
+  m_Script: {fileID: 11500000, guid: dc4b1b0ec8ba8aa43916e764225f7858, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  floor: {fileID: 1693883624}
-  moon: {fileID: 1682607388}
-  background: {fileID: 676328300}
-  mountain: {fileID: 1251587948}
-  mountaincloud: {fileID: 1699725075}
-  maincamera: {fileID: 1187097882}
-  speed: 0.01
-  cameraTargetVector: {x: 0, y: 0, z: 0}
-  smoothCameraSpeed: 0
+  levelLoader: {fileID: 952946402}
 --- !u!4 &1616645437
 Transform:
   m_ObjectHideFlags: 0
