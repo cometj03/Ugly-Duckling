@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using SimpleJSON;
 using System.IO;
-using TMPro.EditorUtilities;
+//using TMPro.EditorUtilities;
 
 public class PuzzleLoader : MonoBehaviour
 {

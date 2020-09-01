@@ -11,7 +11,7 @@ public class StandbyScene : MonoBehaviour
 
     public GameObject player;   // 오리 객체
     public GameObject _camera;
-    public GameObject levelLoader;
+    public LevelLoader levelLoader;
 
     public bool isCamMoving;
 
@@ -24,6 +24,16 @@ public class StandbyScene : MonoBehaviour
         StartCoroutine(CameraMoving()); // 카메라 움직임
     }
 
+    private void Update()
+    {
+        if (Application.platform == RuntimePlatform.Android)
+        {
+            if (Input.GetKey(KeyCode.Escape))
+            {
+                levelLoader.LoadNextLevel(SceneManager.GetActiveScene().buildIndex - 1);
+            }
+        }
+    }
 
     IEnumerator BirdComing()
     {
