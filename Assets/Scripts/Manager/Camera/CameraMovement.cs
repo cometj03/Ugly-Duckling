@@ -36,7 +36,7 @@ public class CameraMovement : MonoBehaviour
 		// floor 생성
 		if (maincamera.transform.position.x - 4.8f >= floor.transform.position.x)
 		{
-			floor.transform.position += new Vector3(9.6f, 0, 0);
+			floor.transform.position += Vector3.right * 9.6f;
 		}
 
 		if (mountaincloud.transform.position.y > -1f)
