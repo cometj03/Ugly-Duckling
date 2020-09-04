@@ -11,12 +11,12 @@ public class CameraMovement : MonoBehaviour
 	public GameObject mountain;
 	public GameObject mountaincloud;
 
-	public float speed;
-	
-	private Camera maincamera;
 	public Vector3 cameraTargetVector;
+	private Camera maincamera;
 	private bool isCloudUp = true;
-	private float smoothCameraSpeed;
+	private float smoothCameraSpeed, speed;
+
+	private float bgOffsetX, moonOffsetX, mtOffsetX;
 
 	private void Start()
 	{
@@ -24,31 +24,46 @@ public class CameraMovement : MonoBehaviour
 		cameraTargetVector = maincamera.transform.position;
 		speed = 0.01f;
 		smoothCameraSpeed = 0.025f;
+
+		bgOffsetX = background.transform.position.x - cameraTargetVector.x;
+		moonOffsetX = moon.transform.position.x - cameraTargetVector.x;
+		mtOffsetX = mountain.transform.position.x - cameraTargetVector.x;
 	}
 
 	private void FixedUpdate()
 	{
-		// 배경 오브젝트 이동
+		// 카메라 이동
 		maincamera.transform.position = Vector3.Lerp(maincamera.transform.position, cameraTargetVector, smoothCameraSpeed);
-		background.transform.position = Vector3.Lerp(background.transform.position, cameraTargetVector + new Vector3(3, 0, 10), smoothCameraSpeed);
-		moon.transform.position = Vector3.Lerp(moon.transform.position, cameraTargetVector * 0.9f + new Vector3(3, 0.6f, 10), smoothCameraSpeed);
 		
-		// floor 생성
+		// 배경 오브젝트 이동
+		MoveBgObject(background, bgOffsetX, 0.95f);
+		MoveBgObject(moon, moonOffsetX, 0.93f);
+		//MoveBgObject(mountain, mtOffsetX, 0.7f);
+		
+		// floor 반복
 		if (maincamera.transform.position.x - 4.8f >= floor.transform.position.x)
-		{
 			floor.transform.position += Vector3.right * 9.6f;
-		}
+		//if (maincamera.transform.position.x - 12f >= mountain.transform.position.x)
+		//	background.transform.position += Vector3.right * 24f;
 
+		
 		if (mountaincloud.transform.position.y > -1f)
 			isCloudUp = false;
 		else if (mountaincloud.transform.position.y < -1.3f)
 			isCloudUp = true;
 		
-		Vector3 cloudVec = isCloudUp ? new Vector3(1, 0.2f, 0) : new Vector3(1, -0.2f, 0);
+		float cloudDeltaY = isCloudUp ? 0.2f : -0.2f;
 
 		mountain.transform.position += Vector3.right * (speed * 0.7f);
-		mountaincloud.transform.position += cloudVec * (speed * 0.7f);
+		mountaincloud.transform.position += new Vector3(0, cloudDeltaY * (speed * 0.7f));
 		
 		cameraTargetVector += Vector3.right * speed;
+	}
+
+	private void MoveBgObject(GameObject gameObject, float offset, float ratio)
+	{
+		Vector3 pos = gameObject.transform.position;
+		pos.x = Mathf.Lerp(pos.x, cameraTargetVector.x * ratio + offset, smoothCameraSpeed);
+		gameObject.transform.position = pos;
 	}
 }
