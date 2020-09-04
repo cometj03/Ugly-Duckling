@@ -31,7 +31,7 @@ public class BirdController : MonoBehaviour
 	private void Update()
 	{
 		// birdSpeed = Input.GetAxisRaw("Horizontal") * 2;
-		birdSpeed = horizontalButton.getDir() * 2;
+		birdSpeed = horizontalButton.GETDir() * 2;
 		
 		if (birdSpeed == 0)
 			_birdAnimator.SetBool(IsWalk, false);

@@ -5,6 +5,9 @@ using UnityEngine;
 
 public class CameraResolution : MonoBehaviour
 {
+    /// <summary>
+    /// 가로세로 비율 16:9
+    /// </summary>
     private void Awake()
     {
         Camera camera = GetComponent<Camera>();
