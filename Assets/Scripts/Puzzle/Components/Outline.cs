@@ -82,5 +82,7 @@ public class Outline : MonoBehaviour
 			tiles[0].GetComponent<OutlineTile>().isConnected.Add("up");
 			tiles[tiles.Count - 1].GetComponent<OutlineTile>().isConnected.Add("down");
 		}
+
+		tiles[0].isConnected.Reverse();	
 	}
 }

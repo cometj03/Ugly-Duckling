@@ -9,9 +9,9 @@ public class Puzzle : MonoBehaviour
 	public Outline outline;
 	public List<Block> blocks = new List<Block>();
 
-	public void SaveToFile()
+	public void SaveToFile(string fileName)
 	{
-		FileStream file = File.Create("newPuzzle");
+		FileStream file = File.Create(fileName);
 
 		Hashtable h_puzzle = new Hashtable();
 		List<Hashtable> h_outline = new List<Hashtable>();
