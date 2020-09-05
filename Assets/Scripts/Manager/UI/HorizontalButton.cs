@@ -6,9 +6,9 @@ public class HorizontalButton : MonoBehaviour, IDragHandler, IPointerDownHandler
 {
     public Sprite defaultSprite, rightSprite, leftSprite;
     
-    private Vector3 currentMousePos;
     private RectTransform btnPos;
     private Image btnImage;
+    private float currentTouchPosX;
     private float btnPosX;
     private int dir;    // -1: left, 0: default, 1: right 
 
@@ -23,7 +23,7 @@ public class HorizontalButton : MonoBehaviour, IDragHandler, IPointerDownHandler
 
     public void OnDrag(PointerEventData eventData)
     {
-        currentMousePos = Input.mousePosition;
+        /*currentMousePos = Input.mousePosition;
         if (Input.touches.Length > 1)
         {
             // 터치 두 개 이상
@@ -32,13 +32,14 @@ public class HorizontalButton : MonoBehaviour, IDragHandler, IPointerDownHandler
                 if (currentMousePos.x > touch.position.x)
                     currentMousePos = touch.position;
             }
-        }
-        if (dir != 1 && currentMousePos.x > btnPosX)
+        }*/
+        currentTouchPosX = eventData.position.x;
+        if (dir != 1 && currentTouchPosX > btnPosX)
         {
             dir = 1;
             btnImage.sprite = rightSprite;
         }
-        else if (dir != -1 && currentMousePos.x <= btnPosX)
+        else if (dir != -1 && currentTouchPosX <= btnPosX)
         {
             dir = -1;
             btnImage.sprite = leftSprite;
@@ -47,28 +48,17 @@ public class HorizontalButton : MonoBehaviour, IDragHandler, IPointerDownHandler
 
     public void OnPointerDown(PointerEventData eventData)
     {
-        currentMousePos = Input.mousePosition;
-        if (Input.touches.Length > 1)
-        {
-            // 터치 두 개 이상
-            foreach (Touch touch in Input.touches)
-            {
-                if (currentMousePos.x > touch.position.x)
-                    currentMousePos = touch.position;
-            }
-        }
-        Debug.Log(currentMousePos.x);
-        btnImage.sprite = currentMousePos.x > btnPosX ? rightSprite : leftSprite;
-        dir = currentMousePos.x > btnPosX ? 1 : -1;
+        OnDrag(eventData);
     }
 
     public void OnPointerUp(PointerEventData eventData)
     {
         dir = 0;
+        currentTouchPosX = 0;
         btnImage.sprite = defaultSprite;
     }
 
-    public int getDir()
+    public int GETDir()
     {
         return dir;
     }

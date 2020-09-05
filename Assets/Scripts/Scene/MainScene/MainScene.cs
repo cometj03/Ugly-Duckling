@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
@@ -12,15 +13,11 @@ public class MainScene : MonoBehaviour
 	public Text text;	// touch to start Text
 	public GameObject player;	// 오리 객체 
 	public LevelLoader levelLoader;	// FadeIn하는 이미지
+	public Camera mainCamera;
 
 	private bool fade = true;   // touch to start 가 흐려지게 하건지 뚜렷해지게 할건지 여부
 	private static readonly int IsWalk = Animator.StringToHash("is_walk");	// 애니메이션 is_walk 트리거 저장
 	private bool isStart = false;
-	private void Awake()
-    {
-		// Screen.SetResolution(Screen.height * 16 / 9, Screen.height, true);
-		// Debug.Log(Screen.width + ", " + Screen.height);
-    }
 
 	private void Update()
 	{
