@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class Tile : MonoBehaviour
 {
@@ -9,10 +10,12 @@ public class Tile : MonoBehaviour
 
 	private void OnMouseDown()
 	{
-		GameObject parent = transform.parent.gameObject;
+		if (!EventSystem.current.IsPointerOverGameObject()) {
+			GameObject parent = transform.parent.gameObject;
 
-		parent.transform.parent.GetComponent<Puzzle>().blocks.Remove(parent.GetComponent<Block>());
-		Destroy(parent);
+			parent.transform.parent.GetComponent<Puzzle>().blocks.Remove(parent.GetComponent<Block>());
+			Destroy(parent);
+		}
 	}
 
 	private void Awake()
