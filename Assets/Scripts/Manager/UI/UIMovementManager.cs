@@ -5,9 +5,9 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class UIMovementManager : MonoBehaviour
-{
-    
+{ 
     public GameObject buttons;
+    //public GameObject world_
     
     private RectTransform _buttonsRect;
     private bool isButtonsCome;
@@ -22,15 +22,14 @@ public class UIMovementManager : MonoBehaviour
     
     IEnumerator ButtonsIn()
     {
-        isButtonsCome = true;
-        
         // 버튼들 화면 밖에서 안으로 들어오는 함수
-        _buttonsRect.anchoredPosition = new Vector3(350f, _buttonsRect.anchoredPosition.y);
+        isButtonsCome = true;
+        Vector3 buttonPos = _buttonsRect.anchoredPosition = new Vector3(_buttonsRect.anchoredPosition.x, 100);
 
-        while (_buttonsRect.anchoredPosition.x > -380 && isButtonsCome)
+        while (_buttonsRect.anchoredPosition.y >= -100 && isButtonsCome)
         {
-            _buttonsRect.anchoredPosition = 
-                new Vector3(_buttonsRect.anchoredPosition.x - 200 * Time.deltaTime, _buttonsRect.anchoredPosition.y);
+            buttonPos.y = Mathf.Lerp(buttonPos.y, -100.5f, 0.01f);
+            _buttonsRect.anchoredPosition = buttonPos;
 
             yield return null;
         }
@@ -41,13 +40,14 @@ public class UIMovementManager : MonoBehaviour
     public IEnumerator ButtonsAway()
     {
         // 버튼들 화면 밖으로 나가는 함수
-        float awaySpeed = 600;
         isButtonsCome = false;
-        while (_buttonsRect.anchoredPosition.x < 400)
+        Vector3 buttonPos = _buttonsRect.anchoredPosition;
+        
+        while (_buttonsRect.anchoredPosition.y <= 100)
         {
-            _buttonsRect.anchoredPosition = 
-                new Vector3(_buttonsRect.anchoredPosition.x + awaySpeed * Time.deltaTime, _buttonsRect.anchoredPosition.y);
-
+            buttonPos.y = Mathf.Lerp(buttonPos.y, 100.5f, 0.01f);
+            _buttonsRect.anchoredPosition = buttonPos;
+            
             yield return null;
         }
     }

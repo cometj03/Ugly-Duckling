@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class EnvironmentManager : MonoBehaviour
 {
-    [SerializeField] GameObject background;
-    [SerializeField] GameObject moon;
-    [SerializeField] GameObject mountain;
-    [SerializeField] GameObject mountaincloud;
-    [SerializeField] GameObject floor;
+    [SerializeField] GameObject background = default;
+    [SerializeField] GameObject moon = default;
+    [SerializeField] GameObject mountain = default;
+    [SerializeField] GameObject mountaincloud = default;
+    [SerializeField] GameObject floor = default;
 
-    [SerializeField] CameraMovement _cameraMovement;
+    public CameraMovement _cameraMovement;
     private Vector3 targetVector;
     private const float smoothCameraSpeed = 0.025f;
     
