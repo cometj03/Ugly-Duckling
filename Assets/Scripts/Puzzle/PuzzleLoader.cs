@@ -21,7 +21,7 @@ public class PuzzleLoader : MonoBehaviour
 	{
 		writingPuzzle = Instantiate(puzzle).GetComponent<Puzzle>();
 
-		var file = File.OpenRead(src);
+		var file = File.OpenRead("Assets/Puzzles/" + src);
 		StreamReader sr = new StreamReader(file);
 
 		var json = JSON.Parse(sr.ReadToEnd());
