@@ -8,16 +8,6 @@ public class Tile : MonoBehaviour
 {
 	public List<bool> isConnect;
 
-	private void OnMouseDown()
-	{
-		if (!EventSystem.current.IsPointerOverGameObject()) {
-			GameObject parent = transform.parent.gameObject;
-
-			parent.transform.parent.GetComponent<Puzzle>().blocks.Remove(parent.GetComponent<Block>());
-			Destroy(parent);
-		}
-	}
-
 	private void Awake()
 	{
 		isConnect = new List<bool> { false, false, false, false };

@@ -61,6 +61,15 @@ public class PuzzleMaker : MonoBehaviour
 		}
 	}
 
+	public void DeleteBlock()
+	{
+		if (Input.GetMouseButtonDown(0))
+		{
+			RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
+			Destroy(hit.transform.parent.gameObject);
+		}
+	}
+
 	public void WriteOutline()
 	{
 		if (Input.GetMouseButtonDown(0))
@@ -147,6 +156,10 @@ public class PuzzleMaker : MonoBehaviour
 			if (type == TILE_TYPE.BLOCK)
 			{
 				WriteBlock();
+			}
+			else if(type == TILE_TYPE.AIR)
+			{
+				DeleteBlock();
 			}
 			else if (type == TILE_TYPE.OUTLINE)
 			{
