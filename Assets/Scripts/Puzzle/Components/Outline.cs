@@ -4,12 +4,7 @@ using UnityEngine;
 
 public class Outline : MonoBehaviour
 {
-    List<OutlineTile> tiles = new List<OutlineTile>();
-
-	public List<OutlineTile> GetTiles()
-	{
-		return tiles;
-	}
+    public List<OutlineTile> tiles = new List<OutlineTile>();
 
 	public void Clear()
 	{
