@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class BirdController : MonoBehaviour
 {
-	public CameraMovement _cameraMovement;
+	public CameraValue cameraValue;
 	public HorizontalButton horizontalButton;
 
 	// bird property
@@ -53,10 +53,10 @@ public class BirdController : MonoBehaviour
 	private void MoveRight()
 	{
 		// 카메라 뒤로 물러남
-		if (_birdTransform.position.x - 2 > _cameraMovement.cameraTargetVector.x)
+		if (_birdTransform.position.x - 2.5f > cameraValue.cameraTarget.x)
 		{
 			//_runningScene.cameraTargetVector = new Vector3(_birdTransform.position.x - 1.5f, _runningScene.cameraTargetVector.y, -10);
-			_cameraMovement.cameraTargetVector = new Vector3(_birdTransform.position.x + 1f, _cameraMovement.cameraTargetVector.y, -10);
+			cameraValue.cameraTarget = new Vector3(_birdTransform.position.x + 1f, cameraValue.cameraTarget.y, -10);
 		}
 	}
 
