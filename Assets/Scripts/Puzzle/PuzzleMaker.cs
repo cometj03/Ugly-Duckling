@@ -66,6 +66,7 @@ public class PuzzleMaker : MonoBehaviour
 		if (Input.GetMouseButtonDown(0))
 		{
 			RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
+			writingpuzzle.GetComponent<Puzzle>().blocks.Remove(hit.transform.parent.GetComponent<Block>());
 			Destroy(hit.transform.parent.gameObject);
 		}
 	}
