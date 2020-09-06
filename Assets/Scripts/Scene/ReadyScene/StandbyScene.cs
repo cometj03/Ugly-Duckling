@@ -68,10 +68,12 @@ public class StandbyScene : MonoBehaviour
 
     public void StartGame(String flag)
     {
-        if (flag == "offline")
+        if (flag.Equals("Summer"))
         {
-            // flag가 Play면 RunningScene으로 넘어감
             levelLoader.GetComponent<LevelLoader>().LoadNextLevel(SceneManager.GetActiveScene().buildIndex + 1);
+        } else if (flag.Equals("Winter"))
+        {
+            levelLoader.GetComponent<LevelLoader>().LoadNextLevel(SceneManager.GetActiveScene().buildIndex + 2);
         }
 
         StartCoroutine(gameObject.GetComponent<UIMovementManager>().ButtonsAway());

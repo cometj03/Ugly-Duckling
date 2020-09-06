@@ -7,17 +7,32 @@ using UnityEngine.UI;
 public class UIMovementManager : MonoBehaviour
 { 
     public GameObject buttons;
-    //public GameObject world_
+    public GameObject worldSelect;
     
-    private RectTransform _buttonsRect;
+    private RectTransform _buttonsRect, _worldRect;
     private bool isButtonsCome;
 
     private void Start()
     {
         _buttonsRect = buttons.GetComponent<RectTransform>();
+        _worldRect = worldSelect.GetComponent<RectTransform>();
         isButtonsCome = false;
 
         StartCoroutine(ButtonsIn());
+        StartCoroutine(WorldSelectIn());
+    }
+
+    IEnumerator WorldSelectIn()
+    {
+        Vector3 worldPos = _worldRect.anchoredPosition = new Vector3(625, _worldRect.anchoredPosition.y);
+
+        while (_buttonsRect.anchoredPosition.x >= -624.5f)
+        {
+            worldPos.x = Mathf.Lerp(worldPos.x, -625f, 0.002f);
+            _worldRect.anchoredPosition = worldPos;
+
+            yield return null;
+        }
     }
     
     IEnumerator ButtonsIn()

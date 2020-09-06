@@ -17,9 +17,9 @@ public class ButtonClick : MonoBehaviour
     }
 
     //-------------StandbyScene-------------//
-    public void OnPlayBtnClicked()   // 플레이 버튼 누름
+    public void OnPlayBtnClicked(string flag)   // 플레이 버튼 누름
     {
-        gameObject.GetComponent<StandbyScene>().StartGame("offline");
+        gameObject.GetComponent<StandbyScene>().StartGame(flag);
     }
 
     public void OnCustomizeBtnClicked()
