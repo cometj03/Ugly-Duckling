@@ -43,7 +43,7 @@ public class BirdCustomAnimation : MonoBehaviour
 			}
 
 			animationPhase++;
-			yield return new WaitForSeconds(isWalking ? 0.1f : 0.3f);
+			yield return new WaitForSeconds(isWalking ? 0.2f : 0.4f);
 		}
 	}
 }
