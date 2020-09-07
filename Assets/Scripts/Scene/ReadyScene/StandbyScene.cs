@@ -15,11 +15,11 @@ public class StandbyScene : MonoBehaviour
 
     public bool isCamMoving;
 
-    private Animator _playerAnimator;
+    private BirdCustomAnimation _playerAnimator;
 
     private void Start()
     {
-        _playerAnimator = player.GetComponent<Animator>();
+        _playerAnimator = player.GetComponent<BirdCustomAnimation>();
         StartCoroutine(BirdComing());   // 오리가 걸어옴
         StartCoroutine(CameraMoving()); // 카메라 움직임
     }
@@ -37,14 +37,14 @@ public class StandbyScene : MonoBehaviour
 
     IEnumerator BirdComing()
     {
-        _playerAnimator.SetBool("is_walk", true);   // 걷는 애니메이션
+        _playerAnimator.isWalking = true;   // 걷는 애니메이션
         player.transform.position = new Vector3(-8, player.transform.position.y, 0);
         while (player.transform.position.x < -3)
         {
             player.transform.Translate(new Vector3(1f, 0, 0) * Time.deltaTime);
             yield return null;
         }
-        _playerAnimator.SetBool("is_walk", false);   // 애니메이션 멈춤
+        _playerAnimator.isWalking = false;   // 애니메이션 멈춤
         player.transform.position = new Vector3(-3, player.transform.position.y, 0);
     }
 
