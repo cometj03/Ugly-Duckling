@@ -28,7 +28,7 @@ public class UIMovementManager : MonoBehaviour
 
         while (_buttonsRect.anchoredPosition.x >= -624.5f)
         {
-            worldPos.x = Mathf.Lerp(worldPos.x, -625f, 0.002f);
+            worldPos.x = Mathf.Lerp(worldPos.x, -625f, 0.005f);
             _worldRect.anchoredPosition = worldPos;
 
             yield return null;
@@ -41,7 +41,7 @@ public class UIMovementManager : MonoBehaviour
         isButtonsCome = true;
         Vector3 buttonPos = _buttonsRect.anchoredPosition = new Vector3(_buttonsRect.anchoredPosition.x, 100);
 
-        while (_buttonsRect.anchoredPosition.y >= -100 && isButtonsCome)
+        while (_buttonsRect.anchoredPosition.y >= -130 && isButtonsCome)
         {
             buttonPos.y = Mathf.Lerp(buttonPos.y, -100.5f, 0.01f);
             _buttonsRect.anchoredPosition = buttonPos;
