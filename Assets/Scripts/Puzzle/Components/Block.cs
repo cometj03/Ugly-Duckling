@@ -8,12 +8,7 @@ public class Block : MonoBehaviour
 
 	//BLOCK_TYPE type = BLOCK_TYPE.NORMAL;
 
-	List<Tile> tiles = new List<Tile>();
-
-	public List<Tile> GetTiles()
-	{
-		return tiles;
-	}
+	public List<Tile> tiles = new List<Tile>();
 
 	public void Insert(Tile tile)
 	{

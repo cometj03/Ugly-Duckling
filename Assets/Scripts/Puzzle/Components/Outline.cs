@@ -4,12 +4,7 @@ using UnityEngine;
 
 public class Outline : MonoBehaviour
 {
-    List<OutlineTile> tiles = new List<OutlineTile>();
-
-	public List<OutlineTile> GetTiles()
-	{
-		return tiles;
-	}
+    public List<OutlineTile> tiles = new List<OutlineTile>();
 
 	public void Clear()
 	{
@@ -82,5 +77,7 @@ public class Outline : MonoBehaviour
 			tiles[0].GetComponent<OutlineTile>().isConnected.Add("up");
 			tiles[tiles.Count - 1].GetComponent<OutlineTile>().isConnected.Add("down");
 		}
+
+		tiles[0].isConnected.Reverse();	
 	}
 }

@@ -1,145 +1,94 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using System.Resources;
+using System.ComponentModel.Design;
 using Unity.Mathematics;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class PuzzleManager : MonoBehaviour
 {
-	public enum TILE_TYPE { OUTLINE, BLOCK, AIR };
+	Vector2 perBlockposition;
+	Vector2 mouseBlockDIstance;
 
-	public TILE_TYPE type;
+	Puzzle selectPuzzle;
+	Block selectBlock;
 
-	public GameObject preview;
-	public GameObject puzzle;
-	public GameObject tile;
-	public GameObject block;
-	public GameObject outlineTile;
-	public GameObject outline;
+	List<Puzzle> puzzles = new List<Puzzle>();
 
-	GameObject writingpuzzle;
-	GameObject writingblock;
-	GameObject writingoutline;
-
-	public List<List<Tile>> grid;
-
-	Vector2 perPreviewPos;
-
-	public void TilePreview()
+	public void Push(Puzzle puzzle)
 	{
-		preview.transform.position = (Vector2)math.round((Vector2)Camera.main.ScreenToWorldPoint(Input.mousePosition));
+		puzzles.Add(puzzle);
 	}
 
-	public void WriteBlock()
+	public void PuzzleMovement()
 	{
 		if (Input.GetMouseButtonDown(0))
 		{
-			writingblock = Instantiate(block);
-			writingblock.transform.SetParent(writingpuzzle.transform);
-			writingpuzzle.GetComponent<Puzzle>().blocks.Add(writingblock.GetComponent<Block>());
+			RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
 
-			GameObject tmp = Instantiate(tile);
-
-			tmp.transform.SetParent(writingblock.transform);
-			tmp.transform.position = preview.transform.position;
-
-			writingblock.GetComponent<Block>().Insert(tmp.GetComponent<Tile>());
-		}
-		else if (Input.GetMouseButton(0))
-		{
-			if (perPreviewPos != (Vector2)preview.transform.position)
+			if (hit && hit.transform.tag == "Tile")
 			{
-				GameObject tmp = Instantiate(tile);
-
-				tmp.transform.SetParent(writingblock.transform);
-				tmp.transform.position = preview.transform.position;
-
-				writingblock.GetComponent<Block>().Insert(tmp.GetComponent<Tile>());
+				selectPuzzle = hit.transform.parent.parent.GetComponent<Puzzle>();
+				selectBlock = hit.transform.parent.GetComponent<Block>();
+				perBlockposition = selectBlock.transform.position;
+				mouseBlockDIstance = selectBlock.transform.position - Camera.main.ScreenToWorldPoint(Input.mousePosition);
 			}
 		}
-	}
-
-	public void WriteOutline()
-	{
-		if (Input.GetMouseButtonDown(0))
+		if (selectPuzzle)
 		{
-			writingoutline.GetComponent<Outline>().Clear();
-
-			GameObject tmp = Instantiate(outlineTile);
-
-			tmp.transform.SetParent(writingoutline.transform);
-			tmp.transform.position = preview.transform.position;
-
-			writingoutline.GetComponent<Outline>().Insert(tmp.GetComponent<OutlineTile>());
-		}
-		else if (Input.GetMouseButton(0))
-		{
-			if (perPreviewPos != (Vector2)preview.transform.position)
+			if (Input.GetMouseButton(0))
 			{
-				GameObject tmp = Instantiate(outlineTile);
+				selectBlock.transform.position = (Vector2)Camera.main.ScreenToWorldPoint(Input.mousePosition) + mouseBlockDIstance;
+			}
+			else if (Input.GetMouseButtonUp(0))
+			{
+				selectBlock.transform.position = (Vector2)math.round((Vector2)selectBlock.transform.position);
 
-				tmp.transform.SetParent(writingoutline.transform);
-				tmp.transform.position = preview.transform.position;
+				foreach (var tile in selectBlock.tiles)
+				{
+					int scrossPoint = 0;
 
-				writingoutline.GetComponent<Outline>().Insert(tmp.GetComponent<OutlineTile>());
+					foreach (var outlinetile in selectPuzzle.outline.tiles)
+					{
+						if (tile.transform.position.y == outlinetile.transform.position.y && tile.transform.position.x <= outlinetile.transform.position.x)
+						{
+							scrossPoint++;
+						}
+					}
+
+					if (scrossPoint % 2 == 0)
+					{
+						selectBlock.transform.position = perBlockposition;
+						return;
+					}
+				}
+
+				foreach (var block in selectPuzzle.blocks)
+				{
+					if (block != selectBlock)
+					{
+						foreach (var tile in selectBlock.tiles)
+						{
+							foreach (var anotertile in block.tiles)
+							{
+								if (tile.transform.position == anotertile.transform.position)
+								{
+									selectBlock.transform.position = perBlockposition;
+									return;
+								}
+							}
+						}
+					}
+				}
+
+				selectPuzzle = null;
+				selectBlock = null;
 			}
 		}
-		else if (Input.GetMouseButtonUp(0))
-		{
-			writingoutline.GetComponent<Outline>().UpdateLInk();
-			writingoutline.GetComponent<Outline>().UpdateShape();
-		}
-	}
-
-	public void ChangeModeToBlock()
-	{
-		type = TILE_TYPE.BLOCK;
-	}
-
-	public void ChangeModeToOutline()
-	{
-		type = TILE_TYPE.OUTLINE;
-	}
-
-	public void SaveToFile()
-	{
-		writingpuzzle.GetComponent<Puzzle>().SaveToFile();
-	}
-
-	private void Awake()
-	{
-		writingpuzzle = Instantiate(puzzle);
-		writingoutline = Instantiate(outline);
-		writingoutline.transform.SetParent(writingpuzzle.transform);
-		writingpuzzle.GetComponent<Puzzle>().outline = writingoutline.GetComponent<Outline>();
 	}
 
 	private void Update()
 	{
-		TilePreview();
-
-		if (type == TILE_TYPE.BLOCK)
-		{
-			WriteBlock();
-		}
-		else if (type == TILE_TYPE.OUTLINE)
-		{
-			WriteOutline();
-		}
-
-		if (Input.GetKeyDown(KeyCode.B))
-		{
-			ChangeModeToBlock();
-		}
-		else if (Input.GetKeyDown(KeyCode.O))
-		{
-			ChangeModeToOutline();
-		}
-		else if (Input.GetKeyDown(KeyCode.S))
-		{
-			SaveToFile();
-		}
-
-		perPreviewPos = preview.transform.position;
+		PuzzleMovement();
 	}
 }

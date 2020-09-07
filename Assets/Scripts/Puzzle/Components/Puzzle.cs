@@ -9,15 +9,15 @@ public class Puzzle : MonoBehaviour
 	public Outline outline;
 	public List<Block> blocks = new List<Block>();
 
-	public void SaveToFile()
+	public void SaveToFile(string fileName)
 	{
-		FileStream file = File.Create("newPuzzle");
+		FileStream file = File.Create(fileName);
 
 		Hashtable h_puzzle = new Hashtable();
 		List<Hashtable> h_outline = new List<Hashtable>();
 		List<List<Hashtable>> h_blocks = new List<List<Hashtable>>();
 
-		foreach(var outlinetile in outline.GetTiles())
+		foreach(var outlinetile in outline.tiles)
 		{
 			Hashtable h_outlineTile = new Hashtable();
 
@@ -31,7 +31,7 @@ public class Puzzle : MonoBehaviour
 		{
 			List<Hashtable> h_block = new List<Hashtable>();
 
-			foreach(var tile in block.GetTiles())
+			foreach(var tile in block.tiles)
 			{
 				Hashtable h_tile = new Hashtable();
 				h_tile.Add("x", tile.transform.position.x);

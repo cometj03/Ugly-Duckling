@@ -18,7 +18,11 @@ public class BlackCloudController : MonoBehaviour
 
     void Update()
     {
+<<<<<<< HEAD
         if (Mathf.Abs(gameObject.transform.position.x - targetBird.position.x) < 1.5f)
+=======
+        if (Mathf.Abs(gameObject.transform.position.x - targetBird.position.x) < 1.75f)
+>>>>>>> master
             anim.SetFloat(State, 1);
         else
             anim.SetFloat(State, 0);
