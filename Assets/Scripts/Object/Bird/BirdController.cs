@@ -11,7 +11,7 @@ public class BirdController : MonoBehaviour
 	// bird property
 	private static readonly int IsWalk = Animator.StringToHash("is_walk");
 	private Transform _birdTransform;
-	private Animator _birdAnimator;
+	private BirdCustomAnimation _birdAnimator;
 	private Rigidbody2D _birdRigidbody2D;
 	private Vector3 localScale;
 	private float birdSpeed = 2f;
@@ -21,9 +21,9 @@ public class BirdController : MonoBehaviour
 	{
 		localScale = gameObject.transform.localScale;
 		_birdTransform = gameObject.transform;
-		_birdAnimator = GetComponent<Animator>();
+		_birdAnimator = GetComponent<BirdCustomAnimation>();
 		_birdRigidbody2D = GetComponent<Rigidbody2D>();
-		_birdAnimator.SetBool(IsWalk, false);
+		_birdAnimator.isWalking = false;
 	}
 
 	private void Update()
@@ -33,12 +33,12 @@ public class BirdController : MonoBehaviour
 		birdSpeed += horizontalButton.GETDir() * 2;
 		
 		if (birdSpeed == 0)
-			_birdAnimator.SetBool(IsWalk, false);
+			_birdAnimator.isWalking = false;
 		else
 		{
 			_birdTransform.position += new Vector3(birdSpeed * Time.deltaTime, 0, 0);
 			//_birdRigidbody2D.AddForce(new Vector3(birdSpeed, 0, 0));
-			_birdAnimator.SetBool(IsWalk, true);
+			_birdAnimator.isWalking = true;
 
 			if (birdSpeed > 0)
 			{

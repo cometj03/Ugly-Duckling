@@ -48,7 +48,7 @@ public class MainScene : MonoBehaviour
 	IEnumerator TouchToStart()
 	{
 		player.GetComponent<SpriteRenderer>().flipX = true;
-		player.GetComponent<Animator>().SetBool(IsWalk, true);
+		player.GetComponent<BirdCustomAnimation>().isWalking = true;
 		while (player.transform.position.x < 6)
 		{
 			player.transform.Translate(new Vector3(1.5f, 0, 0) * Time.deltaTime);
