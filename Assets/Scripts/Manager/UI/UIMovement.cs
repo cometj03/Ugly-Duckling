@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class UIMovementManager : MonoBehaviour
+public class UIMovement : MonoBehaviour
 { 
     public GameObject buttons;
     public GameObject worldSelect;
@@ -24,11 +24,12 @@ public class UIMovementManager : MonoBehaviour
 
     IEnumerator WorldSelectIn()
     {
+        // 월드 선택창 들어옴
         Vector3 worldPos = _worldRect.anchoredPosition = new Vector3(625, _worldRect.anchoredPosition.y);
 
         while (_buttonsRect.anchoredPosition.x >= -624.5f)
         {
-            worldPos.x = Mathf.Lerp(worldPos.x, -625f, 0.01f);
+            worldPos.x = Mathf.Lerp(worldPos.x, -625f, 0.03f);
             _worldRect.anchoredPosition = worldPos;
 
             yield return null;
