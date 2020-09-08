@@ -3,14 +3,17 @@ using System.Collections.Generic;
 using System.ComponentModel.Design;
 using Unity.Mathematics;
 using UnityEngine;
-using UnityEngine.EventSystems;
 
 public class PuzzleManager : MonoBehaviour
 {
+	public GameObject block;
+	public GameObject previewTile;
+
 	Vector2 perBlockposition;
 	Vector2 mouseBlockDIstance;
 
 	Puzzle selectPuzzle;
+	Block previewBlock;
 	Block selectBlock;
 
 	List<Puzzle> puzzles = new List<Puzzle>();
@@ -30,19 +33,32 @@ public class PuzzleManager : MonoBehaviour
 			{
 				selectPuzzle = hit.transform.parent.parent.GetComponent<Puzzle>();
 				selectBlock = hit.transform.parent.GetComponent<Block>();
-				perBlockposition = selectBlock.transform.position;
-				mouseBlockDIstance = selectBlock.transform.position - Camera.main.ScreenToWorldPoint(Input.mousePosition);
+				perBlockposition = selectBlock.transform.localPosition;
+				mouseBlockDIstance = selectBlock.transform.localPosition - Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
+				previewBlock = Instantiate(block).GetComponent<Block>();
+
+				foreach (var tile in selectBlock.tiles)
+				{
+					Tile tmp = Instantiate(previewTile).GetComponent<Tile>();
+
+					tmp.transform.position = tile.transform.localPosition + selectPuzzle.transform.localPosition;
+					tmp.transform.SetParent(previewBlock.transform);
+
+					previewBlock.Insert(tmp);
+				}
 			}
 		}
 		if (selectPuzzle)
 		{
 			if (Input.GetMouseButton(0))
 			{
-				selectBlock.transform.position = (Vector2)Camera.main.ScreenToWorldPoint(Input.mousePosition) + mouseBlockDIstance;
+				previewBlock.transform.position = (Vector2)Camera.main.ScreenToWorldPoint(Input.mousePosition) + mouseBlockDIstance;
 			}
 			else if (Input.GetMouseButtonUp(0))
 			{
-				selectBlock.transform.position = (Vector2)math.round((Vector2)selectBlock.transform.position);
+				selectBlock.transform.localPosition = (Vector2)math.round((Vector2)previewBlock.transform.localPosition);
+				Destroy(previewBlock.gameObject);
 
 				foreach (var tile in selectBlock.tiles)
 				{
@@ -50,7 +66,8 @@ public class PuzzleManager : MonoBehaviour
 
 					foreach (var outlinetile in selectPuzzle.outline.tiles)
 					{
-						if (tile.transform.position.y == outlinetile.transform.position.y && tile.transform.position.x <= outlinetile.transform.position.x)
+						Vector2 tilePosition = tile.transform.localPosition + selectBlock.transform.localPosition;
+						if (tilePosition.y == outlinetile.transform.localPosition.y && tilePosition.x <= outlinetile.transform.localPosition.x)
 						{
 							scrossPoint++;
 						}
@@ -58,7 +75,9 @@ public class PuzzleManager : MonoBehaviour
 
 					if (scrossPoint % 2 == 0)
 					{
-						selectBlock.transform.position = perBlockposition;
+						selectBlock.transform.localPosition = perBlockposition;
+						selectPuzzle = null;
+						selectBlock = null;
 						return;
 					}
 				}
@@ -71,9 +90,13 @@ public class PuzzleManager : MonoBehaviour
 						{
 							foreach (var anotertile in block.tiles)
 							{
-								if (tile.transform.position == anotertile.transform.position)
+								Vector2 tilePosition = tile.transform.localPosition + selectBlock.transform.localPosition;
+								Vector2 anotertilePosition = anotertile.transform.localPosition + block.transform.localPosition;
+								if (tilePosition == anotertilePosition)
 								{
-									selectBlock.transform.position = perBlockposition;
+									selectBlock.transform.localPosition = perBlockposition;
+									selectPuzzle = null;
+									selectBlock = null;
 									return;
 								}
 							}

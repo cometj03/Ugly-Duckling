@@ -1800,6 +1800,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -859489190359942644, guid: 98ab9a0b69ac7114290970651e3c61c9,
+        type: 3}
+      propertyPath: skinName
+      value: Bird
+      objectReference: {fileID: 0}
     - target: {fileID: 3304110852046278954, guid: 98ab9a0b69ac7114290970651e3c61c9,
         type: 3}
       propertyPath: m_GravityScale
