@@ -28,7 +28,7 @@ public class UIMovementManager : MonoBehaviour
 
         while (_buttonsRect.anchoredPosition.x >= -624.5f)
         {
-            worldPos.x = Mathf.Lerp(worldPos.x, -625f, 0.005f);
+            worldPos.x = Mathf.Lerp(worldPos.x, -625f, 0.01f);
             _worldRect.anchoredPosition = worldPos;
 
             yield return null;
