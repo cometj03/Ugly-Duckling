@@ -12,6 +12,7 @@ public class PuzzleManager : MonoBehaviour
 
 	public GameObject jumpObject;
 	public GameObject moveObject;
+	public GameObject player;
 
 	Image jumpImage;
 	Image moveImage;
@@ -84,11 +85,21 @@ public class PuzzleManager : MonoBehaviour
 
 				foreach (var tile in selectBlock.tiles)
 				{
+					Vector2 tilePosition = tile.transform.localPosition + selectBlock.transform.localPosition;
+
+					if (tilePosition.x - 0.5f < player.transform.position.x && player.transform.position.x < tilePosition.x + 0.5f &&
+						tilePosition.y - 0.5f < player.transform.position.y && player.transform.position.y < tilePosition.y + 0.5f)
+					{
+						selectBlock.transform.localPosition = perBlockposition;
+						selectPuzzle = null;
+						selectBlock = null;
+						return;
+					}
+
 					int scrossPoint = 0;
 
 					foreach (var outlinetile in selectPuzzle.outline.tiles)
 					{
-						Vector2 tilePosition = tile.transform.localPosition + selectBlock.transform.localPosition;
 						if (tilePosition.y == outlinetile.transform.localPosition.y && tilePosition.x <= outlinetile.transform.localPosition.x)
 						{
 							scrossPoint++;
