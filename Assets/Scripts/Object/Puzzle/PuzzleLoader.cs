@@ -17,6 +17,14 @@ public class PuzzleLoader : MonoBehaviour
 	Outline writingOutline;
 	Block writingBlock;
 
+	int blockColorIndex = 0;
+	List<Color> blockColors = new List<Color>(){
+		new Color(0.9960784f, 0.9607843f, 0.8313726f),
+		new Color(1, 0.8392157f, 0.6666667f),
+		new Color(0.9372549f, 0.7294118f, 0.8392157f),
+		new Color(0.854902f, 0.854902f, 0.9882353f)
+	};
+
 	public Puzzle FileToPuzzle(string src)
 	{
 		writingPuzzle = Instantiate(puzzle).GetComponent<Puzzle>();
@@ -33,7 +41,7 @@ public class PuzzleLoader : MonoBehaviour
 
 		writingOutline.transform.SetParent(writingPuzzle.transform);
 
-		foreach(var iter in json["outline"])
+		foreach (var iter in json["outline"])
 		{
 			OutlineTile tmp = Instantiate(outlineTile).GetComponent<OutlineTile>();
 
@@ -47,17 +55,23 @@ public class PuzzleLoader : MonoBehaviour
 
 		writingPuzzle.outline = writingOutline;
 
-		foreach(var blocks in json["blocks"])
+		foreach (var blocks in json["blocks"])
 		{
 			writingBlock = Instantiate(block).GetComponent<Block>();
 
+			Color blockColor = blockColors[blockColorIndex++];
+			if (blockColorIndex > blockColors.Count - 1)
+			{
+				blockColorIndex = 0;
+			}
 			writingBlock.transform.SetParent(writingPuzzle.transform);
 
-			foreach(var tiles in blocks.Value)
+			foreach (var tiles in blocks.Value)
 			{
 				Tile tmp = Instantiate(tile).GetComponent<Tile>();
 
 				tmp.transform.position = new Vector2(tiles.Value["x"], tiles.Value["y"]);
+				tmp.GetComponent<SpriteRenderer>().color = blockColor;
 				tmp.transform.SetParent(writingBlock.transform);
 
 				writingBlock.Insert(tmp);
