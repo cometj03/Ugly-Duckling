@@ -676,6 +676,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df14affc094531c40b5f28fcd4333c4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  block: {fileID: 8832283550951503127, guid: 6aff72ffdc10ec1418295edba4755ad2, type: 3}
+  previewTile: {fileID: 8139690910429136407, guid: 73ce862a420054f448172d9eb7fd453d,
+    type: 3}
+  jumpObject: {fileID: 1960701781}
+  moveObject: {fileID: 602057740}
+  player: {fileID: 777402366}
 --- !u!1 &1676010569
 GameObject:
   m_ObjectHideFlags: 0
