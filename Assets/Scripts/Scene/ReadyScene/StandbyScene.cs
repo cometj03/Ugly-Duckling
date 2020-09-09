@@ -76,7 +76,7 @@ public class StandbyScene : MonoBehaviour
             levelLoader.GetComponent<LevelLoader>().LoadNextLevel(SceneManager.GetActiveScene().buildIndex + 2);
         }
 
-        StartCoroutine(gameObject.GetComponent<UIMovementManager>().ButtonsAway());
+        StartCoroutine(gameObject.GetComponent<UIMovement>().ButtonsAway());
     }
 
     

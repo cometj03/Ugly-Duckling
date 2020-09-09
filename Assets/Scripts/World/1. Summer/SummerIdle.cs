@@ -8,11 +8,12 @@ public class SummerIdle : MonoBehaviour
     Vector3 cloudVelocity = new Vector3(-0.1f, 0);
     private bool isCloudUp;
 
-    private float cloudWidth;
+    private float cloudWidth, cloudPosY;
 
     private void Start()
     {
         cloudWidth = cloud.GetComponent<SpriteRenderer>().size.x * cloud.transform.localScale.x;
+        cloudPosY = cloud.transform.position.y;
     }
 
     void Update()
@@ -22,9 +23,9 @@ public class SummerIdle : MonoBehaviour
             cloud.transform.position += Vector3.right * cloudWidth / 2;
         
         // 구름 움직임
-        if (cloud.transform.position.y > 1.1f) // down
+        if (cloud.transform.position.y > cloudPosY + 0.2f) // down
             isCloudUp = false;
-        else if (cloud.transform.position.y < 0.8f) // up
+        else if (cloud.transform.position.y < cloudPosY - 0.2f) // up
             isCloudUp = true;
 
         cloudVelocity.y = isCloudUp ? 0.05f : -0.05f;
