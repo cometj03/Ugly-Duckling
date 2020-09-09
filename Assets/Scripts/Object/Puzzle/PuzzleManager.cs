@@ -27,13 +27,6 @@ public class PuzzleManager : MonoBehaviour
 	Block previewBlock;
 	Block selectBlock;
 
-	List<Puzzle> puzzles = new List<Puzzle>();
-
-	public void Push(Puzzle puzzle)
-	{
-		puzzles.Add(puzzle);
-	}
-
 	public void PuzzleMovement()
 	{
 		if (Input.GetMouseButtonDown(0))
@@ -104,6 +97,13 @@ public class PuzzleManager : MonoBehaviour
 						{
 							scrossPoint++;
 						}
+						if(tilePosition == (Vector2)outlinetile.transform.localPosition)
+						{
+							selectBlock.transform.localPosition = perBlockposition;
+							selectPuzzle = null;
+							selectBlock = null;
+							return;
+						}
 					}
 
 					if (scrossPoint % 2 == 0)
@@ -121,9 +121,9 @@ public class PuzzleManager : MonoBehaviour
 					{
 						foreach (var tile in selectBlock.tiles)
 						{
+							Vector2 tilePosition = tile.transform.localPosition + selectBlock.transform.localPosition;
 							foreach (var anotertile in block.tiles)
 							{
-								Vector2 tilePosition = tile.transform.localPosition + selectBlock.transform.localPosition;
 								Vector2 anotertilePosition = anotertile.transform.localPosition + block.transform.localPosition;
 								if (tilePosition == anotertilePosition)
 								{
