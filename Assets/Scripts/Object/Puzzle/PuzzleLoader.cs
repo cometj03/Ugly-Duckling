@@ -88,6 +88,6 @@ public class PuzzleLoader : MonoBehaviour
 
 	private void Awake()
 	{
-		FileToPuzzle("newPuzzle");
+		//FileToPuzzle("newPuzzle");
 	}
 }

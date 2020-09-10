@@ -26,7 +26,7 @@ public class MainScene : MonoBehaviour
 		{
 			var color = text.color;
 			text.color = new Color(color.r, color.g, color.b, color.a - Time.deltaTime * 0.8f);
-			if (text.color.a <= 0)
+			if (text.color.a <= 0.4f)
 				fade = false;
 		}
 		else
