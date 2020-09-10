@@ -598,7 +598,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 74962953}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 52, y: -1, z: 0}
+  m_LocalPosition: {x: 52, y: -0.9, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 686858087}
@@ -3152,7 +3152,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 287481804}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 64, y: -1, z: 0}
+  m_LocalPosition: {x: 64, y: -0.9, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1558888343}
@@ -11446,7 +11446,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 991226198}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 16, y: -1, z: 0}
+  m_LocalPosition: {x: 16, y: -0.9, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 901679049}
@@ -12551,7 +12551,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1079417384}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 28, y: -1, z: 0}
+  m_LocalPosition: {x: 28, y: -0.9, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2016776977}
@@ -12987,7 +12987,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1130955866}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 40, y: -1, z: 0}
+  m_LocalPosition: {x: 40, y: -0.9, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 994633499}
@@ -14103,6 +14103,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f84efb80aaf9764da8d320cbbbd4811, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _gameManager: {fileID: 1616645441}
   cameraValue: {fileID: 11400000, guid: 9e36a5534297bc444b165f0154c85901, type: 2}
 --- !u!1 &1188995368
 GameObject:
@@ -19795,6 +19796,7 @@ GameObject:
   - component: {fileID: 1616645438}
   - component: {fileID: 1616645436}
   - component: {fileID: 1616645440}
+  - component: {fileID: 1616645441}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Untagged
@@ -19879,6 +19881,20 @@ MonoBehaviour:
   jumpObject: {fileID: 941298822}
   moveObject: {fileID: 665339024}
   player: {fileID: 777402366}
+--- !u!114 &1616645441
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1616645435}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6585b7c646b4815458ae39b87d1edf8c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentState: 0
+  cameraValue: {fileID: 11400000, guid: 9e36a5534297bc444b165f0154c85901, type: 2}
 --- !u!1 &1617100903
 GameObject:
   m_ObjectHideFlags: 0
@@ -24093,7 +24109,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1952761314}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4, y: -1, z: 0}
+  m_LocalPosition: {x: 4, y: -0.9, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 89406208}

@@ -2,6 +2,7 @@
 
 public class CameraMovement : MonoBehaviour
 {
+	public GameManager _gameManager;
 	public CameraValue cameraValue;
 	private Camera maincamera;
 	private float speed;
@@ -18,6 +19,7 @@ public class CameraMovement : MonoBehaviour
 	{
 		// 카메라 이동
 		maincamera.transform.position = Vector3.Lerp(maincamera.transform.position, cameraValue.cameraTarget, CameraValue.SmoothSpeed);
-		cameraValue.cameraTarget += Vector3.right * speed;
+		if (_gameManager.currentState == GameManager.GameState.GameContinue)
+			cameraValue.cameraTarget += Vector3.right * speed;
 	}
 }

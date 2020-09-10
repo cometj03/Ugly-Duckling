@@ -9,12 +9,11 @@ public class BirdController : MonoBehaviour
 	public HorizontalButton horizontalButton;
 
 	// bird property
-	private static readonly int IsWalk = Animator.StringToHash("is_walk");
 	private Transform _birdTransform;
 	private BirdCustomAnimation _birdAnimator;
 	private Rigidbody2D _birdRigidbody2D;
 	private Vector3 localScale;
-	private float birdSpeed = 2f;
+	private float birdSpeed = 1f;
 	private bool can_jump = true;
 
 	private void Start()
