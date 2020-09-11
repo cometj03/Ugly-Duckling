@@ -35,4 +35,6 @@ public class PlayerData : ScriptableObject
             return _instance;
         }
     }
+
+    public string currentSkin = "bird";    // default : "bird"
 }

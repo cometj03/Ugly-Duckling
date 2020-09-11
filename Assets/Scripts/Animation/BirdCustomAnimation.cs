@@ -5,8 +5,6 @@ using UnityEngine.Experimental.GlobalIllumination;
 
 public class BirdCustomAnimation : MonoBehaviour
 {
-    public string skinName;
-
 	int animationPhase = 0;
 	public bool isWalking = false;
 
@@ -15,13 +13,22 @@ public class BirdCustomAnimation : MonoBehaviour
 
 	SpriteRenderer player;
 
+	private Coroutine doAnim;
+
 	private void Awake()
 	{
-		idle = Resources.LoadAll<Sprite>("Animations/" + skinName + "/Idle");
-		walk = Resources.LoadAll<Sprite>("Animations/" + skinName + "/Walk");
+		idle = Resources.LoadAll<Sprite>("Animations/" + PlayerData.Instance.currentSkin + "/Idle");
+		walk = Resources.LoadAll<Sprite>("Animations/" + PlayerData.Instance.currentSkin + "/Walk");
 		player = GetComponent<SpriteRenderer>();
 
-		StartCoroutine(DoAnimation());
+		doAnim = StartCoroutine(DoAnimation());
+	}
+
+	public void ChangeSkin(string _skinName)
+	{
+		PlayerData.Instance.currentSkin = _skinName;
+		StopCoroutine(doAnim);
+		Awake();
 	}
 
 	IEnumerator DoAnimation()
