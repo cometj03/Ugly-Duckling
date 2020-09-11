@@ -16883,7 +16883,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1616645437}
-  - component: {fileID: 1616645439}
   - component: {fileID: 1616645438}
   - component: {fileID: 1616645436}
   - component: {fileID: 1616645440}
@@ -16940,18 +16939,6 @@ MonoBehaviour:
   outlineTile: {fileID: 1941854243523734639, guid: 40618dc661f869346a3f3d4f40221015,
     type: 3}
   outline: {fileID: 8161142515266273546, guid: 7187dfba4cc046347bfda504a7705a88, type: 3}
---- !u!114 &1616645439
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1616645435}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 38315bb60234aa04cac8de0849c0fcc3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1616645440
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -32,7 +32,7 @@ public class BlackCloudController : MonoBehaviour
     {
         if (Mathf.Abs(gameObject.transform.position.x - targetBird.position.x) < 1.5f)
         {
-            StartCoroutine(TurningToRain(1f));
+            StartCoroutine(TurningToRain(0.8f));
             anim.SetFloat(State, 1);
         }
         else

@@ -1,5 +1,8 @@
-﻿using UnityEditor;
-using UnityEngine;
+﻿using UnityEngine;
+
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
 
 public class PlayerData : ScriptableObject
 {
@@ -18,6 +21,7 @@ public class PlayerData : ScriptableObject
 
             _instance = Resources.Load<PlayerData>("PlayerData");
 
+#if UNITY_EDITOR
             if (_instance == null)
             {
                 if (!AssetDatabase.IsValidFolder(DataFileDirectory))
@@ -31,7 +35,7 @@ public class PlayerData : ScriptableObject
                     AssetDatabase.CreateAsset(_instance, DataFilePath);
                 }
             }
-
+#endif
             return _instance;
         }
     }
