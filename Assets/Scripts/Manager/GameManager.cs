@@ -1,37 +1,41 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    public static GameManager instance;
     public enum GameState
     {
-        GameContinue, GameClear, GameOver
+        CONTINUE, CLEAR, OVER
     }
     public GameState currentState;
     public CameraValue cameraValue;
 
     private GameObject maincamera;
     private GameObject bird;
-    private Rigidbody2D birdRb2D;
     
     void Start()
     {
+        if (instance == null)
+            instance = this;
+        
         maincamera = GameObject.Find("Main Camera");
         if (GameObject.Find("bird") != null)
             bird = GameObject.Find("bird");
-        birdRb2D = bird.GetComponent<Rigidbody2D>();
-        currentState = GameState.GameContinue;
+        
+        currentState = GameState.CONTINUE;
     }
     
     void Update()
     {
-        if (currentState == GameState.GameOver)
+        if (currentState == GameState.OVER)
         {
             if (maincamera.transform.position.x < 4)
             {
                 bird.transform.position = new Vector3(-3, -0.7f, 0);
-                currentState = GameState.GameContinue;
+                currentState = GameState.CONTINUE;
             }
         }
         if (Input.GetKey(KeyCode.Space))
@@ -42,7 +46,7 @@ public class GameManager : MonoBehaviour
 
     public void GameOver()
     {
-        currentState = GameState.GameOver;
+        currentState = GameState.OVER;
         cameraValue.cameraTarget = Vector3.back * 10;
     }
 }

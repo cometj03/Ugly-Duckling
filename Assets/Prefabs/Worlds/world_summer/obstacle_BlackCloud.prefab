@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 5635628415785797388}
   - component: {fileID: 5635628415785797389}
   - component: {fileID: 5635628415785797390}
+  - component: {fileID: 1962922669268228686}
+  - component: {fileID: 1339640130278054539}
   - component: {fileID: 5635628415785797391}
   m_Layer: 0
   m_Name: obstacle_BlackCloud
@@ -102,6 +104,43 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!50 &1962922669268228686
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5635628415785797376}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!70 &1339640130278054539
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5635628415785797376}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.000000050187673, y: 0.42100474}
+  m_Size: {x: 2.0000007, y: 0.95881367}
+  m_Direction: 1
 --- !u!114 &5635628415785797391
 MonoBehaviour:
   m_ObjectHideFlags: 0

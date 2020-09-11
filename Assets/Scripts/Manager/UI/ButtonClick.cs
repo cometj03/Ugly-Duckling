@@ -5,9 +5,11 @@ using UnityEngine;
 
 public class ButtonClick : MonoBehaviour
 {
-    public GameObject bird;
+    [Header("StandbyScene")]
     public GameObject standbyCamera;
-    
+    [Header("GameScene")]
+    public GameObject bird;
+
     private CameraZoom _cameraZoom;
 
     private void Start()

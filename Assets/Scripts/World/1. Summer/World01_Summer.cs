@@ -31,13 +31,15 @@ public class World01_Summer : MonoBehaviour
     {
         // floor 반복
         float diff = maincamera.transform.position.x - floor.transform.position.x;
-        if (diff >= floorWidth / 6)
-            floor.transform.position += Vector3.right * floorWidth / 3;
-        else if (diff <= -floorWidth / 6)
-            floor.transform.position -= Vector3.right * floorWidth / 3;
+        if (diff >= floorWidth / 4)
+            floor.transform.position += Vector3.right * floorWidth / 2;
+        else if (diff <= -floorWidth / 4)
+            floor.transform.position -= Vector3.right * floorWidth / 2;
         
         // 배경 움직임
-        MoveBgObject(background, 0, 1);
+        Vector3 bgPos = background.transform.position;
+        bgPos.x = maincamera.transform.position.x;
+        background.transform.position = bgPos;
         MoveBgObject(hills, hillsOffset, 0.5f);
         MoveBgObject(cloud, cloudOffset, 0.8f);
     }
