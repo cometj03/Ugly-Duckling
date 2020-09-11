@@ -66,15 +66,15 @@ public class StandbyScene : MonoBehaviour
         // _camera.transform.position = new Vector3(0f, 0, -10);
     }
 
-    public void StartGame(String flag)
+    public void StartGame(String world)
     {
-        if (flag.Equals("Summer"))
-        {
-            levelLoader.GetComponent<LevelLoader>().LoadNextLevel(SceneManager.GetActiveScene().buildIndex + 1);
-        } else if (flag.Equals("Winter"))
-        {
-            levelLoader.GetComponent<LevelLoader>().LoadNextLevel(SceneManager.GetActiveScene().buildIndex + 2);
-        }
+        if (world.Equals("Summer"))
+            levelLoader.GetComponent<LevelLoader>().LoadNextLevel("1_Summer");
+        else if (world.Equals("Autumn"))
+            levelLoader.GetComponent<LevelLoader>().LoadNextLevel("2_Autumn");
+        else if (world.Equals("Winter"))
+            levelLoader.GetComponent<LevelLoader>().LoadNextLevel("3_Winter");
+        
 
         StartCoroutine(gameObject.GetComponent<UIMovement>().ButtonsAway());
     }

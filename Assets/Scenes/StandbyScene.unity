@@ -204,7 +204,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1457547973}
-        m_MethodName: OnPlayBtnClicked
+        m_MethodName: BtnPlay
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1321,7 +1321,7 @@ PrefabInstance:
     - target: {fileID: 4239654739324789894, guid: 730b426e05c7ed945b838c909fe43444,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4239654739324789894, guid: 730b426e05c7ed945b838c909fe43444,
         type: 3}
@@ -1717,8 +1717,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1904318998}
-  - {fileID: 1747059012}
   - {fileID: 1612518583}
+  - {fileID: 1747059012}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1987,7 +1987,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1457547973}
-        m_MethodName: OnPlayBtnClicked
+        m_MethodName: BtnPlay
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2194,7 +2194,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1457547973}
-        m_MethodName: OnCustomizeBtnClicked
+        m_MethodName: BtnCustomize
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2692,7 +2692,7 @@ MonoBehaviour:
           m_BoolArgument: 1
         m_CallState: 2
       - m_Target: {fileID: 1457547973}
-        m_MethodName: OnZoomOutBtnClicked
+        m_MethodName: BtnCustomizeExit
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3496,11 +3496,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1457547969}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 38315bb60234aa04cac8de0849c0fcc3, type: 3}
+  m_Script: {fileID: 11500000, guid: 1a369d0df29321c4badad7ea8e64ece6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bird: {fileID: 0}
-  standbyCamera: {fileID: 167354203}
 --- !u!1 &1474694441 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1201917385984855949, guid: 211510d9c062b9f46a1fff510260c9d8,
@@ -5472,7 +5470,7 @@ PrefabInstance:
     - target: {fileID: 4626933623038613729, guid: 73af060d12828af4a946c1304f3cd762,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4626933623038613729, guid: 73af060d12828af4a946c1304f3cd762,
         type: 3}

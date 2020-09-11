@@ -41,7 +41,7 @@ public class World01_Summer : MonoBehaviour
         bgPos.x = maincamera.transform.position.x;
         background.transform.position = bgPos;
         MoveBgObject(hills, hillsOffset, 0.5f);
-        MoveBgObject(cloud, cloudOffset, 0.8f);
+        MoveBgObject(cloud, cloudOffset, 0.9f);
     }
     
     private void MoveBgObject(GameObject gameObject, float offset, float ratio)

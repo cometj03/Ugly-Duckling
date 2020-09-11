@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3cf211bf84253041a5d8113148a5e0d, type: 3}
   m_Name: CameraValueData
   m_EditorClassIdentifier: 
-  cameraTarget: {x: 0, y: 0, z: 0}
+  cameraTarget: {x: 1.3099991, y: 0, z: -10}

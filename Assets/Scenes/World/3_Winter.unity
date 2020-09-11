@@ -8602,7 +8602,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85180ab296b59644d94471d62d3339b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameraValue: {fileID: 11400000, guid: 9e36a5534297bc444b165f0154c85901, type: 2}
   horizontalButton: {fileID: 665339025}
 --- !u!1 &784221745
 GameObject:
@@ -18848,14 +18847,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1616645439}
+      objectReference: {fileID: 1574256673}
     - target: {fileID: 1832177796386809018, guid: 264337c0d58267340a142634516c072b,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OnJumpBtnClicked
+      value: JumpBtn
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 264337c0d58267340a142634516c072b, type: 3}
+--- !u!114 &1574256673 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5627153549853476030, guid: 264337c0d58267340a142634516c072b,
+    type: 3}
+  m_PrefabInstance: {fileID: 1574256672}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 941298822}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0eec006d2f143c045b984089e2584a1c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1576955491
 GameObject:
   m_ObjectHideFlags: 0
@@ -19861,8 +19872,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38315bb60234aa04cac8de0849c0fcc3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bird: {fileID: 777402366}
-  standbyCamera: {fileID: 0}
 --- !u!114 &1616645440
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -16889,7 +16889,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1616645437}
-  - component: {fileID: 1616645439}
   - component: {fileID: 1616645438}
   - component: {fileID: 1616645436}
   - component: {fileID: 1616645440}
@@ -16946,20 +16945,6 @@ MonoBehaviour:
   outlineTile: {fileID: 1941854243523734639, guid: 40618dc661f869346a3f3d4f40221015,
     type: 3}
   outline: {fileID: 8161142515266273546, guid: 7187dfba4cc046347bfda504a7705a88, type: 3}
---- !u!114 &1616645439
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1616645435}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 38315bb60234aa04cac8de0849c0fcc3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  standbyCamera: {fileID: 0}
-  bird: {fileID: 777402366}
 --- !u!114 &1616645440
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20706,6 +20691,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1832177797647535085}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1960701786 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5627153549853476030, guid: 264337c0d58267340a142634516c072b,
+    type: 3}
+  m_PrefabInstance: {fileID: 1832177797647535085}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1960701781}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0eec006d2f143c045b984089e2584a1c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1977928040
 GameObject:
   m_ObjectHideFlags: 0
@@ -22959,7 +22956,7 @@ PrefabInstance:
     - target: {fileID: 1201917387331684675, guid: 211510d9c062b9f46a1fff510260c9d8,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 17.72
+      value: 38
       objectReference: {fileID: 0}
     - target: {fileID: 1381733115249429222, guid: 211510d9c062b9f46a1fff510260c9d8,
         type: 3}
@@ -23104,6 +23101,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1616645439}
+      objectReference: {fileID: 1960701786}
+    - target: {fileID: 1832177796386809018, guid: 264337c0d58267340a142634516c072b,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: JumpBtn
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 264337c0d58267340a142634516c072b, type: 3}

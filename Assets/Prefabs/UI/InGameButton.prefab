@@ -112,6 +112,7 @@ GameObject:
   - component: {fileID: 1832177796386809012}
   - component: {fileID: 1832177796386809013}
   - component: {fileID: 1832177796386809018}
+  - component: {fileID: 5627153549853476030}
   m_Layer: 5
   m_Name: Jump_Button
   m_TagString: Untagged
@@ -218,8 +219,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: OnJumpBtnClicked
+      - m_Target: {fileID: 5627153549853476030}
+        m_MethodName: JumpBtn
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -229,6 +230,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &5627153549853476030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1832177796386809016}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0eec006d2f143c045b984089e2584a1c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1832177797104216033
 GameObject:
   m_ObjectHideFlags: 0

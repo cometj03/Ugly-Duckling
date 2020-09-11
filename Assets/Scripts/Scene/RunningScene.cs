@@ -13,8 +13,7 @@ public class RunningScene : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.Escape))
             {
-                // StandbyScene의 경로 : 2
-                levelLoader.LoadNextLevel(2);
+                levelLoader.LoadNextLevel("StandbyScene");
             }
         }
     }
