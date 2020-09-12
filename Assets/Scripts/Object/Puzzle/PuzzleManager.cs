@@ -1,15 +1,11 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using System.ComponentModel.Design;
+﻿using System;
+using System.Runtime.CompilerServices;
 using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class PuzzleManager : MonoBehaviour
 {
-	public GameObject block;
-	public GameObject previewTile;
-
 	public GameObject jumpObject;
 	public GameObject moveObject;
 	public GameObject player;
@@ -20,11 +16,10 @@ public class PuzzleManager : MonoBehaviour
 	Button jumpButton;
 	HorizontalButton moveButton;
 
-	Vector2 perBlockposition;
-	Vector2 mouseBlockDIstance;
+	Vector2 perBlockPosition;
+	Vector2 perMousePosition;
 
 	Puzzle selectPuzzle;
-	Block previewBlock;
 	Block selectBlock;
 
 	public void PuzzleMovement()
@@ -37,33 +32,80 @@ public class PuzzleManager : MonoBehaviour
 			{
 				selectPuzzle = hit.transform.parent.parent.GetComponent<Puzzle>();
 				selectBlock = hit.transform.parent.GetComponent<Block>();
-				perBlockposition = selectBlock.transform.localPosition;
-				mouseBlockDIstance = selectBlock.transform.localPosition - Camera.main.ScreenToWorldPoint(Input.mousePosition);
+				perBlockPosition = selectBlock.transform.localPosition;
+				perMousePosition = math.round((Vector2)Camera.main.ScreenToWorldPoint(Input.mousePosition));
 
 				jumpImage.color = new Color(0.5f, 0.5f, 0.5f);
 				moveImage.color = new Color(0.5f, 0.5f, 0.5f);
 
 				jumpButton.enabled = false;
 				moveButton.enabled = false;
-
-				previewBlock = Instantiate(block).GetComponent<Block>();
-
-				foreach (var tile in selectBlock.tiles)
-				{
-					Tile tmp = Instantiate(previewTile).GetComponent<Tile>();
-
-					tmp.transform.position = tile.transform.localPosition + selectPuzzle.transform.localPosition;
-					tmp.transform.SetParent(previewBlock.transform);
-
-					previewBlock.Insert(tmp);
-				}
 			}
 		}
 		if (selectPuzzle)
 		{
 			if (Input.GetMouseButton(0))
 			{
-				previewBlock.transform.position = (Vector2)Camera.main.ScreenToWorldPoint(Input.mousePosition) + mouseBlockDIstance;
+				selectBlock.transform.localPosition += (Vector3)(Vector2)math.round((Vector2)Camera.main.ScreenToWorldPoint(Input.mousePosition) - perMousePosition);
+
+				if (perBlockPosition != (Vector2)selectBlock.transform.localPosition)
+				{
+					foreach (var tile in selectBlock.tiles)
+					{
+						Vector2 tilePosition = tile.transform.localPosition + selectBlock.transform.localPosition;
+
+						int crossCount = 0;
+
+						foreach (var anothertile in selectPuzzle.outline.tiles)
+						{
+
+							if (tilePosition.y == anothertile.transform.localPosition.y && tilePosition.x <= anothertile.transform.localPosition.x)
+							{
+								crossCount++;
+							}
+
+							if (tilePosition == (Vector2)anothertile.transform.localPosition)
+							{
+								selectBlock.transform.localPosition = perBlockPosition;
+								return;
+							}
+						}
+
+						if(crossCount % 2 == 0)
+						{
+							selectBlock.transform.localPosition = perBlockPosition;
+							return;
+						}
+
+						foreach (var block in selectPuzzle.blocks)
+						{
+							if (block != selectBlock)
+							{
+								foreach (var anothertile in block.tiles)
+								{
+									Vector2 anothertilePosition = anothertile.transform.localPosition + block.transform.localPosition;
+
+									if (tilePosition == anothertilePosition)
+									{
+										selectBlock.transform.localPosition = perBlockPosition;
+										return;
+									}
+								}
+							}
+						}
+
+						if (tilePosition.x - 0.5f < player.transform.position.x && player.transform.position.x < tilePosition.x + 0.5f &&
+						tilePosition.y - 0.5f < player.transform.position.y && player.transform.position.y < tilePosition.y + 0.5f)
+						{
+							selectBlock.transform.localPosition = perBlockPosition;
+							return;
+						}
+					}
+
+					perMousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+				}
+
+				perBlockPosition = selectBlock.transform.localPosition;
 			}
 			else if (Input.GetMouseButtonUp(0))
 			{
@@ -73,72 +115,8 @@ public class PuzzleManager : MonoBehaviour
 				jumpButton.enabled = true;
 				moveButton.enabled = true;
 
-				selectBlock.transform.localPosition = (Vector2)math.round((Vector2)previewBlock.transform.localPosition);
-				Destroy(previewBlock.gameObject);
-
-				foreach (var tile in selectBlock.tiles)
-				{
-					Vector2 tilePosition = tile.transform.localPosition + selectBlock.transform.localPosition;
-
-					if (tilePosition.x - 0.5f < player.transform.position.x && player.transform.position.x < tilePosition.x + 0.5f &&
-						tilePosition.y - 0.5f < player.transform.position.y && player.transform.position.y < tilePosition.y + 0.5f)
-					{
-						selectBlock.transform.localPosition = perBlockposition;
-						selectPuzzle = null;
-						selectBlock = null;
-						return;
-					}
-
-					int scrossPoint = 0;
-
-					foreach (var outlinetile in selectPuzzle.outline.tiles)
-					{
-						if (tilePosition.y == outlinetile.transform.localPosition.y && tilePosition.x <= outlinetile.transform.localPosition.x)
-						{
-							scrossPoint++;
-						}
-						if(tilePosition == (Vector2)outlinetile.transform.localPosition)
-						{
-							selectBlock.transform.localPosition = perBlockposition;
-							selectPuzzle = null;
-							selectBlock = null;
-							return;
-						}
-					}
-
-					if (scrossPoint % 2 == 0)
-					{
-						selectBlock.transform.localPosition = perBlockposition;
-						selectPuzzle = null;
-						selectBlock = null;
-						return;
-					}
-				}
-
-				foreach (var block in selectPuzzle.blocks)
-				{
-					if (block != selectBlock)
-					{
-						foreach (var tile in selectBlock.tiles)
-						{
-							Vector2 tilePosition = tile.transform.localPosition + selectBlock.transform.localPosition;
-							foreach (var anotertile in block.tiles)
-							{
-								Vector2 anotertilePosition = anotertile.transform.localPosition + block.transform.localPosition;
-								if (tilePosition == anotertilePosition)
-								{
-									selectBlock.transform.localPosition = perBlockposition;
-									selectPuzzle = null;
-									selectBlock = null;
-									return;
-								}
-							}
-						}
-					}
-				}
-
-				selectPuzzle = null;
 				selectBlock = null;
+				selectPuzzle = null;
 			}
 		}
 	}
