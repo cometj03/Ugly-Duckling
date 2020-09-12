@@ -9,13 +9,8 @@ public class UIManager : MonoBehaviour
 
     private void Awake()
     {
-        GameObject standbyCamera = GameObject.Find("Main Camera");
-        if (standbyCamera != null)
-            _cameraZoom = standbyCamera.GetComponent<CameraZoom>();
-        
-        GameObject bird = GameObject.Find("bird");
-        if (bird != null)
-            _birdAnim = bird.GetComponent<BirdCustomAnimation>();
+        _cameraZoom = FindObjectOfType<CameraZoom>();
+        _birdAnim = FindObjectOfType<BirdCustomAnimation>();
     }
     
     public void BtnPlay(string world)

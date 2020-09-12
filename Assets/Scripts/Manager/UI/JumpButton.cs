@@ -6,9 +6,7 @@ public class JumpButton : MonoBehaviour
     
     private void Awake()
     {
-        GameObject bird = GameObject.Find("bird");
-        if (bird != null)
-            _birdController = bird.GetComponent<BirdController>();
+        _birdController = FindObjectOfType<BirdController>();
     }
 
     // 점프 버튼 누름

@@ -5,15 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class RunningScene : MonoBehaviour
 {
-    public LevelLoader levelLoader;
-    
     void Update()
     {
         if (Application.platform == RuntimePlatform.Android)
         {
-            if (Input.GetKey(KeyCode.Escape))
+            if (Input.GetKeyDown(KeyCode.Escape))
             {
-                levelLoader.LoadNextLevel("StandbyScene");
+                FindObjectOfType<LevelLoader>().LoadNextLevel("StandbyScene");
             }
         }
     }

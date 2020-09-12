@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    [HideInInspector]
     public static GameManager instance;
     public enum GameState
     {

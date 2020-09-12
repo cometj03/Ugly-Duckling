@@ -40,5 +40,5 @@ public class PlayerData : ScriptableObject
         }
     }
 
-    public string currentSkin = "bird";    // default : "bird"
+    public string currentSkin;    // default : "bird"
 }
