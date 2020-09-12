@@ -7,6 +7,13 @@ public class OutlineTile : MonoBehaviour
 {
 	public List<string> isConnected = new List<string>();
 
+	public Vector2 position;
+
+	private void Awake()
+	{
+		position = transform.localPosition;
+	}
+
 	public void UpdateShape()
 	{
 		string src = "OutLines/outline";

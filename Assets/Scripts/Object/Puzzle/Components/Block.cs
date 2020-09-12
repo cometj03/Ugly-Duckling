@@ -10,6 +10,15 @@ public class Block : MonoBehaviour
 
 	public List<Tile> tiles = new List<Tile>();
 
+	public Vector2 position;
+
+	private void Awake()
+	{
+		position = transform.localPosition;
+
+		StartCoroutine(Movement());
+	}
+
 	public void Insert(Tile tile)
 	{
 		tiles.Add(tile);
@@ -55,6 +64,15 @@ public class Block : MonoBehaviour
 					tile2.GetComponent<Tile>().isConnect[3] = true;
 				}
 			}
+		}
+	}
+
+	IEnumerator Movement()
+	{
+		while (true)
+		{
+			transform.localPosition = Vector2.Lerp(transform.localPosition, position, 0.1f);
+			yield return new WaitForEndOfFrame();
 		}
 	}
 }
