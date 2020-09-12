@@ -32,13 +32,10 @@ public class MainScene : MonoBehaviour
 			if (text.color.a >= 1)
 				fade = true;
 		}
-
-		// 프레이어가 화면 터치시 오리가 화면 밖으로 나가고 다음 씬으로 넘어감
-		/*if (!isStart && (Input.touchCount > 0 || Input.anyKeyDown))
-		{
-			isStart = true;
-			StartCoroutine(TouchToStart());
-		}*/
+		
+		if (Application.platform == RuntimePlatform.Android)
+			if (Input.GetKey(KeyCode.Escape))
+				Application.Quit();
 	}
 
 	public void TouchBtn() => StartCoroutine(TouchToStart());

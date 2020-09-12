@@ -4,7 +4,7 @@ using UnityEngine;
 public class SetVolume : MonoBehaviour
 {
     private SoundManager _soundManager;
-    private void Awake()
+    private void Start()
     {
         _soundManager = FindObjectOfType<SoundManager>();
     }

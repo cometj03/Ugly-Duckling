@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Runtime.CompilerServices;
+﻿using System.Collections;
 using UnityEngine;
 
 public class BlackCloudController : MonoBehaviour
@@ -84,6 +82,6 @@ public class BlackCloudController : MonoBehaviour
     private void OnTriggerStay2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
-            GameManager.instance.GameOver();
+            StartCoroutine(GameManager.instance.GameOver());
     }
 }

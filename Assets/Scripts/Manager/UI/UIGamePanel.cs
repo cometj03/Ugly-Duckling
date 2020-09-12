@@ -15,10 +15,10 @@ public class UIGamePanel : MonoBehaviour
         OverPanel.SetActive(false);
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
         if (Application.platform == RuntimePlatform.Android)
-            if (Input.GetKeyDown(KeyCode.Escape))
+            if (Input.GetKey(KeyCode.Escape))
                 TogglePause();
         if (Input.GetKeyDown(KeyCode.Escape))
             TogglePause();
