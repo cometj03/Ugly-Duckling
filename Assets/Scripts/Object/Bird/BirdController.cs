@@ -7,6 +7,8 @@ public class BirdController : MonoBehaviour
 {
 	public HorizontalButton horizontalButton;
 
+	private GameManager _gameManager;
+	
 	// bird property
 	private Transform _birdTransform;
 	private BirdCustomAnimation _birdAnimator;
@@ -17,7 +19,9 @@ public class BirdController : MonoBehaviour
 
 	private void Start()
 	{
-		localScale = gameObject.transform.localScale;
+		_gameManager = FindObjectOfType<GameManager>();
+
+			localScale = gameObject.transform.localScale;
 		_birdTransform = gameObject.transform;
 		_birdAnimator = GetComponent<BirdCustomAnimation>();
 		_birdRigidbody2D = GetComponent<Rigidbody2D>();
@@ -32,10 +36,9 @@ public class BirdController : MonoBehaviour
 		
 		if (birdSpeed == 0)
 			_birdAnimator.isWalking = false;
-		else
+		else if (_gameManager.currentState == GameManager.GameState.CONTINUE)
 		{
 			_birdTransform.position += new Vector3(birdSpeed * Time.deltaTime, 0, 0);
-			//_birdRigidbody2D.AddForce(new Vector3(birdSpeed, 0, 0));
 			_birdAnimator.isWalking = true;
 
 			if (birdSpeed >= 0)

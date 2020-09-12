@@ -1,53 +1,51 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
-using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    [HideInInspector]
     public static GameManager instance;
     public enum GameState
     {
-        CONTINUE, CLEAR, OVER
+        CONTINUE, CLEAR, OVER, PAUSE
     }
     public GameState currentState;
     public CameraValue cameraValue;
 
-    private GameObject maincamera;
-    private GameObject bird;
+    private UIGamePanel _uiGamePanel;
     
-    void Start()
+    void Awake()
     {
         if (instance == null)
             instance = this;
-        
-        maincamera = GameObject.Find("Main Camera");
-        if (GameObject.Find("bird") != null)
-            bird = GameObject.Find("bird");
+
+        _uiGamePanel = FindObjectOfType<UIGamePanel>();
         
         currentState = GameState.CONTINUE;
     }
     
-    void Update()
+    void FixedUpdate()
     {
-        if (currentState == GameState.OVER)
-        {
-            if (maincamera.transform.position.x < 4)
-            {
-                bird.transform.position = new Vector3(-3, -0.7f, 0);
-                currentState = GameState.CONTINUE;
-            }
-        }
-        if (Input.GetKey(KeyCode.Space))
-        {
-            GameOver();
-        }
+        if (Input.GetKeyDown(KeyCode.Space))
+            GameClear();
     }
 
-    public void GameOver()
+    public void GameClear()
     {
+        print("Game Clear!");
+        currentState = GameState.CLEAR;
+        _uiGamePanel.OpenClearPanel();    // 클리어창 띄움
+    }
+    
+    public IEnumerator GameOver()
+    {
+        print("Game Over");
         currentState = GameState.OVER;
+        yield return new WaitForSeconds(1.3f);
+        _uiGamePanel.OpenOverPanel();    // 게임 오버창 띄움
+    }
+    
+    public void CameraReset()
+    {
         cameraValue.cameraTarget = Vector3.back * 10;
     }
 }

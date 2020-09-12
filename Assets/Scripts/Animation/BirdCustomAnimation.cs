@@ -9,11 +9,14 @@ public class BirdCustomAnimation : MonoBehaviour
 	public bool isWalking = false;
 
     Sprite[] idle;
-	Sprite[] walk;
+    Sprite[] walk;
+	Sprite[] fallDown;
 
 	SpriteRenderer player;
 
-	private Coroutine doAnim;
+	private GameManager _gameManager;
+	private Coroutine co_doAnim;
+	private bool isGameScene;
 
 	private void Awake()
 	{
@@ -21,14 +24,35 @@ public class BirdCustomAnimation : MonoBehaviour
 		walk = Resources.LoadAll<Sprite>("Animations/" + PlayerData.Instance.currentSkin + "/Walk");
 		player = GetComponent<SpriteRenderer>();
 
-		doAnim = StartCoroutine(DoAnimation());
+		if (FindObjectOfType<GameManager>() != null)
+		{
+			isGameScene = true;
+			_gameManager = FindObjectOfType<GameManager>();
+		}
+
+		co_doAnim = StartCoroutine(DoAnimation());
 	}
 
 	public void ChangeSkin(string _skinName)
 	{
 		PlayerData.Instance.currentSkin = _skinName;
-		StopCoroutine(doAnim);
+		StopCoroutine(co_doAnim);
 		Awake();
+	}
+
+	private void PlayFallDown()
+	{
+		StartCoroutine(DoFallDown());
+	}
+
+	IEnumerator DoFallDown()
+	{
+		fallDown = Resources.LoadAll<Sprite>("Animations/" + PlayerData.Instance.currentSkin + "/FallDown");
+		foreach (Sprite sp in fallDown)
+		{
+			player.sprite = sp;
+			yield return new WaitForSeconds(0.2f);
+		}
 	}
 
 	IEnumerator DoAnimation()
@@ -47,6 +71,12 @@ public class BirdCustomAnimation : MonoBehaviour
 			else
 			{
 				player.sprite = idle[animationPhase];
+			}
+
+			if (isGameScene && _gameManager.currentState == GameManager.GameState.OVER)
+			{
+				PlayFallDown();
+				break;
 			}
 
 			animationPhase++;

@@ -1,7 +1,10 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
+    public Slider musicSlider, sfxSlider;
+    
     public GameObject[] worlds;
     
     private CameraZoom _cameraZoom;
@@ -11,6 +14,9 @@ public class UIManager : MonoBehaviour
     {
         _cameraZoom = FindObjectOfType<CameraZoom>();
         _birdAnim = FindObjectOfType<BirdCustomAnimation>();
+
+        musicSlider.value = PlayerData.Instance.musicVolume;
+        sfxSlider.value = PlayerData.Instance.sfxVolume;
     }
     
     public void BtnPlay(string world)
@@ -45,10 +51,13 @@ public class UIManager : MonoBehaviour
         switch (order)
         {
             case 0:
-                _birdAnim.ChangeSkin("bird");
+                _birdAnim.ChangeSkin("Bird");
                 break;
             case 1:
                 _birdAnim.ChangeSkin("SchoolUniform");
+                break;
+            case 2:
+                _birdAnim.ChangeSkin("Bee");
                 break;
         }
     }

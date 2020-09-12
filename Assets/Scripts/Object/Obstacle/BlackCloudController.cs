@@ -18,6 +18,8 @@ public class BlackCloudController : MonoBehaviour
     private static readonly int State = Animator.StringToHash("State");
     private float len;
 
+    private bool gameoverOnce;
+
     void Start()
     {
         anim = GetComponent<Animator>();
@@ -26,13 +28,14 @@ public class BlackCloudController : MonoBehaviour
 
         anim.SetFloat(State, 0);
         cloudState = CloudState.IDLE;
+        gameoverOnce = false;
     }
 
     void Update()
     {
-        if (Mathf.Abs(gameObject.transform.position.x - targetBird.position.x) < 1.5f)
+        if (Mathf.Abs(gameObject.transform.position.x - targetBird.position.x) < 1.2f)
         {
-            StartCoroutine(TurningToRain(0.8f));
+            StartCoroutine(TurningToRain(0.4f));
             anim.SetFloat(State, 1);
         }
         else
@@ -60,13 +63,15 @@ public class BlackCloudController : MonoBehaviour
             }
             else
             {
-                isOver = false;
                 len += 0.2f;
                 scanObject = null;
             }
-            
-            if (isOver)
-                GameManager.instance.GameOver();
+
+            if (isOver && !gameoverOnce)
+            {
+                gameoverOnce = true;
+                StartCoroutine(GameManager.instance.GameOver());
+            }
         }
     }
 

@@ -14,8 +14,6 @@ public class MainScene : MonoBehaviour
 	public GameObject player;	// 오리 객체 
 	
 	private bool fade = true;   // touch to start 가 흐려지게 하건지 뚜렷해지게 할건지 여부
-	private static readonly int IsWalk = Animator.StringToHash("is_walk");	// 애니메이션 is_walk 트리거 저장
-	private bool isStart = false;
 
 	private void Update()
 	{
@@ -36,13 +34,16 @@ public class MainScene : MonoBehaviour
 		}
 
 		// 프레이어가 화면 터치시 오리가 화면 밖으로 나가고 다음 씬으로 넘어감
-		if (!isStart && (Input.touchCount > 0 || Input.anyKeyDown))
+		/*if (!isStart && (Input.touchCount > 0 || Input.anyKeyDown))
 		{
 			isStart = true;
 			StartCoroutine(TouchToStart());
-		}
+		}*/
 	}
 
+	public void TouchBtn() => StartCoroutine(TouchToStart());
+
+	
 	IEnumerator TouchToStart()
 	{
 		player.GetComponent<SpriteRenderer>().flipX = true;

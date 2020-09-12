@@ -40,5 +40,6 @@ public class PlayerData : ScriptableObject
         }
     }
 
-    public string currentSkin;    // default : "bird"
+    public string currentSkin;
+    public float musicVolume, sfxVolume;
 }

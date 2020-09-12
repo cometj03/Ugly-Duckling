@@ -9,16 +9,16 @@ public class LevelLoader : MonoBehaviour
     private static readonly int Start = Animator.StringToHash("Start");
     private float transitionTime = 1f;
 
-    public void LoadNextLevel(int levelIndex) => StartCoroutine(LoadLevel(levelIndex));
+    public void LoadNextLevel(int sceneIndex) => StartCoroutine(LoadLevel(sceneIndex));
     public void LoadNextLevel(string sceneName) => StartCoroutine(LoadLevel(sceneName));
 
-    private IEnumerator LoadLevel(int levelIndex)
+    private IEnumerator LoadLevel(int sceneIndex)
     {
         Transition.SetTrigger(Start);
         
         yield return new WaitForSeconds(transitionTime);
 
-        SceneManager.LoadScene(levelIndex);
+        SceneManager.LoadScene(sceneIndex);
     }
     private IEnumerator LoadLevel(string sceneName)
     {
