@@ -18,8 +18,8 @@ public class SoundManager : MonoBehaviour
         }
         DontDestroyOnLoad(gameObject);
         
-        SetMusicVolume(PlayerData.Instance.musicVolume);
-        SetSFXVolume(PlayerData.Instance.sfxVolume);
+        // SetMusicVolume(PlayerData.Instance.musicVolume);
+        // SetSFXVolume(PlayerData.Instance.sfxVolume);
     }
 
     public void SetMusicVolume(float volume)
