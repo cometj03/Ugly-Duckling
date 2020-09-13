@@ -71,7 +71,7 @@ public class Block : MonoBehaviour
 	{
 		while (true)
 		{
-			transform.localPosition = Vector2.Lerp(transform.localPosition, position, 0.1f);
+			transform.localPosition = Vector2.Lerp(transform.localPosition, position, 0.2f);
 			yield return new WaitForEndOfFrame();
 		}
 	}
