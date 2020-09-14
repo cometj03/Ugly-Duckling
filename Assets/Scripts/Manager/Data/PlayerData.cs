@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Runtime.InteropServices;
+using UnityEngine;
 
 #if UNITY_EDITOR
 using UnityEditor;
@@ -40,6 +41,34 @@ public class PlayerData : ScriptableObject
         }
     }
 
+    public SaveUserData userData;
+
+    public int money;
     public string currentSkin;
     public float musicVolume, sfxVolume;
+
+    public void Save(eSaveType saveType)
+    {
+        Debug.Log("Save");
+        if (saveType == eSaveType.eAll)
+        {
+            userData.Save(saveType);
+        }
+        else if (saveType == eSaveType.eUser)
+        {
+            userData.Save(saveType);
+        }
+    }
+    
+    public void Load(eSaveType saveType)
+    {
+        if (saveType == eSaveType.eAll)
+        {
+            userData.Load(saveType);
+        } 
+        else if (saveType == eSaveType.eUser)
+        {
+            userData.Load(saveType);
+        }
+    }
 }

@@ -3,7 +3,6 @@ using UnityEngine;
 
 public class CameraMovement : MonoBehaviour
 {
-	public GameManager _gameManager;
 	public CameraValue cameraValue;
 
 	private Transform _birdTransform;
@@ -28,11 +27,11 @@ public class CameraMovement : MonoBehaviour
 	{
 		// 카메라 이동
 		maincamera.transform.position = Vector3.Lerp(maincamera.transform.position, cameraValue.cameraTarget, CameraValue.SmoothSpeed);
-		if (_gameManager.currentState == GameManager.GameState.CONTINUE)
+		if (GameManager.instance.currentState == GameManager.GameState.CONTINUE)
 			cameraValue.cameraTarget += Vector3.right * speed;
 		
 		// 카메라 뒤로 물러남
-		if (_birdTransform.position.x - 3f > cameraValue.cameraTarget.x && _gameManager.currentState == GameManager.GameState.CONTINUE)
+		if (_birdTransform.position.x - 3f > cameraValue.cameraTarget.x && GameManager.instance.currentState == GameManager.GameState.CONTINUE)
 			cameraValue.cameraTarget = new Vector3(_birdTransform.position.x + 1f, cameraValue.cameraTarget.y, -10);
 		
 	}

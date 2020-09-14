@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using System.Security.Cryptography;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -15,12 +16,22 @@ public class GameManager : MonoBehaviour
     
     void Awake()
     {
-        if (instance == null)
-            instance = this;
-
+        currentState = GameState.CONTINUE;
         _uiGamePanel = FindObjectOfType<UIGamePanel>();
         
-        currentState = GameState.CONTINUE;
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+            return;
+        }
+        
+        // TODO: 
+        // PlayerData.Instance.Load(eSaveType.eAll);    // 게임 시작시 모든 데이터 불러옴
     }
     
     void FixedUpdate()

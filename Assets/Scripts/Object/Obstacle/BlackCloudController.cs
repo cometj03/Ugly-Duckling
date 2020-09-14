@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class BlackCloudController : MonoBehaviour
 {
+    public ParticleSystem rain;
+    
     enum CloudState
     {
         IDLE, RAINNING
@@ -35,12 +37,14 @@ public class BlackCloudController : MonoBehaviour
         {
             StartCoroutine(TurningToRain(0.4f));
             anim.SetFloat(State, 1);
+            rain.Play();
         }
         else
         {
             len = 0f;
             cloudState = CloudState.IDLE;
             anim.SetFloat(State, 0);
+            rain.Stop();
         }
     }
 
