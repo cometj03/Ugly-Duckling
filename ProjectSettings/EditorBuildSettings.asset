@@ -21,6 +21,9 @@ EditorBuildSettings:
     path: Assets/Scenes/World/1_Summer.unity
     guid: b287c482a11533a49b5bceeb69afff40
   - enabled: 1
+    path: Assets/Scenes/World/2_Autumn.unity
+    guid: 40c8b6fcaa5ddc4499fa4d2f8e50d8e4
+  - enabled: 1
     path: Assets/Scenes/World/3_Winter.unity
     guid: 0b3d75f4239635b45bafb9fbb49a51fa
   m_configObjects: {}

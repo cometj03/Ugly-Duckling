@@ -3,6 +3,7 @@
 public class World03_Winter : MonoBehaviour
 {
     public CameraValue cameraValue;
+    private GameObject maincamera;
     
     [SerializeField] GameObject background = default;
     [SerializeField] GameObject moon = default;
@@ -14,10 +15,11 @@ public class World03_Winter : MonoBehaviour
     
     void Start()
     {
+        maincamera = GameObject.Find("Main Camera");
         // 바닥의 가로 길이
         floorWidth = snowyfloor.GetComponent<SpriteRenderer>().size.x * snowyfloor.transform.localScale.x;
 
-        float cameraX = cameraValue.cameraTarget.x;
+        float cameraX = maincamera.transform.position.x;
         bgOffsetX = background.transform.position.x - cameraX;
         moonOffsetX = moon.transform.position.x - cameraX;
         mtOffsetX = mountain.transform.position.x - cameraX;
@@ -26,8 +28,11 @@ public class World03_Winter : MonoBehaviour
     void FixedUpdate()
     {
         // floor 반복
-        if (cameraValue.cameraTarget.x - floorWidth / 6 >= snowyfloor.transform.position.x)
+        float diff = maincamera.transform.position.x - snowyfloor.transform.position.x;
+        if (diff >= floorWidth / 6)
             snowyfloor.transform.position += Vector3.right * floorWidth / 3;
+        else if (diff <= -floorWidth / 6)
+            snowyfloor.transform.position -= Vector3.right * floorWidth / 3;
         
         // 배경 오브젝트 이동
         MoveBgObject(background, bgOffsetX, 0.95f);

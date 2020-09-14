@@ -59,7 +59,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 810525401
-  m_SortingOrder: 10
+  m_SortingOrder: 1
   m_TargetDisplay: 0
 --- !u!114 &1832177796030820262
 MonoBehaviour:
@@ -112,6 +112,7 @@ GameObject:
   - component: {fileID: 1832177796386809012}
   - component: {fileID: 1832177796386809013}
   - component: {fileID: 1832177796386809018}
+  - component: {fileID: 5627153549853476030}
   m_Layer: 5
   m_Name: Jump_Button
   m_TagString: Untagged
@@ -165,7 +166,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 18eb94a548795b64b9b6512d5edbe2a9, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1a376144b0b7b1047929b5cb6a5f2d51, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -206,7 +207,7 @@ MonoBehaviour:
     m_HighlightedSprite: {fileID: 0}
     m_PressedSprite: {fileID: 21300000, guid: 2a2132d5d4a327846af74414a2647e3c, type: 3}
     m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 21300000, guid: 18eb94a548795b64b9b6512d5edbe2a9, type: 3}
+    m_DisabledSprite: {fileID: 21300000, guid: 1a376144b0b7b1047929b5cb6a5f2d51, type: 3}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
@@ -218,8 +219,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: OnJumpBtnClicked
+      - m_Target: {fileID: 5627153549853476030}
+        m_MethodName: JumpBtn
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -229,6 +230,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &5627153549853476030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1832177796386809016}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0eec006d2f143c045b984089e2584a1c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1832177797104216033
 GameObject:
   m_ObjectHideFlags: 0
@@ -294,7 +307,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 6a74a2db61f3bb748bfad8dd27b54762, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 242c9740ebb7e4a4d98ea1935d3c22ea, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -316,6 +329,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d95aa276720b3f24e82377f563dc432e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defaultSprite: {fileID: 21300000, guid: 6a74a2db61f3bb748bfad8dd27b54762, type: 3}
-  rightSprite: {fileID: 21300000, guid: 8d3b218778d34b54da03e3f3f0e99d0c, type: 3}
-  leftSprite: {fileID: 21300000, guid: 1c413377292373045a1d5a10078c146a, type: 3}
+  defaultSprite: {fileID: 21300000, guid: 242c9740ebb7e4a4d98ea1935d3c22ea, type: 3}
+  rightSprite: {fileID: 21300000, guid: b507feef55eae0543bc0789e62872c92, type: 3}
+  leftSprite: {fileID: 21300000, guid: 1e82733e8ba73ae4d8b2e8a68bd814fc, type: 3}
