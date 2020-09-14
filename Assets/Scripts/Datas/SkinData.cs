@@ -2,14 +2,12 @@
 using SimpleJSON;
 using System.Collections;
 using System.Collections.Generic;
-using System.Data;
 using System.IO;
-using System.Linq;
 using UnityEngine;
 
 public class SkinData : MonoBehaviour
 {
-	public JSONNode data;
+	public List<Hashtable> data;
 
 	public void DataToFile()
 	{
@@ -26,13 +24,47 @@ public class SkinData : MonoBehaviour
 	{
 		StreamReader sr = new StreamReader("Assets/Datas/Skins.json");
 
-		data = JSON.Parse(sr.ReadToEnd());
+		if(sr == null)
+		{
+			data = new List<Hashtable>();
+			return;
+		}
+
+		var tmp = JSON.Parse(sr.ReadToEnd());
+
+		List<Hashtable> l_data = new List<Hashtable>();
+
+		foreach(var iter in tmp)
+		{
+			Hashtable h_data = new Hashtable
+			{
+				{ "skinName", iter.Value["skinName"] },
+				{ "displayName", iter.Value["displayName"] },
+				{ "price", iter.Value["price"].AsInt }
+			};
+
+			l_data.Add(h_data);
+		}
+
+		data = l_data;
 
 		sr.Close();
 	}
 
+	public void Insert(string skinName, string displayName, int price)
+	{
+		Hashtable h_data = new Hashtable
+		{
+			{ "skinName", skinName },
+			{ "displayName", displayName },
+			{ "price", price }
+		};
+
+		data.Add(h_data);
+	}
+
 	private void Awake()
 	{
-		
+		FileToData();
 	}
 };
