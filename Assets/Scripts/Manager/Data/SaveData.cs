@@ -23,9 +23,9 @@ public class SaveData
     {
         //ex) nickname:닉네임/money:1000/currentSkine:2
 
-        Debug.Log("Load : " + saveType);
-        
         strLoad = PlayerPrefs.GetString(saveType.ToString());
+
+        Debug.Log("Load : " + strLoad);
 
         string[] splitData = strLoad.Split('/');
 

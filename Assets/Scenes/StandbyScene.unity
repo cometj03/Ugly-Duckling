@@ -439,6 +439,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 1457547973}
+        m_MethodName: BtnStagesExit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &145421357
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3090,7 +3101,7 @@ GameObject:
   - component: {fileID: 1089744819}
   - component: {fileID: 1089744818}
   m_Layer: 5
-  m_Name: PriceText
+  m_Name: MoneyText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3940,6 +3951,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   musicSlider: {fileID: 420150139}
   sfxSlider: {fileID: 2095385457}
+  moneyText: {fileID: 1089744818}
   mainCanvas: {fileID: 1889409676}
   settingsCanvas: {fileID: 1889130535}
   customizeCanvas: {fileID: 1291003986}
@@ -4309,6 +4321,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 1457547973}
+        m_MethodName: BtnStagesExit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &1669515986
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4642,6 +4665,17 @@ MonoBehaviour:
       - m_Target: {fileID: 1984549016}
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1457547973}
+        m_MethodName: BtnStagesExit
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

@@ -5,6 +5,7 @@ using UnityEngine.UI;
 public class UIManager : MonoBehaviour
 {
     public Slider musicSlider, sfxSlider;
+    public Text moneyText;
 
     public GameObject mainCanvas, settingsCanvas, customizeCanvas;
     
@@ -48,13 +49,13 @@ public class UIManager : MonoBehaviour
 
     public void BtnCustomize()
     {
+        moneyText.text = PlayerData.Instance.money.ToString();    // 보유 금액 표시
         gameObject.GetComponent<StandbyScene>().isCamMoving = false;
         StartCoroutine(_cameraZoom.CustomizeZoomIn());    // 줌인
     }
 
     public void BtnCustomizeExit()
     {
-        Debug.Log("asdf");
         PlayerData.Instance.Save(eSaveType.eUser);    // 유저 정보 저장
         StartCoroutine(_cameraZoom.CustomizeZoomOut());    // 줌아웃
     }

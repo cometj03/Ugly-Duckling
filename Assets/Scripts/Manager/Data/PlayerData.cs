@@ -52,7 +52,7 @@ public class PlayerData : ScriptableObject
         Debug.Log("Save");
         if (saveType == eSaveType.eAll)
         {
-            userData.Save(saveType);
+            userData.Save(eSaveType.eUser);
         }
         else if (saveType == eSaveType.eUser)
         {
@@ -64,7 +64,7 @@ public class PlayerData : ScriptableObject
     {
         if (saveType == eSaveType.eAll)
         {
-            userData.Load(saveType);
+            userData.Load(eSaveType.eUser);
         } 
         else if (saveType == eSaveType.eUser)
         {

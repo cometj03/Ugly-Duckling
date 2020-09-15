@@ -31,7 +31,7 @@ public class GameManager : MonoBehaviour
         }
         
         // TODO: 
-        // PlayerData.Instance.Load(eSaveType.eAll);    // 게임 시작시 모든 데이터 불러옴
+        PlayerData.Instance.Load(eSaveType.eAll);    // 게임 시작시 모든 데이터 불러옴
     }
     
     void FixedUpdate()

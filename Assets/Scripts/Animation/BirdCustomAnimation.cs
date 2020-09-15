@@ -18,7 +18,7 @@ public class BirdCustomAnimation : MonoBehaviour
 	private Coroutine co_doAnim;
 	private bool isGameScene;
 
-	private void Awake()
+	private void Start()
 	{
 		idle = Resources.LoadAll<Sprite>("Animations/" + PlayerData.Instance.currentSkin + "/Idle");
 		walk = Resources.LoadAll<Sprite>("Animations/" + PlayerData.Instance.currentSkin + "/Walk");
@@ -37,7 +37,7 @@ public class BirdCustomAnimation : MonoBehaviour
 	{
 		PlayerData.Instance.currentSkin = _skinName;
 		StopCoroutine(co_doAnim);
-		Awake();
+		Start();
 	}
 
 	private void PlayFallDown()
