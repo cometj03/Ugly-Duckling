@@ -1,9 +1,9 @@
 ﻿using UnityEngine;
-using UnityEngine.Audio;
 
 public class SoundManager : MonoBehaviour
 {
-    public AudioMixer audioMixer;
+    public AudioSource musicSource;
+    public AudioSource sfxSource;
 
     public static SoundManager instance;
 
@@ -17,22 +17,25 @@ public class SoundManager : MonoBehaviour
         else
         {
             Destroy(gameObject);
-            return;
+            // return;
         }
-        
+    }
+
+    private void Start()
+    {
         SetMusicVolume(PlayerData.Instance.musicVolume);
         SetSFXVolume(PlayerData.Instance.sfxVolume);
     }
 
     public void SetMusicVolume(float volume)
     {
-        audioMixer.SetFloat("MusicVolume", Mathf.Log10(volume) * 20);
+        musicSource.volume = volume;
         PlayerData.Instance.musicVolume = volume;
     }
     
     public void SetSFXVolume(float volume)
     {
-        print(Mathf.Log10(volume) * 20);
+        sfxSource.volume = volume;
         PlayerData.Instance.sfxVolume = volume;
     }
 }

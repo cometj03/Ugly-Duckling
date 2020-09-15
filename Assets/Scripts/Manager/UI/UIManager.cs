@@ -22,9 +22,6 @@ public class UIManager : MonoBehaviour
     {
         _cameraZoom = FindObjectOfType<CameraZoom>();
         _birdAnim = FindObjectOfType<BirdCustomAnimation>();
-
-        musicSlider.value = PlayerData.Instance.musicVolume;
-        sfxSlider.value = PlayerData.Instance.sfxVolume;
     }
     
     public void BtnPlay(string world)
@@ -34,6 +31,9 @@ public class UIManager : MonoBehaviour
 
     public void BtnSettings()
     {
+        musicSlider.value = PlayerData.Instance.musicVolume;
+        sfxSlider.value = PlayerData.Instance.sfxVolume;
+        
         mainCanvas.SetActive(false);
         settingsCanvas.SetActive(true);
         StagesSelected(0);    // All stages active false
@@ -41,6 +41,8 @@ public class UIManager : MonoBehaviour
 
     public void BtnSettingsExit()
     {
+        PlayerData.Instance.Save(eSaveType.eSetting);    // 세팅 정보 저장
+        
         mainCanvas.SetActive(true);
         settingsCanvas.SetActive(false);
         if (isShowStages)

@@ -42,6 +42,7 @@ public class PlayerData : ScriptableObject
     }
 
     public SaveUserData userData;
+    public SaveSettingData settingData;
 
     public int money;
     public string currentSkin;
@@ -50,25 +51,35 @@ public class PlayerData : ScriptableObject
     public void Save(eSaveType saveType)
     {
         Debug.Log("Save");
-        if (saveType == eSaveType.eAll)
+        switch (saveType)
         {
-            userData.Save(eSaveType.eUser);
-        }
-        else if (saveType == eSaveType.eUser)
-        {
-            userData.Save(saveType);
+            case eSaveType.eAll:
+                userData.Save(eSaveType.eUser);
+                settingData.Save(eSaveType.eSetting);
+                break;
+            case eSaveType.eUser:
+                userData.Save(saveType);
+                break;
+            case eSaveType.eSetting:
+                settingData.Save(eSaveType.eSetting);
+                break;
         }
     }
     
     public void Load(eSaveType saveType)
     {
-        if (saveType == eSaveType.eAll)
+        switch (saveType)
         {
-            userData.Load(eSaveType.eUser);
-        } 
-        else if (saveType == eSaveType.eUser)
-        {
-            userData.Load(saveType);
+            case eSaveType.eAll:
+                userData.Load(eSaveType.eUser);
+                settingData.Load(eSaveType.eSetting);
+                break;
+            case eSaveType.eUser:
+                userData.Load(saveType);
+                break;
+            case eSaveType.eSetting:
+                settingData.Load(eSaveType.eSetting);
+                break;
         }
     }
 }

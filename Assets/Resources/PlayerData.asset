@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c16c9a3cfd3eb054c9f0c5e8f8e0baa2, type: 3}
   m_Name: PlayerData
   m_EditorClassIdentifier: 
-  currentSkin: bird
+  money: 20
+  currentSkin: Bee
   musicVolume: 0.5
   sfxVolume: 1

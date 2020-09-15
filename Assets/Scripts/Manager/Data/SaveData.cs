@@ -3,7 +3,7 @@ using UnityEngine;
 
 public enum eSaveType
 {
-    eAll, eUser
+    eAll, eUser, eSetting
 }
 
 public class SaveData
@@ -21,7 +21,7 @@ public class SaveData
 
     public virtual void Load(eSaveType saveType)
     {
-        //ex) nickname:닉네임/money:1000/currentSkine:2
+        // ex) nickname:닉네임/money:1000/currentSkin:2
 
         strLoad = PlayerPrefs.GetString(saveType.ToString());
 
