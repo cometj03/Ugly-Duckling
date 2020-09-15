@@ -1,7 +1,20 @@
-[
+﻿[
   {
-    "skinName": "test",
-    "displayName": "test",
+    "skinName": "Bird",
+    "displayName": "기본",
+    "info": "귀여운 오리입니다.",
+    "price": 10
+  },
+  {
+    "skinName": "SchoolUniform",
+    "displayName": "학생",
+    "info": "잠깐.. 오리가 학교를 갔었나요..?",
+    "price": 10
+  },
+  {
+    "skinName": "Bee",
+    "displayName": "벌",
+    "info": "위이잉",
     "price": 10
   }
 ]
