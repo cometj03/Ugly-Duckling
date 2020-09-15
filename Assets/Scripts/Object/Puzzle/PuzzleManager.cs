@@ -32,8 +32,8 @@ public class PuzzleManager : MonoBehaviour
 			{
 				selectPuzzle = hit.transform.parent.parent.GetComponent<Puzzle>();
 				selectBlock = hit.transform.parent.GetComponent<Block>();
-				perBlockPosition = selectBlock.transform.localPosition;
-				perMousePosition = math.round((Vector2)Camera.main.ScreenToWorldPoint(Input.mousePosition));
+				perBlockPosition = selectBlock.position;
+				perMousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
 				jumpImage.color = new Color(0.5f, 0.5f, 0.5f);
 				moveImage.color = new Color(0.5f, 0.5f, 0.5f);
@@ -46,34 +46,40 @@ public class PuzzleManager : MonoBehaviour
 		{
 			if (Input.GetMouseButton(0))
 			{
-				selectBlock.transform.localPosition += (Vector3)(Vector2)math.round((Vector2)Camera.main.ScreenToWorldPoint(Input.mousePosition) - perMousePosition);
+				Vector2 mouseDistance = math.round((Vector2)Camera.main.ScreenToWorldPoint(Input.mousePosition) - perMousePosition);
 
-				if (perBlockPosition != (Vector2)selectBlock.transform.localPosition)
+				if (math.abs(mouseDistance.x) + math.abs(mouseDistance.y) > 1)
+				{
+					return;
+				}
+
+				selectBlock.position += mouseDistance;
+
+				if (perBlockPosition != selectBlock.position)
 				{
 					foreach (var tile in selectBlock.tiles)
 					{
-						Vector2 tilePosition = tile.transform.localPosition + selectBlock.transform.localPosition;
+						Vector2 tilePosition = tile.position + selectBlock.position;
 
 						int crossCount = 0;
 
 						foreach (var anothertile in selectPuzzle.outline.tiles)
 						{
-
-							if (tilePosition.y == anothertile.transform.localPosition.y && tilePosition.x <= anothertile.transform.localPosition.x)
+							if (tilePosition.y == anothertile.position.y && tilePosition.x <= anothertile.position.x)
 							{
 								crossCount++;
 							}
 
-							if (tilePosition == (Vector2)anothertile.transform.localPosition)
+							if (tilePosition == anothertile.position)
 							{
-								selectBlock.transform.localPosition = perBlockPosition;
+								selectBlock.position = perBlockPosition;
 								return;
 							}
 						}
 
-						if(crossCount % 2 == 0)
+						if (crossCount % 2 == 0)
 						{
-							selectBlock.transform.localPosition = perBlockPosition;
+							selectBlock.position = perBlockPosition;
 							return;
 						}
 
@@ -83,11 +89,11 @@ public class PuzzleManager : MonoBehaviour
 							{
 								foreach (var anothertile in block.tiles)
 								{
-									Vector2 anothertilePosition = anothertile.transform.localPosition + block.transform.localPosition;
+									Vector2 anothertilePosition = anothertile.position + block.position;
 
 									if (tilePosition == anothertilePosition)
 									{
-										selectBlock.transform.localPosition = perBlockPosition;
+										selectBlock.position = perBlockPosition;
 										return;
 									}
 								}
@@ -97,15 +103,14 @@ public class PuzzleManager : MonoBehaviour
 						if (tilePosition.x - 0.5f < player.transform.position.x && player.transform.position.x < tilePosition.x + 0.5f &&
 						tilePosition.y - 0.5f < player.transform.position.y && player.transform.position.y < tilePosition.y + 0.5f)
 						{
-							selectBlock.transform.localPosition = perBlockPosition;
+							selectBlock.position = perBlockPosition;
 							return;
 						}
 					}
 
 					perMousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+					perBlockPosition = selectBlock.position;
 				}
-
-				perBlockPosition = selectBlock.transform.localPosition;
 			}
 			else if (Input.GetMouseButtonUp(0))
 			{
