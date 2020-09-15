@@ -73,7 +73,7 @@ public class BirdCustomAnimation : MonoBehaviour
 				player.sprite = idle[animationPhase];
 			}
 
-			if (isGameScene && _gameManager.currentState == GameManager.GameState.OVER)
+			if (isGameScene && _gameManager.currentState == GameState.OVER)
 			{
 				PlayFallDown();
 				break;

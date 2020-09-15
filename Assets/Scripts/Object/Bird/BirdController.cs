@@ -36,7 +36,7 @@ public class BirdController : MonoBehaviour
 		
 		if (birdSpeed == 0)
 			_birdAnimator.isWalking = false;
-		else if (_gameManager.currentState == GameManager.GameState.CONTINUE)
+		else if (_gameManager.currentState == GameState.CONTINUE)
 		{
 			_birdTransform.position += new Vector3(birdSpeed * Time.deltaTime, 0, 0);
 			_birdAnimator.isWalking = true;

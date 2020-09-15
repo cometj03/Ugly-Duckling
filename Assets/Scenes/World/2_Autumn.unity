@@ -188,6 +188,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5635628415785797391, guid: 1bf2e98a773e901429a3ea968ef5954d,
+        type: 3}
+      propertyPath: rain
+      value: 
+      objectReference: {fileID: 781316280}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1bf2e98a773e901429a3ea968ef5954d, type: 3}
 --- !u!1 &5681485
@@ -7897,6 +7902,12 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!198 &781316280 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 4672019441952101617, guid: 1bf2e98a773e901429a3ea968ef5954d,
+    type: 3}
+  m_PrefabInstance: {fileID: 2464768}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &794700386
 GameObject:
   m_ObjectHideFlags: 0

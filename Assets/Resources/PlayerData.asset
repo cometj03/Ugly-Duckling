@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   money: 20
   currentSkin: Bee
-  musicVolume: 0.5
+  musicVolume: 1
   sfxVolume: 1

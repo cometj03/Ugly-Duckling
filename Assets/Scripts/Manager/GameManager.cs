@@ -1,14 +1,16 @@
-﻿using System.Collections;
-using System.Security.Cryptography;
+﻿using System;
+using System.Collections;
 using UnityEngine;
+
+public enum GameState
+{
+    CONTINUE, CLEAR, OVER, PAUSE
+}
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
-    public enum GameState
-    {
-        CONTINUE, CLEAR, OVER, PAUSE
-    }
+    
     public GameState currentState;
     public CameraValue cameraValue;
 
@@ -18,7 +20,6 @@ public class GameManager : MonoBehaviour
     {
         currentState = GameState.CONTINUE;
         _uiGamePanel = FindObjectOfType<UIGamePanel>();
-        
         if (instance == null)
         {
             instance = this;
