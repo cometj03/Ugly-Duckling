@@ -10,19 +10,14 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
     
-    // public GameState currentState;
     public CameraValue cameraValue;
 
     private UIGamePanel _uiGamePanel;
     
     void Awake()
     {
-        GameObject gamePanel = GameObject.FindGameObjectWithTag("GamePanel");
-        if (gamePanel)
-            _uiGamePanel = gamePanel.GetComponent<UIGamePanel>();
-        
         PlayerData.Instance.currentState = GameState.CONTINUE;
-        
+
         if (instance == null)
         {
             instance = this;
@@ -58,6 +53,10 @@ public class GameManager : MonoBehaviour
         print("Game Over");
         PlayerData.Instance.currentState = GameState.OVER;
         yield return new WaitForSeconds(1.3f);
+        
+        if (!_uiGamePanel)
+            GetGamePanel();
+        
         _uiGamePanel.OpenOverPanel();    // 게임 오버창 띄움
     }
     
@@ -65,4 +64,6 @@ public class GameManager : MonoBehaviour
     {
         cameraValue.cameraTarget = Vector3.back * 10;
     }
+
+    private void GetGamePanel() => _uiGamePanel = GameObject.FindGameObjectWithTag("GamePanel").GetComponent<UIGamePanel>();
 }

@@ -3,14 +3,23 @@ using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
+    /// <summary>
+    /// 대기 화면 UI 관리
+    /// </summary>
+    public GameObject mainCanvas, settingsCanvas, customizeCanvas;
+
+    [Header("Settings Canvas")]
     public Slider musicSlider, sfxSlider;
     public Text moneyText;
-
-    public GameObject mainCanvas, settingsCanvas, customizeCanvas;
     
-    public GameObject[] worldBackGrounds;
-    public GameObject[] stages;
+    [Header("World Select Button")]
+    public RectTransform worldSelectContent;
+    
+    [Header("Worlds")]
+    public Transform Environment;
+    public Transform stages;
 
+    
     private CameraZoom _cameraZoom;
     private int currentWorld;
     private bool isShowStages;
@@ -65,32 +74,44 @@ public class UIManager : MonoBehaviour
     
     public void WorldSelected(int order)
     {
-        isShowStages = true;
         StagesSelected(order);
+        isShowStages = true;
         currentWorld = order;
-        for (int i = 0; i < worldBackGrounds.Length; i++)
+
+        for (int i = 0; i < Environment.childCount; i++)
         {
-            if (currentWorld == i + 1)
+            if (currentWorld == i)
             {
-                worldBackGrounds[i].SetActive(true);
+                Environment.GetChild(i).gameObject.SetActive(true);
                 
-                Transform hole = worldBackGrounds[i].transform.GetChild(0).GetChild(0);
+                Debug.Log(GetButtonPosX());
+                Transform hole = Environment.GetChild(i).GetChild(0).GetChild(0);
+                hole.position = Vector3.right * GetButtonPosX();
                 hole.localScale = Vector3.zero;
                 hole.GetComponent<Animator>().SetTrigger("Play");
             }
             else
-                worldBackGrounds[i].SetActive(false);
+            {
+                Environment.GetChild(i).gameObject.SetActive(false);
+            }
         }
     }
 
-    void StagesSelected(int order)
+    private void StagesSelected(int order)
     {
-        for (int i = 0; i < stages.Length; i++)
+        for (int i = 0; i < stages.childCount; i++)
         {
-            if (order == i + 1)
-                stages[i].SetActive(true);
+            if (order == i)
+                stages.GetChild(i).gameObject.SetActive(true);
             else
-                stages[i].SetActive(false);
+                stages.GetChild(i).gameObject.SetActive(false);
         }
+    }
+
+    private float GetButtonPosX()
+    {
+        float contentPosX = worldSelectContent.anchoredPosition.x;    // Rect Left value
+        float btnPosX = (currentWorld * 900 + contentPosX * 1.2f) / 550;
+        return btnPosX;
     }
 }

@@ -52,7 +52,6 @@ public class PlayerData : ScriptableObject
 
     public void Save(eSaveType saveType)
     {
-        Debug.Log("Save");
         switch (saveType)
         {
             case eSaveType.eAll:

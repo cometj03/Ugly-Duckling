@@ -251,12 +251,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 35940349}
   m_CullTransparentMesh: 0
---- !u!1 &83420156 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4239654739324789897, guid: 730b426e05c7ed945b838c909fe43444,
-    type: 3}
-  m_PrefabInstance: {fileID: 517852200}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &94194984
 GameObject:
   m_ObjectHideFlags: 0
@@ -857,7 +851,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 1
@@ -1362,12 +1356,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &459601674 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4626933623038613728, guid: 73af060d12828af4a946c1304f3cd762,
-    type: 3}
-  m_PrefabInstance: {fileID: 4626933624650468438}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &491593707
 GameObject:
   m_ObjectHideFlags: 0
@@ -1681,7 +1669,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 3
+          m_IntArgument: 2
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 1
@@ -3873,20 +3861,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a369d0df29321c4badad7ea8e64ece6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  musicSlider: {fileID: 420150139}
-  sfxSlider: {fileID: 2095385457}
-  moneyText: {fileID: 1089744818}
   mainCanvas: {fileID: 1889409676}
   settingsCanvas: {fileID: 1889130535}
   customizeCanvas: {fileID: 1291003986}
-  worldBackGrounds:
-  - {fileID: 1474694441}
-  - {fileID: 459601674}
-  - {fileID: 83420156}
-  stages:
-  - {fileID: 491593707}
-  - {fileID: 1236184067}
-  - {fileID: 1502345814}
+  musicSlider: {fileID: 420150139}
+  sfxSlider: {fileID: 2095385457}
+  moneyText: {fileID: 1089744818}
+  worldSelectContent: {fileID: 590595385}
+  Environment: {fileID: 621318954}
+  stages: {fileID: 1677269894}
 --- !u!114 &1457547974
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3913,12 +3896,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   skinContent: {fileID: 1688436702}
   skinBox: {fileID: 2934982874469092018, guid: 2b1ee8e7e97b55246b34b9a2220aec66, type: 3}
---- !u!1 &1474694441 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1201917385984855949, guid: 211510d9c062b9f46a1fff510260c9d8,
-    type: 3}
-  m_PrefabInstance: {fileID: 366808770}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1502345814
 GameObject:
   m_ObjectHideFlags: 0
@@ -5450,7 +5427,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 2
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 1
