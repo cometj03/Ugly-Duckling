@@ -1,47 +1,41 @@
 ﻿using UnityEngine;
 
-public class World01_Summer : MonoBehaviour
+public class World02_Autumn : MonoBehaviour
 {
     public CameraValue cameraValue;
-
+    
     [SerializeField] GameObject background = default;
-    [SerializeField] GameObject hills = default;
-    [SerializeField] GameObject cloud = default;
+    [SerializeField] GameObject sun = default;
     [SerializeField] GameObject floor = default;
 
     private GameObject maincamera;
-    private float floorWidth;//, hillsWidth, cloudWidth;
-    private float hillsOffset, cloudOffset;
-
+    private float floorWidth, cloudWidth;
+    private float sunOffset;
+    
+    
     void Start()
     {
         // 바닥 가로 길이
         floorWidth = floor.GetComponent<SpriteRenderer>().size.x * floor.transform.localScale.x;
-        // hill 가로 길이
-        //hillsWidth = hills.GetComponent<SpriteRenderer>().size.x * hills.transform.localScale.x;
-        // 구름 가로 길이
-        //cloudWidth = cloud.GetComponent<SpriteRenderer>().size.x * cloud.transform.localScale.x;
-
+        
         maincamera = GameObject.FindGameObjectWithTag("MainCamera");
-        hillsOffset = hills.transform.position.x - cameraValue.cameraTarget.x;
-        cloudOffset = cloud.transform.position.x - cameraValue.cameraTarget.x;
+        sunOffset = sun.transform.position.x - cameraValue.cameraTarget.x;
     }
 
     void FixedUpdate()
     {
         // floor 반복
-        float diff = maincamera.transform.position.x - floor.transform.position.x;
-        if (diff >= floorWidth / 4)
+        float floorDiff = maincamera.transform.position.x - floor.transform.position.x;
+        if (floorDiff >= floorWidth / 4)
             floor.transform.position += Vector3.right * floorWidth / 2;
-        else if (diff <= -floorWidth / 4)
+        else if (floorDiff <= -floorWidth / 4)
             floor.transform.position -= Vector3.right * floorWidth / 2;
         
         // 배경 움직임
         Vector3 bgPos = background.transform.position;
         bgPos.x = maincamera.transform.position.x;
         background.transform.position = bgPos;
-        MoveBgObject(hills, hillsOffset, 0.5f);
-        MoveBgObject(cloud, cloudOffset, 0.9f);
+        MoveBgObject(sun, sunOffset, 0.95f);
     }
     
     private void MoveBgObject(GameObject gameObject, float offset, float ratio)

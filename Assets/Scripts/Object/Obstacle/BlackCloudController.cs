@@ -23,8 +23,7 @@ public class BlackCloudController : MonoBehaviour
     void Start()
     {
         anim = GetComponent<Animator>();
-        if (GameObject.Find("bird") != null)
-            targetBird = GameObject.Find("bird").transform;
+        targetBird = GameObject.FindGameObjectWithTag("Player").transform;
 
         anim.SetFloat(State, 0);
         cloudState = CloudState.IDLE;

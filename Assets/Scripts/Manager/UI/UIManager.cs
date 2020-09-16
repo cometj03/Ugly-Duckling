@@ -1,5 +1,4 @@
-﻿using System.Security.Cryptography;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
