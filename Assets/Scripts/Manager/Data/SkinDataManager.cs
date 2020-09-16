@@ -38,7 +38,7 @@ public class SkinDataManager : MonoBehaviour
 
 	public void UpdateContent()
 	{
-		int sortX = 255;
+		int sortX = 250;
 
 		foreach(var iter in data)
 		{
@@ -56,7 +56,11 @@ public class SkinDataManager : MonoBehaviour
 			rectTransform.position = new Vector2(sortX, 0);
 			rectTransform.SetParent(skinContent.transform);
 			rectTransform.localScale = new Vector3(1, 1, 1);
-			sortX += 525;
+			sortX += 500;
+
+			RectTransform contentRectTransform = skinContent.GetComponent<RectTransform>();
+
+			contentRectTransform.sizeDelta += new Vector2(500, 0);
 		}
 	}
 
