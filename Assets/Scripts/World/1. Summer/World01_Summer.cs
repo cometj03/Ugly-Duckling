@@ -22,7 +22,7 @@ public class World01_Summer : MonoBehaviour
         // 구름 가로 길이
         //cloudWidth = cloud.GetComponent<SpriteRenderer>().size.x * cloud.transform.localScale.x;
 
-        maincamera = GameObject.Find("Main Camera");
+        maincamera = GameObject.FindGameObjectWithTag("MainCamera");
         hillsOffset = hills.transform.position.x - cameraValue.cameraTarget.x;
         cloudOffset = cloud.transform.position.x - cameraValue.cameraTarget.x;
     }

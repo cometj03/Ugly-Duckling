@@ -1,30 +1,32 @@
-﻿using System.Security.Cryptography;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
+    /// <summary>
+    /// 대기 화면 UI 관리
+    /// </summary>
+    public GameObject mainCanvas, settingsCanvas, customizeCanvas;
+
+    [Header("Settings Canvas")]
     public Slider musicSlider, sfxSlider;
     public Text moneyText;
-
-    public GameObject mainCanvas, settingsCanvas, customizeCanvas;
     
-    public GameObject[] worldBackGrounds;
+    [Header("World Select Button")]
+    public RectTransform worldSelectContent;
+    
+    [Header("Worlds")]
+    public Transform Environment;
+    public Transform stages;
 
-    public GameObject[] stages;
-
+    
     private CameraZoom _cameraZoom;
-    private BirdCustomAnimation _birdAnim;
     private int currentWorld;
     private bool isShowStages;
 
     private void Awake()
     {
         _cameraZoom = FindObjectOfType<CameraZoom>();
-        _birdAnim = FindObjectOfType<BirdCustomAnimation>();
-
-        musicSlider.value = PlayerData.Instance.musicVolume;
-        sfxSlider.value = PlayerData.Instance.sfxVolume;
     }
     
     public void BtnPlay(string world)
@@ -34,6 +36,9 @@ public class UIManager : MonoBehaviour
 
     public void BtnSettings()
     {
+        musicSlider.value = PlayerData.Instance.musicVolume;
+        sfxSlider.value = PlayerData.Instance.sfxVolume;
+        
         mainCanvas.SetActive(false);
         settingsCanvas.SetActive(true);
         StagesSelected(0);    // All stages active false
@@ -41,6 +46,8 @@ public class UIManager : MonoBehaviour
 
     public void BtnSettingsExit()
     {
+        PlayerData.Instance.Save(eSaveType.eSetting);    // 세팅 정보 저장
+        
         mainCanvas.SetActive(true);
         settingsCanvas.SetActive(false);
         if (isShowStages)
@@ -67,42 +74,44 @@ public class UIManager : MonoBehaviour
     
     public void WorldSelected(int order)
     {
-        isShowStages = true;
         StagesSelected(order);
+        isShowStages = true;
         currentWorld = order;
-        for (int i = 0; i < worldBackGrounds.Length; i++)
+
+        for (int i = 0; i < Environment.childCount; i++)
         {
-            if (currentWorld == i + 1)
-                worldBackGrounds[i].SetActive(true);
+            if (currentWorld == i)
+            {
+                Environment.GetChild(i).gameObject.SetActive(true);
+                
+                Debug.Log(GetButtonPosX());
+                Transform hole = Environment.GetChild(i).GetChild(0).GetChild(0);
+                hole.position = Vector3.right * GetButtonPosX();
+                hole.localScale = Vector3.zero;
+                hole.GetComponent<Animator>().SetTrigger("Play");
+            }
             else
-                worldBackGrounds[i].SetActive(false);
+            {
+                Environment.GetChild(i).gameObject.SetActive(false);
+            }
         }
     }
 
-    void StagesSelected(int order)
+    private void StagesSelected(int order)
     {
-        for (int i = 0; i < stages.Length; i++)
+        for (int i = 0; i < stages.childCount; i++)
         {
-            if (order == i + 1)
-                stages[i].SetActive(true);
+            if (order == i)
+                stages.GetChild(i).gameObject.SetActive(true);
             else
-                stages[i].SetActive(false);
+                stages.GetChild(i).gameObject.SetActive(false);
         }
     }
 
-    public void SkinSelected(int order)
+    private float GetButtonPosX()
     {
-        switch (order)
-        {
-            case 0:
-                _birdAnim.ChangeSkin("Bird");
-                break;
-            case 1:
-                _birdAnim.ChangeSkin("SchoolUniform");
-                break;
-            case 2:
-                _birdAnim.ChangeSkin("Bee");
-                break;
-        }
+        float contentPosX = worldSelectContent.anchoredPosition.x;    // Rect Left value
+        float btnPosX = (currentWorld * 900 + contentPosX * 1.2f) / 550;
+        return btnPosX;
     }
 }

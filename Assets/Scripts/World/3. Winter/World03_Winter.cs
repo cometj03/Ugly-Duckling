@@ -15,7 +15,7 @@ public class World03_Winter : MonoBehaviour
     
     void Start()
     {
-        maincamera = GameObject.Find("Main Camera");
+        maincamera = GameObject.FindGameObjectWithTag("MainCamera");
         // 바닥의 가로 길이
         floorWidth = snowyfloor.GetComponent<SpriteRenderer>().size.x * snowyfloor.transform.localScale.x;
 

@@ -188,6 +188,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5635628415785797391, guid: 1bf2e98a773e901429a3ea968ef5954d,
+        type: 3}
+      propertyPath: rain
+      value: 
+      objectReference: {fileID: 781316280}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1bf2e98a773e901429a3ea968ef5954d, type: 3}
 --- !u!1 &5681485
@@ -235,6 +240,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isConnect: 00000000
+  position: {x: 0, y: 0}
 --- !u!212 &5681488
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -492,6 +498,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isConnect: 00000001
+  position: {x: 0, y: 0}
 --- !u!1 &42715889
 GameObject:
   m_ObjectHideFlags: 0
@@ -746,6 +753,7 @@ MonoBehaviour:
   isConnected:
   - down
   - right
+  position: {x: 0, y: 0}
 --- !u!1 &58975850
 GameObject:
   m_ObjectHideFlags: 0
@@ -924,6 +932,7 @@ MonoBehaviour:
   isConnected:
   - right
   - left
+  position: {x: 0, y: 0}
 --- !u!1 &89934945
 GameObject:
   m_ObjectHideFlags: 0
@@ -1021,6 +1030,7 @@ MonoBehaviour:
   isConnected:
   - up
   - down
+  position: {x: 0, y: 0}
 --- !u!1 &97305143
 GameObject:
   m_ObjectHideFlags: 0
@@ -1118,6 +1128,7 @@ MonoBehaviour:
   isConnected:
   - down
   - right
+  position: {x: 0, y: 0}
 --- !u!1 &101418247
 GameObject:
   m_ObjectHideFlags: 0
@@ -1215,6 +1226,7 @@ MonoBehaviour:
   isConnected:
   - left
   - right
+  position: {x: 0, y: 0}
 --- !u!1 &122957610
 GameObject:
   m_ObjectHideFlags: 0
@@ -1299,6 +1311,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isConnect: 01000000
+  position: {x: 0, y: 0}
 --- !u!61 &126179447
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1490,6 +1503,7 @@ MonoBehaviour:
   isConnected:
   - up
   - left
+  position: {x: 0, y: 0}
 --- !u!1 &161006192
 GameObject:
   m_ObjectHideFlags: 0
@@ -1587,6 +1601,7 @@ MonoBehaviour:
   isConnected:
   - up
   - down
+  position: {x: 0, y: 0}
 --- !u!1 &179388849
 GameObject:
   m_ObjectHideFlags: 0
@@ -1765,6 +1780,7 @@ MonoBehaviour:
   isConnected:
   - down
   - up
+  position: {x: 0, y: 0}
 --- !u!1 &205201473
 GameObject:
   m_ObjectHideFlags: 0
@@ -1862,6 +1878,7 @@ MonoBehaviour:
   isConnected:
   - down
   - up
+  position: {x: 0, y: 0}
 --- !u!1 &216933817
 GameObject:
   m_ObjectHideFlags: 0
@@ -2171,6 +2188,7 @@ MonoBehaviour:
   isConnected:
   - right
   - left
+  position: {x: 0, y: 0}
 --- !u!1 &250605696
 GameObject:
   m_ObjectHideFlags: 0
@@ -2430,6 +2448,13 @@ MonoBehaviour:
   isConnected:
   - left
   - right
+  position: {x: 0, y: 0}
+--- !u!224 &281106276 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 5510732383017135301, guid: 3be218c70340329488bd4b1a5769da5d,
+    type: 3}
+  m_PrefabInstance: {fileID: 572995993}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &294548911
 GameObject:
   m_ObjectHideFlags: 0
@@ -2625,6 +2650,7 @@ MonoBehaviour:
   - {fileID: 386252526}
   - {fileID: 324383711}
   - {fileID: 126179446}
+  position: {x: 0, y: 0}
 --- !u!4 &294864877
 Transform:
   m_ObjectHideFlags: 0
@@ -2814,6 +2840,7 @@ MonoBehaviour:
   isConnected:
   - right
   - left
+  position: {x: 0, y: 0}
 --- !u!1 &324383707
 GameObject:
   m_ObjectHideFlags: 0
@@ -2940,6 +2967,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isConnect: 00010100
+  position: {x: 0, y: 0}
 --- !u!1 &328021572
 GameObject:
   m_ObjectHideFlags: 0
@@ -2985,6 +3013,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isConnect: 
+  position: {x: 0, y: 0}
 --- !u!212 &328021575
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3161,6 +3190,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isConnect: 01010000
+  position: {x: 0, y: 0}
 --- !u!1 &328849495
 GameObject:
   m_ObjectHideFlags: 0
@@ -3339,6 +3369,7 @@ MonoBehaviour:
   isConnected:
   - up
   - left
+  position: {x: 0, y: 0}
 --- !u!1 &345708574
 GameObject:
   m_ObjectHideFlags: 0
@@ -3384,6 +3415,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isConnect: 00000000
+  position: {x: 0, y: 0}
 --- !u!212 &345708577
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3560,6 +3592,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isConnect: 00000000
+  position: {x: 0, y: 0}
 --- !u!212 &360547937
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3788,6 +3821,7 @@ MonoBehaviour:
   isConnected:
   - up
   - left
+  position: {x: 0, y: 0}
 --- !u!1 &386252522
 GameObject:
   m_ObjectHideFlags: 0
@@ -3914,6 +3948,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isConnect: 00000001
+  position: {x: 0, y: 0}
 --- !u!1 &386528257
 GameObject:
   m_ObjectHideFlags: 0
@@ -4121,6 +4156,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isConnect: 01000001
+  position: {x: 0, y: 0}
 --- !u!1 &395439548
 GameObject:
   m_ObjectHideFlags: 0
@@ -4166,6 +4202,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isConnect: 00000000
+  position: {x: 0, y: 0}
 --- !u!212 &395439551
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4313,6 +4350,7 @@ MonoBehaviour:
   isConnected:
   - left
   - right
+  position: {x: 0, y: 0}
 --- !u!1 &402741933
 GameObject:
   m_ObjectHideFlags: 0
@@ -4345,6 +4383,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isConnect: 01000000
+  position: {x: 0, y: 0}
 --- !u!61 &402741935
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4698,6 +4737,7 @@ MonoBehaviour:
   isConnected:
   - down
   - right
+  position: {x: 0, y: 0}
 --- !u!1 &444964127
 GameObject:
   m_ObjectHideFlags: 0
@@ -4892,6 +4932,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isConnect: 00000100
+  position: {x: 0, y: 0}
 --- !u!61 &469586843
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5164,6 +5205,7 @@ MonoBehaviour:
   isConnected:
   - down
   - up
+  position: {x: 0, y: 0}
 --- !u!1001 &487493813
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5278,6 +5320,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isConnect: 00000000
+  position: {x: 0, y: 0}
 --- !u!212 &489283612
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5425,6 +5468,7 @@ MonoBehaviour:
   isConnected:
   - right
   - up
+  position: {x: 0, y: 0}
 --- !u!1 &512594888
 GameObject:
   m_ObjectHideFlags: 0
@@ -5603,6 +5647,7 @@ MonoBehaviour:
   isConnected:
   - right
   - left
+  position: {x: 0, y: 0}
 --- !u!1 &524005898
 GameObject:
   m_ObjectHideFlags: 0
@@ -5700,6 +5745,7 @@ MonoBehaviour:
   isConnected:
   - right
   - left
+  position: {x: 0, y: 0}
 --- !u!1 &526099771
 GameObject:
   m_ObjectHideFlags: 0
@@ -5745,6 +5791,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isConnect: 00000000
+  position: {x: 0, y: 0}
 --- !u!212 &526099774
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5921,6 +5968,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isConnect: 00010100
+  position: {x: 0, y: 0}
 --- !u!1 &529000132
 GameObject:
   m_ObjectHideFlags: 0
@@ -5966,6 +6014,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isConnect: 00000000
+  position: {x: 0, y: 0}
 --- !u!212 &529000135
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6113,6 +6162,7 @@ MonoBehaviour:
   isConnected:
   - right
   - left
+  position: {x: 0, y: 0}
 --- !u!1 &553760033
 GameObject:
   m_ObjectHideFlags: 0
@@ -6194,6 +6244,130 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1001 &572995993
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1534999174}
+    m_Modifications:
+    - target: {fileID: 5510732383017135298, guid: 3be218c70340329488bd4b1a5769da5d,
+        type: 3}
+      propertyPath: m_Name
+      value: GamePanel-Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 5510732383017135301, guid: 3be218c70340329488bd4b1a5769da5d,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5510732383017135301, guid: 3be218c70340329488bd4b1a5769da5d,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5510732383017135301, guid: 3be218c70340329488bd4b1a5769da5d,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5510732383017135301, guid: 3be218c70340329488bd4b1a5769da5d,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5510732383017135301, guid: 3be218c70340329488bd4b1a5769da5d,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5510732383017135301, guid: 3be218c70340329488bd4b1a5769da5d,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5510732383017135301, guid: 3be218c70340329488bd4b1a5769da5d,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5510732383017135301, guid: 3be218c70340329488bd4b1a5769da5d,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5510732383017135301, guid: 3be218c70340329488bd4b1a5769da5d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5510732383017135301, guid: 3be218c70340329488bd4b1a5769da5d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5510732383017135301, guid: 3be218c70340329488bd4b1a5769da5d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5510732383017135301, guid: 3be218c70340329488bd4b1a5769da5d,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5510732383017135301, guid: 3be218c70340329488bd4b1a5769da5d,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5510732383017135301, guid: 3be218c70340329488bd4b1a5769da5d,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5510732383017135301, guid: 3be218c70340329488bd4b1a5769da5d,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5510732383017135301, guid: 3be218c70340329488bd4b1a5769da5d,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5510732383017135301, guid: 3be218c70340329488bd4b1a5769da5d,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5510732383017135301, guid: 3be218c70340329488bd4b1a5769da5d,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5510732383017135301, guid: 3be218c70340329488bd4b1a5769da5d,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5510732383017135301, guid: 3be218c70340329488bd4b1a5769da5d,
+        type: 3}
+      propertyPath: m_Pivot.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5510732383017135301, guid: 3be218c70340329488bd4b1a5769da5d,
+        type: 3}
+      propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5510732383017135302, guid: 3be218c70340329488bd4b1a5769da5d,
+        type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 1187097882}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 3be218c70340329488bd4b1a5769da5d, type: 3}
 --- !u!1 &586017626
 GameObject:
   m_ObjectHideFlags: 0
@@ -6320,6 +6494,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isConnect: 00000000
+  position: {x: 0, y: 0}
 --- !u!212 &602025613
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6566,6 +6741,7 @@ MonoBehaviour:
   isConnected:
   - up
   - down
+  position: {x: 0, y: 0}
 --- !u!1 &635679670
 GameObject:
   m_ObjectHideFlags: 0
@@ -6598,6 +6774,7 @@ MonoBehaviour:
   tiles:
   - {fileID: 740929349}
   - {fileID: 905876368}
+  position: {x: 0, y: 0}
 --- !u!4 &635679672
 Transform:
   m_ObjectHideFlags: 0
@@ -6726,6 +6903,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tiles:
   - {fileID: 2139431371}
+  position: {x: 0, y: 0}
 --- !u!4 &657749866
 Transform:
   m_ObjectHideFlags: 0
@@ -7267,6 +7445,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isConnect: 00000000
+  position: {x: 0, y: 0}
 --- !u!212 &709393195
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -7414,6 +7593,7 @@ MonoBehaviour:
   isConnected:
   - right
   - up
+  position: {x: 0, y: 0}
 --- !u!1 &736295391
 GameObject:
   m_ObjectHideFlags: 0
@@ -7621,6 +7801,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isConnect: 00000001
+  position: {x: 0, y: 0}
 --- !u!1 &760661587
 GameObject:
   m_ObjectHideFlags: 0
@@ -7666,6 +7847,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isConnect: 00000000
+  position: {x: 0, y: 0}
 --- !u!212 &760661590
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -7897,6 +8079,12 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!198 &781316280 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 4672019441952101617, guid: 1bf2e98a773e901429a3ea968ef5954d,
+    type: 3}
+  m_PrefabInstance: {fileID: 2464768}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &794700386
 GameObject:
   m_ObjectHideFlags: 0
@@ -7994,6 +8182,7 @@ MonoBehaviour:
   isConnected:
   - left
   - right
+  position: {x: 0, y: 0}
 --- !u!1 &797104272
 GameObject:
   m_ObjectHideFlags: 0
@@ -8091,6 +8280,7 @@ MonoBehaviour:
   isConnected:
   - left
   - right
+  position: {x: 0, y: 0}
 --- !u!1 &797106247
 GameObject:
   m_ObjectHideFlags: 0
@@ -8205,6 +8395,7 @@ MonoBehaviour:
   isConnected:
   - down
   - up
+  position: {x: 0, y: 0}
 --- !u!212 &803091340
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -8366,6 +8557,7 @@ MonoBehaviour:
   isConnected:
   - left
   - down
+  position: {x: 0, y: 0}
 --- !u!1 &804841049
 GameObject:
   m_ObjectHideFlags: 0
@@ -8544,6 +8736,7 @@ MonoBehaviour:
   isConnected:
   - right
   - left
+  position: {x: 0, y: 0}
 --- !u!1 &836396799
 GameObject:
   m_ObjectHideFlags: 0
@@ -8879,6 +9072,7 @@ MonoBehaviour:
   isConnected:
   - left
   - right
+  position: {x: 0, y: 0}
 --- !u!1 &877085632
 GameObject:
   m_ObjectHideFlags: 0
@@ -8976,6 +9170,7 @@ MonoBehaviour:
   isConnected:
   - left
   - right
+  position: {x: 0, y: 0}
 --- !u!1 &885060096
 GameObject:
   m_ObjectHideFlags: 0
@@ -9235,6 +9430,7 @@ MonoBehaviour:
   isConnected:
   - left
   - right
+  position: {x: 0, y: 0}
 --- !u!1 &905876367
 GameObject:
   m_ObjectHideFlags: 0
@@ -9267,6 +9463,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isConnect: 00000100
+  position: {x: 0, y: 0}
 --- !u!61 &905876369
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -9620,6 +9817,7 @@ MonoBehaviour:
   isConnected:
   - left
   - right
+  position: {x: 0, y: 0}
 --- !u!1 &918154148
 GameObject:
   m_ObjectHideFlags: 0
@@ -9653,6 +9851,7 @@ MonoBehaviour:
   isConnected:
   - down
   - up
+  position: {x: 0, y: 0}
 --- !u!212 &918154150
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -9895,6 +10094,7 @@ MonoBehaviour:
   isConnected:
   - right
   - left
+  position: {x: 0, y: 0}
 --- !u!1 &940336384
 GameObject:
   m_ObjectHideFlags: 0
@@ -9992,6 +10192,7 @@ MonoBehaviour:
   isConnected:
   - up
   - down
+  position: {x: 0, y: 0}
 --- !u!1 &954012559
 GameObject:
   m_ObjectHideFlags: 0
@@ -10024,6 +10225,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isConnect: 00000100
+  position: {x: 0, y: 0}
 --- !u!61 &954012561
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -10232,6 +10434,7 @@ MonoBehaviour:
   isConnected:
   - down
   - up
+  position: {x: 0, y: 0}
 --- !u!212 &958187160
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -10393,6 +10596,7 @@ MonoBehaviour:
   isConnected:
   - right
   - left
+  position: {x: 0, y: 0}
 --- !u!1 &969385839
 GameObject:
   m_ObjectHideFlags: 0
@@ -10600,6 +10804,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isConnect: 00000000
+  position: {x: 0, y: 0}
 --- !u!212 &982525659
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -10695,6 +10900,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isConnect: 00000000
+  position: {x: 0, y: 0}
 --- !u!212 &997628682
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -10894,6 +11100,7 @@ MonoBehaviour:
   isConnected:
   - right
   - left
+  position: {x: 0, y: 0}
 --- !u!1001 &1014933740
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11008,6 +11215,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isConnect: 00000000
+  position: {x: 0, y: 0}
 --- !u!212 &1020159161
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -11172,6 +11380,7 @@ MonoBehaviour:
   - {fileID: 1850687110}
   - {fileID: 1906173305}
   - {fileID: 469586842}
+  position: {x: 0, y: 0}
 --- !u!4 &1033232562
 Transform:
   m_ObjectHideFlags: 0
@@ -11286,6 +11495,7 @@ MonoBehaviour:
   isConnected:
   - left
   - down
+  position: {x: 0, y: 0}
 --- !u!1 &1048970706
 GameObject:
   m_ObjectHideFlags: 0
@@ -11331,6 +11541,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isConnect: 00000000
+  position: {x: 0, y: 0}
 --- !u!212 &1048970709
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -11495,6 +11706,7 @@ MonoBehaviour:
   isConnected:
   - down
   - up
+  position: {x: 0, y: 0}
 --- !u!212 &1067268067
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -11737,6 +11949,7 @@ MonoBehaviour:
   isConnected:
   - down
   - up
+  position: {x: 0, y: 0}
 --- !u!1 &1096658235
 GameObject:
   m_ObjectHideFlags: 0
@@ -11915,6 +12128,7 @@ MonoBehaviour:
   isConnected:
   - right
   - left
+  position: {x: 0, y: 0}
 --- !u!1 &1109061883
 GameObject:
   m_ObjectHideFlags: 0
@@ -11947,6 +12161,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isConnect: 00010000
+  position: {x: 0, y: 0}
 --- !u!61 &1109061885
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -12138,6 +12353,7 @@ MonoBehaviour:
   isConnected:
   - down
   - up
+  position: {x: 0, y: 0}
 --- !u!1 &1117266024
 GameObject:
   m_ObjectHideFlags: 0
@@ -12316,6 +12532,7 @@ MonoBehaviour:
   isConnected:
   - left
   - right
+  position: {x: 0, y: 0}
 --- !u!1 &1145320582
 GameObject:
   m_ObjectHideFlags: 0
@@ -12442,6 +12659,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isConnect: 01000000
+  position: {x: 0, y: 0}
 --- !u!1 &1158246825
 GameObject:
   m_ObjectHideFlags: 0
@@ -12539,6 +12757,7 @@ MonoBehaviour:
   isConnected:
   - down
   - right
+  position: {x: 0, y: 0}
 --- !u!1 &1160705130
 GameObject:
   m_ObjectHideFlags: 0
@@ -12652,6 +12871,7 @@ MonoBehaviour:
   tiles:
   - {fileID: 1343112517}
   - {fileID: 2104720493}
+  position: {x: 0, y: 0}
 --- !u!4 &1163409947
 Transform:
   m_ObjectHideFlags: 0
@@ -12765,6 +12985,7 @@ MonoBehaviour:
   isConnected:
   - down
   - up
+  position: {x: 0, y: 0}
 --- !u!1 &1180027658
 GameObject:
   m_ObjectHideFlags: 0
@@ -12880,6 +13101,7 @@ MonoBehaviour:
   - {fileID: 1582276933}
   - {fileID: 328783439}
   - {fileID: 1903198993}
+  position: {x: 0, y: 0}
 --- !u!4 &1181013999
 Transform:
   m_ObjectHideFlags: 0
@@ -13027,6 +13249,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isConnect: 00000100
+  position: {x: 0, y: 0}
 --- !u!61 &1198289034
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -13235,6 +13458,7 @@ MonoBehaviour:
   - {fileID: 35020451}
   - {fileID: 528331243}
   - {fileID: 402741934}
+  position: {x: 0, y: 0}
 --- !u!4 &1240289073
 Transform:
   m_ObjectHideFlags: 0
@@ -13866,6 +14090,7 @@ MonoBehaviour:
   isConnected:
   - left
   - down
+  position: {x: 0, y: 0}
 --- !u!1 &1312829168
 GameObject:
   m_ObjectHideFlags: 0
@@ -13963,6 +14188,7 @@ MonoBehaviour:
   isConnected:
   - down
   - up
+  position: {x: 0, y: 0}
 --- !u!1 &1322336080
 GameObject:
   m_ObjectHideFlags: 0
@@ -13996,6 +14222,7 @@ MonoBehaviour:
   - {fileID: 1916311704}
   - {fileID: 389441672}
   - {fileID: 1198289033}
+  position: {x: 0, y: 0}
 --- !u!4 &1322336082
 Transform:
   m_ObjectHideFlags: 0
@@ -14110,6 +14337,7 @@ MonoBehaviour:
   isConnected:
   - right
   - up
+  position: {x: 0, y: 0}
 --- !u!1 &1343112513
 GameObject:
   m_ObjectHideFlags: 0
@@ -14236,6 +14464,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isConnect: 01000000
+  position: {x: 0, y: 0}
 --- !u!1 &1365198132
 GameObject:
   m_ObjectHideFlags: 0
@@ -14362,6 +14591,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isConnect: 00000001
+  position: {x: 0, y: 0}
 --- !u!1 &1371267115
 GameObject:
   m_ObjectHideFlags: 0
@@ -14535,6 +14765,7 @@ MonoBehaviour:
   isConnected:
   - up
   - down
+  position: {x: 0, y: 0}
 --- !u!1 &1415712381
 GameObject:
   m_ObjectHideFlags: 0
@@ -14713,6 +14944,7 @@ MonoBehaviour:
   isConnected:
   - up
   - left
+  position: {x: 0, y: 0}
 --- !u!1 &1421673825
 GameObject:
   m_ObjectHideFlags: 0
@@ -14810,6 +15042,7 @@ MonoBehaviour:
   isConnected:
   - up
   - down
+  position: {x: 0, y: 0}
 --- !u!1 &1426452006
 GameObject:
   m_ObjectHideFlags: 0
@@ -14855,6 +15088,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isConnect: 00000000
+  position: {x: 0, y: 0}
 --- !u!212 &1426452009
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -14950,6 +15184,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isConnect: 00000000
+  position: {x: 0, y: 0}
 --- !u!212 &1451638945
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -15097,6 +15332,7 @@ MonoBehaviour:
   isConnected:
   - up
   - left
+  position: {x: 0, y: 0}
 --- !u!1 &1458888501
 GameObject:
   m_ObjectHideFlags: 0
@@ -15223,6 +15459,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isConnect: 00000001
+  position: {x: 0, y: 0}
 --- !u!1 &1460157495
 GameObject:
   m_ObjectHideFlags: 0
@@ -15401,6 +15638,7 @@ MonoBehaviour:
   isConnected:
   - left
   - right
+  position: {x: 0, y: 0}
 --- !u!1 &1508591919
 GameObject:
   m_ObjectHideFlags: 0
@@ -15608,6 +15846,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isConnect: 00000000
+  position: {x: 0, y: 0}
 --- !u!212 &1520533849
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -15917,6 +16156,7 @@ MonoBehaviour:
   isConnected:
   - left
   - down
+  position: {x: 0, y: 0}
 --- !u!1 &1533773457
 GameObject:
   m_ObjectHideFlags: 0
@@ -16027,6 +16267,7 @@ Transform:
   m_Children:
   - {fileID: 295887810}
   - {fileID: 1676010573}
+  - {fileID: 281106276}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -16289,6 +16530,7 @@ MonoBehaviour:
   isConnected:
   - right
   - left
+  position: {x: 0, y: 0}
 --- !u!1 &1552150980
 GameObject:
   m_ObjectHideFlags: 0
@@ -16321,6 +16563,7 @@ MonoBehaviour:
   tiles:
   - {fileID: 1145320586}
   - {fileID: 1109061884}
+  position: {x: 0, y: 0}
 --- !u!4 &1552150982
 Transform:
   m_ObjectHideFlags: 0
@@ -16434,6 +16677,7 @@ MonoBehaviour:
   isConnected:
   - up
   - down
+  position: {x: 0, y: 0}
 --- !u!1 &1582276929
 GameObject:
   m_ObjectHideFlags: 0
@@ -16560,6 +16804,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isConnect: 01000100
+  position: {x: 0, y: 0}
 --- !u!1 &1593100991
 GameObject:
   m_ObjectHideFlags: 0
@@ -16686,6 +16931,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isConnect: 00000000
+  position: {x: 0, y: 0}
 --- !u!212 &1593413155
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -16833,6 +17079,7 @@ MonoBehaviour:
   isConnected:
   - left
   - right
+  position: {x: 0, y: 0}
 --- !u!1 &1610322044
 GameObject:
   m_ObjectHideFlags: 0
@@ -16930,6 +17177,7 @@ MonoBehaviour:
   isConnected:
   - left
   - down
+  position: {x: 0, y: 0}
 --- !u!1 &1616645435
 GameObject:
   m_ObjectHideFlags: 0
@@ -17040,6 +17288,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isConnect: 00000000
+  position: {x: 0, y: 0}
 --- !u!212 &1636427555
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -17318,6 +17567,7 @@ MonoBehaviour:
   isConnected:
   - right
   - up
+  position: {x: 0, y: 0}
 --- !u!1 &1667068430
 GameObject:
   m_ObjectHideFlags: 0
@@ -17512,6 +17762,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isConnect: 00000000
+  position: {x: 0, y: 0}
 --- !u!61 &1670532013
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -17732,6 +17983,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isConnect: 
+  position: {x: 0, y: 0}
 --- !u!212 &1674665967
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -18047,6 +18299,7 @@ MonoBehaviour:
   isConnected:
   - up
   - down
+  position: {x: 0, y: 0}
 --- !u!1 &1736925416
 GameObject:
   m_ObjectHideFlags: 0
@@ -18144,6 +18397,7 @@ MonoBehaviour:
   isConnected:
   - right
   - up
+  position: {x: 0, y: 0}
 --- !u!1 &1753370365
 GameObject:
   m_ObjectHideFlags: 0
@@ -18189,6 +18443,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isConnect: 
+  position: {x: 0, y: 0}
 --- !u!212 &1753370368
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -18417,6 +18672,7 @@ MonoBehaviour:
   isConnected:
   - up
   - down
+  position: {x: 0, y: 0}
 --- !u!1001 &1780807678
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18741,6 +18997,7 @@ MonoBehaviour:
   isConnected:
   - up
   - down
+  position: {x: 0, y: 0}
 --- !u!1 &1800069957
 GameObject:
   m_ObjectHideFlags: 0
@@ -18854,6 +19111,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isConnect: 00010000
+  position: {x: 0, y: 0}
 --- !u!61 &1821598878
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -19045,6 +19303,7 @@ MonoBehaviour:
   isConnected:
   - left
   - right
+  position: {x: 0, y: 0}
 --- !u!1 &1839323892
 GameObject:
   m_ObjectHideFlags: 0
@@ -19090,6 +19349,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isConnect: 00000000
+  position: {x: 0, y: 0}
 --- !u!212 &1839323895
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -19185,6 +19445,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isConnect: 00000000
+  position: {x: 0, y: 0}
 --- !u!212 &1840913906
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -19361,6 +19622,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isConnect: 01000000
+  position: {x: 0, y: 0}
 --- !u!1 &1852070443
 GameObject:
   m_ObjectHideFlags: 0
@@ -19458,6 +19720,7 @@ MonoBehaviour:
   isConnected:
   - up
   - down
+  position: {x: 0, y: 0}
 --- !u!1 &1859268145
 GameObject:
   m_ObjectHideFlags: 0
@@ -19555,6 +19818,7 @@ MonoBehaviour:
   isConnected:
   - left
   - right
+  position: {x: 0, y: 0}
 --- !u!1 &1859892764
 GameObject:
   m_ObjectHideFlags: 0
@@ -19652,6 +19916,7 @@ MonoBehaviour:
   isConnected:
   - down
   - up
+  position: {x: 0, y: 0}
 --- !u!1 &1861434677
 GameObject:
   m_ObjectHideFlags: 0
@@ -19749,6 +20014,7 @@ MonoBehaviour:
   isConnected:
   - down
   - right
+  position: {x: 0, y: 0}
 --- !u!1 &1865677874
 GameObject:
   m_ObjectHideFlags: 0
@@ -19875,6 +20141,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isConnect: 00000000
+  position: {x: 0, y: 0}
 --- !u!212 &1868569673
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -19958,6 +20225,7 @@ MonoBehaviour:
   isConnected:
   - down
   - up
+  position: {x: 0, y: 0}
 --- !u!212 &1870852837
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -20054,6 +20322,7 @@ MonoBehaviour:
   tiles:
   - {fileID: 1458888505}
   - {fileID: 954012560}
+  position: {x: 0, y: 0}
 --- !u!4 &1873170871
 Transform:
   m_ObjectHideFlags: 0
@@ -20171,6 +20440,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isConnect: 00010000
+  position: {x: 0, y: 0}
 --- !u!61 &1903198994
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -20391,6 +20661,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isConnect: 00010001
+  position: {x: 0, y: 0}
 --- !u!1 &1909873166
 GameObject:
   m_ObjectHideFlags: 0
@@ -20593,6 +20864,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isConnect: 00010000
+  position: {x: 0, y: 0}
 --- !u!1 &1923097144
 GameObject:
   m_ObjectHideFlags: 0
@@ -20690,6 +20962,7 @@ MonoBehaviour:
   isConnected:
   - up
   - down
+  position: {x: 0, y: 0}
 --- !u!1 &1932335531
 GameObject:
   m_ObjectHideFlags: 0
@@ -20955,6 +21228,7 @@ MonoBehaviour:
   isConnected:
   - up
   - down
+  position: {x: 0, y: 0}
 --- !u!1 &1989082889
 GameObject:
   m_ObjectHideFlags: 0
@@ -21137,6 +21411,7 @@ MonoBehaviour:
   isConnected:
   - right
   - left
+  position: {x: 0, y: 0}
 --- !u!1 &1998089200
 GameObject:
   m_ObjectHideFlags: 0
@@ -21234,6 +21509,7 @@ MonoBehaviour:
   isConnected:
   - up
   - down
+  position: {x: 0, y: 0}
 --- !u!1 &2007980202
 GameObject:
   m_ObjectHideFlags: 0
@@ -21279,6 +21555,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isConnect: 00000000
+  position: {x: 0, y: 0}
 --- !u!212 &2007980205
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -21507,6 +21784,7 @@ MonoBehaviour:
   isConnected:
   - left
   - right
+  position: {x: 0, y: 0}
 --- !u!1 &2030798985
 GameObject:
   m_ObjectHideFlags: 0
@@ -21604,6 +21882,7 @@ MonoBehaviour:
   isConnected:
   - down
   - up
+  position: {x: 0, y: 0}
 --- !u!1 &2051183950
 GameObject:
   m_ObjectHideFlags: 0
@@ -21701,6 +21980,7 @@ MonoBehaviour:
   isConnected:
   - down
   - up
+  position: {x: 0, y: 0}
 --- !u!1 &2067700654
 GameObject:
   m_ObjectHideFlags: 0
@@ -21733,6 +22013,7 @@ MonoBehaviour:
   tiles:
   - {fileID: 2067996039}
   - {fileID: 1821598877}
+  position: {x: 0, y: 0}
 --- !u!4 &2067700656
 Transform:
   m_ObjectHideFlags: 0
@@ -21875,6 +22156,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isConnect: 01000000
+  position: {x: 0, y: 0}
 --- !u!1 &2075552829
 GameObject:
   m_ObjectHideFlags: 0
@@ -21972,6 +22254,7 @@ MonoBehaviour:
   isConnected:
   - right
   - left
+  position: {x: 0, y: 0}
 --- !u!1 &2095418465
 GameObject:
   m_ObjectHideFlags: 0
@@ -22085,6 +22368,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isConnect: 00010000
+  position: {x: 0, y: 0}
 --- !u!61 &2104720494
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -22210,6 +22494,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tiles:
   - {fileID: 1670532012}
+  position: {x: 0, y: 0}
 --- !u!4 &2109926567
 Transform:
   m_ObjectHideFlags: 0
@@ -22399,6 +22684,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isConnect: 00000000
+  position: {x: 0, y: 0}
 --- !u!212 &2121071757
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -22708,6 +22994,7 @@ MonoBehaviour:
   isConnected:
   - right
   - left
+  position: {x: 0, y: 0}
 --- !u!1 &2137373985
 GameObject:
   m_ObjectHideFlags: 0
@@ -22805,6 +23092,7 @@ MonoBehaviour:
   isConnected:
   - up
   - down
+  position: {x: 0, y: 0}
 --- !u!1 &2139431370
 GameObject:
   m_ObjectHideFlags: 0
@@ -22837,6 +23125,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isConnect: 00000000
+  position: {x: 0, y: 0}
 --- !u!61 &2139431372
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -22976,6 +23265,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isConnect: 00000000
+  position: {x: 0, y: 0}
 --- !u!212 &2141833608
 SpriteRenderer:
   m_ObjectHideFlags: 0

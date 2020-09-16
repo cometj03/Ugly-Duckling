@@ -1,5 +1,4 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class SummerIdle : MonoBehaviour
 {
@@ -8,10 +7,13 @@ public class SummerIdle : MonoBehaviour
     Vector3 cloudVelocity = new Vector3(-0.1f, 0);
     private bool isCloudUp;
 
+    private GameObject maincamera;
     private float cloudWidth, cloudPosY;
 
     private void Start()
     {
+        maincamera = GameObject.FindGameObjectWithTag("MainCamera");
+        
         cloudWidth = cloud.GetComponent<SpriteRenderer>().size.x * cloud.transform.localScale.x;
         cloudPosY = cloud.transform.position.y;
     }
@@ -19,10 +21,13 @@ public class SummerIdle : MonoBehaviour
     void Update()
     {
         // 구름 반복
-        if (cloud.transform.position.x <= -cloudWidth / 4)
+        float diff = maincamera.transform.position.x - cloud.transform.position.x;
+        if (diff >= cloudWidth / 4)
             cloud.transform.position += Vector3.right * cloudWidth / 2;
+        else if (diff <= -cloudWidth / 4)
+            cloud.transform.position -= Vector3.right * cloudWidth / 2;
         
-        // 구름 움직임
+        // 구름 위아래
         if (cloud.transform.position.y > cloudPosY + 0.2f) // down
             isCloudUp = false;
         else if (cloud.transform.position.y < cloudPosY - 0.2f) // up
