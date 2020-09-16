@@ -2,7 +2,6 @@
 using SimpleJSON;
 using System.IO;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class SkinDataManager : MonoBehaviour
 {
@@ -11,9 +10,11 @@ public class SkinDataManager : MonoBehaviour
 	public GameObject skinContent;
 	public GameObject skinBox;
 
+	private string path = "/Datas/Skins.json";
+
 	public void DataToFile()
 	{
-		FileStream fs = File.Create("Assets/Datas/Skins.json");
+		FileStream fs = File.Create(path);
 		StreamWriter sw = new StreamWriter(fs);
 
 		sw.Write(JsonConvert.SerializeObject(data));
@@ -24,16 +25,7 @@ public class SkinDataManager : MonoBehaviour
 
 	public void FileToData()
 	{
-		StreamReader sr = new StreamReader("Assets/Datas/Skins.json");
-
-		if(sr == null)
-		{
-			return;
-		}
-
-		data = JSON.Parse(sr.ReadToEnd());
-
-		sr.Close();
+		data = JSON.Parse(BetterStreamingAssets.ReadAllText(path));
 	}
 
 	public void UpdateContent()
@@ -66,6 +58,8 @@ public class SkinDataManager : MonoBehaviour
 
 	private void Awake()
 	{
+		BetterStreamingAssets.Initialize();
+
 		FileToData();
 		UpdateContent();
 	}
