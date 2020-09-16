@@ -19,8 +19,8 @@ public class SkinData : MonoBehaviour
 	{
 		transform.GetChild(0).GetChild(0).GetComponent<Text>().text = displayName;
 		transform.GetChild(0).GetChild(0).GetChild(0).GetComponent<Text>().text = info;
-		transform.GetChild(1).GetChild(0).GetComponent<Text>().text = price.ToString();
+		transform.GetChild(2).GetChild(0).GetChild(0).GetComponent<Text>().text = price.ToString();
 
-		transform.GetChild(2).GetComponent<Image>().sprite = Resources.LoadAll<Sprite>("Animations/" + skinName + "/Idle")[0];
+		transform.GetChild(1).GetComponent<Image>().sprite = Resources.LoadAll<Sprite>("Animations/" + skinName + "/Idle")[0];
 	}
 }
