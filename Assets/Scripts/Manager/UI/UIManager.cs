@@ -10,18 +10,15 @@ public class UIManager : MonoBehaviour
     public GameObject mainCanvas, settingsCanvas, customizeCanvas;
     
     public GameObject[] worldBackGrounds;
-
     public GameObject[] stages;
 
     private CameraZoom _cameraZoom;
-    private BirdCustomAnimation _birdAnim;
     private int currentWorld;
     private bool isShowStages;
 
     private void Awake()
     {
         _cameraZoom = FindObjectOfType<CameraZoom>();
-        _birdAnim = FindObjectOfType<BirdCustomAnimation>();
     }
     
     public void BtnPlay(string world)
@@ -75,7 +72,13 @@ public class UIManager : MonoBehaviour
         for (int i = 0; i < worldBackGrounds.Length; i++)
         {
             if (currentWorld == i + 1)
+            {
                 worldBackGrounds[i].SetActive(true);
+                
+                Transform hole = worldBackGrounds[i].transform.GetChild(0).GetChild(0);
+                hole.localScale = Vector3.zero;
+                hole.GetComponent<Animator>().SetTrigger("Play");
+            }
             else
                 worldBackGrounds[i].SetActive(false);
         }
@@ -89,22 +92,6 @@ public class UIManager : MonoBehaviour
                 stages[i].SetActive(true);
             else
                 stages[i].SetActive(false);
-        }
-    }
-
-    public void SkinSelected(int order)
-    {
-        switch (order)
-        {
-            case 0:
-                _birdAnim.ChangeSkin("Bird");
-                break;
-            case 1:
-                _birdAnim.ChangeSkin("SchoolUniform");
-                break;
-            case 2:
-                _birdAnim.ChangeSkin("Bee");
-                break;
         }
     }
 }

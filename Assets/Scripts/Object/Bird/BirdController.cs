@@ -6,8 +6,6 @@ using UnityEngine;
 public class BirdController : MonoBehaviour
 {
 	public HorizontalButton horizontalButton;
-
-	private GameManager _gameManager;
 	
 	// bird property
 	private Transform _birdTransform;
@@ -19,9 +17,7 @@ public class BirdController : MonoBehaviour
 
 	private void Start()
 	{
-		_gameManager = FindObjectOfType<GameManager>();
-
-			localScale = gameObject.transform.localScale;
+		localScale = gameObject.transform.localScale;
 		_birdTransform = gameObject.transform;
 		_birdAnimator = GetComponent<BirdCustomAnimation>();
 		_birdRigidbody2D = GetComponent<Rigidbody2D>();
@@ -36,7 +32,7 @@ public class BirdController : MonoBehaviour
 		
 		if (birdSpeed == 0)
 			_birdAnimator.isWalking = false;
-		else if (_gameManager.currentState == GameState.CONTINUE)
+		else if (PlayerData.Instance.currentState == GameState.CONTINUE)
 		{
 			_birdTransform.position += new Vector3(birdSpeed * Time.deltaTime, 0, 0);
 			_birdAnimator.isWalking = true;

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Experimental.GlobalIllumination;
+using UnityEngine.SceneManagement;
 
 public class BirdCustomAnimation : MonoBehaviour
 {
@@ -14,7 +15,6 @@ public class BirdCustomAnimation : MonoBehaviour
 
 	SpriteRenderer player;
 
-	private GameManager _gameManager;
 	private Coroutine co_doAnim;
 	private bool isGameScene;
 
@@ -24,11 +24,7 @@ public class BirdCustomAnimation : MonoBehaviour
 		walk = Resources.LoadAll<Sprite>("Animations/" + PlayerData.Instance.currentSkin + "/Walk");
 		player = GetComponent<SpriteRenderer>();
 
-		if (FindObjectOfType<GameManager>() != null)
-		{
-			isGameScene = true;
-			_gameManager = FindObjectOfType<GameManager>();
-		}
+		isGameScene = SceneManager.GetActiveScene().buildIndex >= 2;
 
 		co_doAnim = StartCoroutine(DoAnimation());
 	}
@@ -73,7 +69,7 @@ public class BirdCustomAnimation : MonoBehaviour
 				player.sprite = idle[animationPhase];
 			}
 
-			if (isGameScene && _gameManager.currentState == GameState.OVER)
+			if (isGameScene && PlayerData.Instance.currentState == GameState.OVER)
 			{
 				PlayFallDown();
 				break;

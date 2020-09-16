@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using UnityEngine;
 
 public enum GameState
@@ -11,15 +10,19 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
     
-    public GameState currentState;
+    // public GameState currentState;
     public CameraValue cameraValue;
 
     private UIGamePanel _uiGamePanel;
     
     void Awake()
     {
-        currentState = GameState.CONTINUE;
-        _uiGamePanel = FindObjectOfType<UIGamePanel>();
+        GameObject gamePanel = GameObject.FindGameObjectWithTag("GamePanel");
+        if (gamePanel)
+            _uiGamePanel = gamePanel.GetComponent<UIGamePanel>();
+        
+        PlayerData.Instance.currentState = GameState.CONTINUE;
+        
         if (instance == null)
         {
             instance = this;
@@ -44,14 +47,16 @@ public class GameManager : MonoBehaviour
     public void GameClear()
     {
         print("Game Clear!");
-        currentState = GameState.CLEAR;
+        PlayerData.Instance.currentState = GameState.CLEAR;
         _uiGamePanel.OpenClearPanel();    // 클리어창 띄움
     }
+
+    public void GameOver() => StartCoroutine(Over());
     
-    public IEnumerator GameOver()
+    IEnumerator Over()
     {
         print("Game Over");
-        currentState = GameState.OVER;
+        PlayerData.Instance.currentState = GameState.OVER;
         yield return new WaitForSeconds(1.3f);
         _uiGamePanel.OpenOverPanel();    // 게임 오버창 띄움
     }

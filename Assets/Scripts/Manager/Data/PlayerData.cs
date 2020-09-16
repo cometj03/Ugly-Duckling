@@ -40,6 +40,8 @@ public class PlayerData : ScriptableObject
             return _instance;
         }
     }
+    
+    public GameState currentState;
 
     public SaveUserData userData;
     public SaveSettingData settingData;

@@ -17,24 +17,24 @@ public class UIGamePanel : MonoBehaviour
 
     private void Update()
     {
-#if UNITY_ANDROID
         if (Input.GetKeyDown(KeyCode.Escape))
             TogglePause();
-#endif
-        if (Input.GetKeyDown(KeyCode.Escape))
-            TogglePause();
+        
+        if (Application.platform == RuntimePlatform.Android)
+            if (Input.GetKey(KeyCode.Escape) && PlayerData.Instance.currentState == GameState.CONTINUE)
+                TogglePause();
     }
 
     public void TogglePause()
     {
         if (isPause)
         {
-            GameManager.instance.currentState = GameState.CONTINUE;
+            PlayerData.Instance.currentState = GameState.CONTINUE;
             isPause = false;
         }
         else
         {
-            GameManager.instance.currentState = GameState.PAUSE;
+            PlayerData.Instance.currentState = GameState.PAUSE;
             isPause = true;
         }
         PausePanel.SetActive(isPause);

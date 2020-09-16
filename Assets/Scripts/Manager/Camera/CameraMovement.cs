@@ -27,11 +27,11 @@ public class CameraMovement : MonoBehaviour
 	{
 		// 카메라 이동
 		maincamera.transform.position = Vector3.Lerp(maincamera.transform.position, cameraValue.cameraTarget, CameraValue.SmoothSpeed);
-		if (GameManager.instance.currentState == GameState.CONTINUE)
+		if (PlayerData.Instance.currentState == GameState.CONTINUE)
 			cameraValue.cameraTarget += Vector3.right * speed;
 		
 		// 카메라 뒤로 물러남
-		if (_birdTransform.position.x - 3f > cameraValue.cameraTarget.x && GameManager.instance.currentState == GameState.CONTINUE)
+		if (_birdTransform.position.x - 3f > cameraValue.cameraTarget.x && PlayerData.Instance.currentState == GameState.CONTINUE)
 			cameraValue.cameraTarget = new Vector3(_birdTransform.position.x + 1f, cameraValue.cameraTarget.y, -10);
 		
 	}

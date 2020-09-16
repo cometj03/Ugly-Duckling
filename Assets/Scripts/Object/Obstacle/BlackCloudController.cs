@@ -72,7 +72,7 @@ public class BlackCloudController : MonoBehaviour
             if (isOver && !gameoverOnce)
             {
                 gameoverOnce = true;
-                StartCoroutine(GameManager.instance.GameOver());
+                GameManager.instance.GameOver();
             }
         }
     }
@@ -86,6 +86,6 @@ public class BlackCloudController : MonoBehaviour
     private void OnTriggerStay2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
-            StartCoroutine(GameManager.instance.GameOver());
+            GameManager.instance.GameOver();
     }
 }
