@@ -43,6 +43,10 @@ public class GameManager : MonoBehaviour
     {
         print("Game Clear!");
         PlayerData.Instance.currentState = GameState.CLEAR;
+        
+        if (!_uiGamePanel)
+            GetGamePanel();
+        
         _uiGamePanel.OpenClearPanel();    // 클리어창 띄움
     }
 

@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-public class BlackCloudController : MonoBehaviour
+public class BlackCloud : MonoBehaviour
 {
     public ParticleSystem rain;
     

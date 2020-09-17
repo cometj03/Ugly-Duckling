@@ -41,7 +41,7 @@ public class UIManager : MonoBehaviour
         
         mainCanvas.SetActive(false);
         settingsCanvas.SetActive(true);
-        StagesSelected(0);    // All stages active false
+        StagesSelected(-1);    // All stages active false
     }
 
     public void BtnSettingsExit()
@@ -88,7 +88,8 @@ public class UIManager : MonoBehaviour
                 Transform hole = Environment.GetChild(i).GetChild(0).GetChild(0);
                 hole.position = Vector3.right * GetButtonPosX();
                 hole.localScale = Vector3.zero;
-                hole.GetComponent<Animator>().SetTrigger("Play");
+                hole.GetComponent<Animator>().SetBool("Play", true);
+                hole.GetComponent<Animator>().SetBool("Play", false);
             }
             else
             {
