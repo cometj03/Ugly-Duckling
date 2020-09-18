@@ -16,7 +16,7 @@ public class OutlineTile : MonoBehaviour
 
 	public void UpdateShape()
 	{
-		string src = "OutLines/outline";
+		string src = "Puzzle/OutLines/outline";
 
 		foreach(string connect in isConnected)
 		{
