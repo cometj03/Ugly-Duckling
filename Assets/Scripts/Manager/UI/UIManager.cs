@@ -31,11 +31,15 @@ public class UIManager : MonoBehaviour
     
     public void BtnPlay(string world)
     {
+        SoundManager.instance.PlayBtnSFX(eSFX.BtnClick1);
+        
         gameObject.GetComponent<StandbyScene>().StartGame(world);
     }
 
     public void BtnSettings()
     {
+        SoundManager.instance.PlayBtnSFX(eSFX.BtnClick1);
+        
         musicSlider.value = PlayerData.Instance.musicVolume;
         sfxSlider.value = PlayerData.Instance.sfxVolume;
         
@@ -46,6 +50,8 @@ public class UIManager : MonoBehaviour
 
     public void BtnSettingsExit()
     {
+        SoundManager.instance.PlayBtnSFX(eSFX.BtnClick1);
+        
         PlayerData.Instance.Save(eSaveType.eSetting);    // 세팅 정보 저장
         
         mainCanvas.SetActive(true);
@@ -56,6 +62,8 @@ public class UIManager : MonoBehaviour
 
     public void BtnCustomize()
     {
+        SoundManager.instance.PlayBtnSFX(eSFX.Crunchy);
+        
         moneyText.text = PlayerData.Instance.money.ToString();    // 보유 금액 표시
         gameObject.GetComponent<StandbyScene>().isCamMoving = false;
         StartCoroutine(_cameraZoom.CustomizeZoomIn());    // 줌인
@@ -63,17 +71,21 @@ public class UIManager : MonoBehaviour
 
     public void BtnCustomizeExit()
     {
+        SoundManager.instance.PlayBtnSFX(eSFX.Crunchy);
+        
         PlayerData.Instance.Save(eSaveType.eUser);    // 유저 정보 저장
         StartCoroutine(_cameraZoom.CustomizeZoomOut());    // 줌아웃
     }
 
     public void BtnStagesExit()
     {
+        SoundManager.instance.PlayBtnSFX(eSFX.BtnClick1);
         isShowStages = false;
     }
     
     public void WorldSelected(int order)
     {
+        SoundManager.instance.PlayBtnSFX(eSFX.BtnClick1);
         StagesSelected(order);
         isShowStages = true;
         currentWorld = order;

@@ -17,8 +17,6 @@ public class LevelLoader : MonoBehaviour
     private IEnumerator LoadLevel(string sceneName)
     {
         Transition.SetTrigger(Start);
-        
-        yield return new WaitForSeconds(transitionTime);
 
         eMusic musicType;
         switch (sceneName)
@@ -36,16 +34,17 @@ public class LevelLoader : MonoBehaviour
                 musicType = eMusic.MAIN;
                 break;
         }
-
+        
         SoundManager.instance.ChangeBGM(musicType);
+        
+        yield return new WaitForSeconds(transitionTime);
+        
         SceneManager.LoadScene(sceneName);
     }
     
     private IEnumerator LoadLevel(int sceneIndex)
     {
         Transition.SetTrigger(Start);
-        
-        yield return new WaitForSeconds(transitionTime);
 
         eMusic musicType;
         switch (sceneIndex)
@@ -65,6 +64,9 @@ public class LevelLoader : MonoBehaviour
         }
 
         SoundManager.instance.ChangeBGM(musicType);
+        
+        yield return new WaitForSeconds(transitionTime);
+        
         SceneManager.LoadScene(sceneIndex);
     }
 }

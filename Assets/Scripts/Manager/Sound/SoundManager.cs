@@ -3,19 +3,27 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Serialization;
 
 public enum eMusic
 {
     MAIN, SUMMER, AUTUMN, WINTER, SPRING
 }
 
+public enum eSFX
+{
+    BtnClick1, BtnClick2, Crunchy
+}
+
 public class SoundManager : MonoBehaviour
 {
-    public AudioSource musicSource;
-    public AudioSource sfxSource;
+    public AudioSource BGM_Source;
+    public AudioSource SFX_BtnSource;
 
     public AudioClip[] BGM;
-    private Dictionary<eMusic, AudioClip> bgmDictionary = new Dictionary<eMusic, AudioClip>();
+    public AudioClip[] SFX;
+    private Dictionary<eMusic, AudioClip> dictBGM = new Dictionary<eMusic, AudioClip>();
+    private Dictionary<eSFX, AudioClip> dictSFX = new Dictionary<eSFX, AudioClip>();
 
     public static SoundManager instance;
 
@@ -32,10 +40,12 @@ public class SoundManager : MonoBehaviour
             return;
         }
         
+        // Add to Dictionary
         for (int i = 0; i < BGM.Length; i++)
-        {
-            bgmDictionary.Add((eMusic) i, BGM[i]);
-        }
+            dictBGM.Add((eMusic) i, BGM[i]);
+        
+        for (int i = 0; i < SFX.Length; i++)
+            dictSFX.Add((eSFX) i, SFX[i]);
     }
 
     private void Start()
@@ -55,18 +65,26 @@ public class SoundManager : MonoBehaviour
 
     public void SetMusicVolume(float volume)
     {
-        musicSource.volume = volume;
+        BGM_Source.volume = volume;
         PlayerData.Instance.musicVolume = volume;
     }
 
     public void SetSFXVolume(float volume)
     {
-        sfxSource.volume = volume;
+        SFX_BtnSource.volume = volume;
         PlayerData.Instance.sfxVolume = volume;
     }
 
-    public void ChangeBGM(eMusic musicIndex) => StartCoroutine(ChangeMusic(bgmDictionary[musicIndex]));
+    public void ChangeBGM(eMusic musicIndex) => StartCoroutine(ChangeMusic(dictBGM[musicIndex]));
+
+    public void PlayBtnSFX(eSFX sfxIndex)
+    {
+        SFX_BtnSource.clip = dictSFX[sfxIndex];
+        SFX_BtnSource.Play();
+    }
     
+    
+    // 배경음악 변경
     IEnumerator ChangeMusic(AudioClip otherAudioClip)
     {
         float originVol = PlayerData.Instance.musicVolume;
@@ -74,22 +92,22 @@ public class SoundManager : MonoBehaviour
         while (volume > 0)
         {
             volume -= 0.01f;
-            musicSource.volume = volume;
+            BGM_Source.volume = volume;
             yield return null;
         }
 
         volume = 0;
-        yield return new WaitForSeconds(0.2f);
-        musicSource.clip = otherAudioClip;
-        musicSource.Play();
+        yield return new WaitForSeconds(0.5f);
+        BGM_Source.clip = otherAudioClip;
+        BGM_Source.Play();
 
         while (volume < originVol)
         {
             volume += 0.01f;
-            musicSource.volume = volume;
+            BGM_Source.volume = volume;
             yield return null;
         }
 
-        musicSource.volume = originVol;
+        BGM_Source.volume = originVol;
     }
 }

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6708440472831646844}
   - component: {fileID: 5386099878152449784}
   m_Layer: 0
-  m_Name: SfxSource
+  m_Name: SFX_BtnSource
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -172,13 +172,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 975bed867e98e4444a657921c9663628, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  musicSource: {fileID: 7938518657305379286}
-  sfxSource: {fileID: 5386099878152449784}
+  BGM_Source: {fileID: 7938518657305379286}
+  SFX_BtnSource: {fileID: 5386099878152449784}
   BGM:
-  - {fileID: 8300000, guid: 91dcc9818f853374bb30e607ddf6ce43, type: 3}
+  - {fileID: 8300000, guid: 701bd6e85c64dc040b3ecfbb5d609912, type: 3}
   - {fileID: 8300000, guid: 52b3f61c5318c4641bf385f8070af003, type: 3}
   - {fileID: 8300000, guid: 2904bc39848434a43a697b7c988ea46d, type: 3}
   - {fileID: 8300000, guid: 2904bc39848434a43a697b7c988ea46d, type: 3}
+  SFX:
+  - {fileID: 8300000, guid: 67290a56c0900aa4392fdad99a4d02e5, type: 3}
+  - {fileID: 8300000, guid: 434b5fd143f2c874895db093cd99d69a, type: 3}
+  - {fileID: 8300000, guid: b2ffae0ec21b40a43ad6c44e7dca7a63, type: 3}
 --- !u!1 &8389253202317573494
 GameObject:
   m_ObjectHideFlags: 0
@@ -190,7 +194,7 @@ GameObject:
   - component: {fileID: 8808435420304894996}
   - component: {fileID: 7938518657305379286}
   m_Layer: 0
-  m_Name: MusicSource
+  m_Name: BGM_Source
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -220,7 +224,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 91dcc9818f853374bb30e607ddf6ce43, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 701bd6e85c64dc040b3ecfbb5d609912, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
