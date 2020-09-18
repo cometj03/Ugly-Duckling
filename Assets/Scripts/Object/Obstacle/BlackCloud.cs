@@ -36,14 +36,16 @@ public class BlackCloud : MonoBehaviour
         {
             StartCoroutine(TurningToRain(0.4f));
             anim.SetFloat(State, 1);
-            rain.Play();
+            if(!rain.isPlaying)
+                rain.Play();
         }
         else
         {
             len = 0f;
             cloudState = CloudState.IDLE;
             anim.SetFloat(State, 0);
-            rain.Stop();
+            if(rain.isPlaying)
+                rain.Stop();
         }
     }
 
