@@ -45,8 +45,10 @@ public class PuzzleLoader : MonoBehaviour
 		{
 			OutlineTile tmp = Instantiate(outlineTile).GetComponent<OutlineTile>();
 
-			tmp.transform.position = new Vector2(iter.Value["x"], iter.Value["y"]);
+			tmp.transform.localPosition = new Vector2(iter.Value["x"], iter.Value["y"]);
+			tmp.position = tmp.transform.localPosition;
 			tmp.transform.SetParent(writingOutline.transform);
+
 			writingOutline.Insert(tmp);
 		}
 
@@ -70,7 +72,8 @@ public class PuzzleLoader : MonoBehaviour
 			{
 				Tile tmp = Instantiate(tile).GetComponent<Tile>();
 
-				tmp.transform.position = new Vector2(tiles.Value["x"], tiles.Value["y"]);
+				tmp.transform.localPosition = new Vector2(tiles.Value["x"], tiles.Value["y"]);
+				tmp.position = tmp.transform.localPosition;
 				tmp.GetComponent<SpriteRenderer>().color = blockColor;
 				tmp.transform.SetParent(writingBlock.transform);
 
@@ -88,6 +91,6 @@ public class PuzzleLoader : MonoBehaviour
 
 	private void Awake()
 	{
-		//FileToPuzzle("newPuzzle");
+		FileToPuzzle("newPuzzle");
 	}
 }
