@@ -12,6 +12,7 @@ public class SkinData : MonoBehaviour
 
 	public void SelectSkin()
 	{
+		SoundManager.instance.PlayBtnSFX(eSFX.BtnClick2);
 		GameObject.FindGameObjectWithTag("Player").GetComponent<BirdCustomAnimation>().ChangeSkin(skinName);
 	}
 
