@@ -42,6 +42,7 @@ public class PlayerData : ScriptableObject
     }
     
     public GameState currentState;
+    public int currentLevel;
 
     public SaveUserData userData;
     public SaveSettingData settingData;

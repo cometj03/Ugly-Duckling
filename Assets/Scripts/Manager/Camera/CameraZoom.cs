@@ -25,7 +25,7 @@ public class CameraZoom : MonoBehaviour
     public IEnumerator CustomizeZoomIn()
     {
         isCamZoomimg = true;
-        while (mainCamera.orthographicSize >= customizeZoom + 0.01f && isCamZoomimg)
+        while (mainCamera.orthographicSize >= customizeZoom + 0.003f && isCamZoomimg)
         {
             mainCamera.orthographicSize =
                 Mathf.Lerp(mainCamera.orthographicSize, customizeZoom, Time.deltaTime * zoomLerpSpeed);
@@ -45,7 +45,7 @@ public class CameraZoom : MonoBehaviour
     public IEnumerator CustomizeZoomOut()
     {
         isCamZoomimg = false;
-        while (mainCamera.orthographicSize <= originZoom - 0.01f && !isCamZoomimg)
+        while (mainCamera.orthographicSize <= originZoom - 0.003f && !isCamZoomimg)
         {
             mainCamera.orthographicSize =
                 Mathf.Lerp(mainCamera.orthographicSize, originZoom, Time.deltaTime * zoomLerpSpeed);

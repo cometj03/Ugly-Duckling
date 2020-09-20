@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
@@ -24,16 +25,32 @@ public class UIManager : MonoBehaviour
     private int currentWorld;
     private bool isShowStages;
 
-    private void Awake()
+    private void Start()
     {
         _cameraZoom = FindObjectOfType<CameraZoom>();
+        
+        // 초기 세팅
+        mainCanvas.SetActive(true);
+        settingsCanvas.SetActive(false);
+        customizeCanvas.SetActive(false);
+        for (int i = 0; i < stages.childCount; i++)
+            stages.GetChild(i).gameObject.SetActive(false);
     }
     
-    public void BtnPlay(string world)
+    public void BtnPlay()
     {
         SoundManager.instance.PlayBtnSFX(eSFX.BtnClick1);
+
+        // 클릭한 스테이지 버튼 불러옴
+        GameObject clickedBtn = EventSystem.current.currentSelectedGameObject;
         
-        gameObject.GetComponent<StandbyScene>().StartGame(world);
+        // 레벨 저장
+        string levelString = clickedBtn.transform.GetChild(0).GetComponent<Text>().text;
+        PlayerData.Instance.currentLevel = System.Convert.ToInt32(levelString);
+        // 계절 이름 가져옴
+        string worldName = clickedBtn.transform.parent.name;
+        
+        FindObjectOfType<StandbyScene>().StartGame(worldName);
     }
 
     public void BtnSettings()

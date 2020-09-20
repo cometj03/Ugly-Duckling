@@ -42,14 +42,14 @@ public class UIMovement : MonoBehaviour
         isButtonsCome = true;
         Vector3 buttonPos = _buttonsRect.anchoredPosition = new Vector3(_buttonsRect.anchoredPosition.x, 100);
 
-        while (_buttonsRect.anchoredPosition.y >= -130 && isButtonsCome)
+        while (_buttonsRect.anchoredPosition.y >= -100 && isButtonsCome)
         {
-            buttonPos.y = Mathf.Lerp(buttonPos.y, -100.5f, 0.01f);
+            buttonPos.y = Mathf.Lerp(buttonPos.y, -100.3f, 0.025f);
             _buttonsRect.anchoredPosition = buttonPos;
 
             yield return null;
         }
-
+        
         isButtonsCome = false;
     }
 
@@ -61,7 +61,7 @@ public class UIMovement : MonoBehaviour
         
         while (_buttonsRect.anchoredPosition.y <= 100)
         {
-            buttonPos.y = Mathf.Lerp(buttonPos.y, 100.5f, 0.01f);
+            buttonPos.y = Mathf.Lerp(buttonPos.y, 100.5f, 0.025f);
             _buttonsRect.anchoredPosition = buttonPos;
             
             yield return null;
