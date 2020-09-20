@@ -13,6 +13,8 @@ public class PuzzleLoader : MonoBehaviour
 	public GameObject outlineTile;
 	public GameObject outline;
 
+	public string puzzlename;
+
 	Puzzle writingPuzzle;
 	Outline writingOutline;
 	Block writingBlock;
@@ -91,6 +93,6 @@ public class PuzzleLoader : MonoBehaviour
 
 	private void Awake()
 	{
-		FileToPuzzle("newPuzzle");
+		FileToPuzzle(puzzlename);
 	}
 }

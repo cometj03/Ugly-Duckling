@@ -177,7 +177,7 @@ MonoBehaviour:
   BGM:
   - {fileID: 8300000, guid: 701bd6e85c64dc040b3ecfbb5d609912, type: 3}
   - {fileID: 8300000, guid: 52b3f61c5318c4641bf385f8070af003, type: 3}
-  - {fileID: 8300000, guid: 2904bc39848434a43a697b7c988ea46d, type: 3}
+  - {fileID: 8300000, guid: 168ce0d018968df44a94a269d1213917, type: 3}
   - {fileID: 8300000, guid: 2904bc39848434a43a697b7c988ea46d, type: 3}
   SFX:
   - {fileID: 8300000, guid: 67290a56c0900aa4392fdad99a4d02e5, type: 3}
