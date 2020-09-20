@@ -65,7 +65,7 @@ public class PuzzleManager : MonoBehaviour
 
 						foreach (var anothertile in selectPuzzle.outline.tiles)
 						{
-							if (tilePosition.y == anothertile.position.y && tilePosition.x <= anothertile.position.x)
+							if (tilePosition.y == anothertile.position.y && tilePosition.x <= anothertile.position.x && anothertile.isConnected.IndexOf("right") == -1)
 							{
 								crossCount++;
 							}
