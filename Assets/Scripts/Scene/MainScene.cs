@@ -40,7 +40,7 @@ public class MainScene : MonoBehaviour
 		MovingCloud();
 		TextFading();
 		AroundCamera();
-		// BGDucklings();
+		BGDucklings();
 
 		// 뒤로가기 종료
 		if (Application.platform == RuntimePlatform.Android)
@@ -93,17 +93,26 @@ public class MainScene : MonoBehaviour
 
 	private void AroundCamera()
     {
-		float dx = Input.GetAxis("Horizontal");
+		/*float dx = Input.GetAxis("Horizontal");
 		float dy = Input.GetAxis("Vertical");
 		if (Application.platform == RuntimePlatform.Android)
         {
 			dx = Input.acceleration.x;
 			dy = Input.acceleration.y;
-        }
+        }*/
+		
+		Vector3 dir = Vector3.zero;
+		dir.x = Input.acceleration.x;
+		dir.y = Input.acceleration.y;
+		
+		Debug.Log(dir);
 
-		cameraPos.x = dx / 3;
-		cameraPos.y = dy / 5;
-	}
+		if (dir.sqrMagnitude > 1)
+			dir.Normalize();
+		
+		dir.z = -10;
+		cameraPos = dir / 4;
+    }
 
 	private void BGDucklings()
     {
@@ -112,7 +121,7 @@ public class MainScene : MonoBehaviour
 		else if (bgDuck.position.x < -3) // right
 			isDuckRight = true;
 
-		Vector3 velo = Vector3.right * (isDuckRight ? 0.5f : -0.5f) * Time.deltaTime;
+		Vector3 velo = Vector3.right * ((isDuckRight ? 0.5f : -0.5f) * Time.deltaTime);
 		bgDuck.position += velo;
 		bgDuck.GetComponent<SpriteRenderer>().flipX = !isDuckRight;
 		for (int i = 0; i < 3; i++)
