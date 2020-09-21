@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using UniRx;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -36,6 +37,9 @@ public class UIManager : MonoBehaviour
         customizeCanvas.SetActive(false);
 
         StagesSelected(-1);    // All stages invisable
+        
+        // 보유금액의 변경을 감지하고 변경되면 moneyText에 갱신하기
+        PlayerData.Instance.MoneyProperty.Subscribe(value => moneyText.text = value.ToString());
     }
     
     public void BtnPlay()
@@ -82,7 +86,7 @@ public class UIManager : MonoBehaviour
     {
         SoundManager.instance.PlayBtnSFX(eSFX.Crunchy);
         
-        moneyText.text = PlayerData.Instance.money.ToString();    // 보유 금액 표시
+        moneyText.text = PlayerData.Instance.MoneyProperty.Value.ToString();    // 보유 금액 표시
         gameObject.GetComponent<StandbyScene>().isCamMoving = false;
         StartCoroutine(_cameraZoom.CustomizeZoomIn());    // 줌인
     }

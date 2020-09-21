@@ -7,7 +7,7 @@ public class SaveUserData : SaveData
     {
         strSave = "";
 
-        strSave += "money:" + PlayerData.Instance.money;
+        strSave += "money:" + PlayerData.Instance.MoneyProperty.Value;
         strSave += "/currentSkin:" + PlayerData.Instance.currentSkin;
 
         base.Save(saveType);
@@ -21,7 +21,7 @@ public class SaveUserData : SaveData
         
         base.Load(saveType);
 
-        PlayerData.Instance.money = System.Convert.ToInt32(loadDataDictionary["money"]);
+        PlayerData.Instance.MoneyProperty.Value = System.Convert.ToInt32(loadDataDictionary["money"]);
         PlayerData.Instance.currentSkin = loadDataDictionary["currentSkin"];
     }
 }

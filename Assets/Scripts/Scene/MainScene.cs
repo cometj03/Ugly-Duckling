@@ -105,8 +105,6 @@ public class MainScene : MonoBehaviour
 		dir.x = Input.acceleration.x;
 		dir.y = Input.acceleration.y;
 		
-		Debug.Log(dir);
-
 		if (dir.sqrMagnitude > 1)
 			dir.Normalize();
 		

@@ -3,7 +3,7 @@
     "skinName": "Bird",
     "displayName": "기본",
     "info": "귀여운 오리입니다.",
-    "price": 10
+    "price": 1
   },
   {
     "skinName": "SchoolUniform",
@@ -15,6 +15,6 @@
     "skinName": "Bee",
     "displayName": "벌",
     "info": "위이잉",
-    "price": 10
+    "price": 20
   }
 ]

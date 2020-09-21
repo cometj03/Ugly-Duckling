@@ -1,4 +1,5 @@
 ﻿using System.Runtime.InteropServices;
+using UniRx;
 using UnityEngine;
 
 #if UNITY_EDITOR
@@ -41,13 +42,15 @@ public class PlayerData : ScriptableObject
         }
     }
     
+    // Global
     public GameState currentState;
     public int currentLevel;
 
+    // saved data variable
     public SaveUserData userData;
     public SaveSettingData settingData;
-
-    public int money;
+    
+    public ReactiveProperty<int> MoneyProperty = new ReactiveProperty<int>();
     public string currentSkin;
     public float musicVolume, sfxVolume;
 

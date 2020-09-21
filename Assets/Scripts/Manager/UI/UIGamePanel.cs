@@ -22,7 +22,7 @@ public class UIGamePanel : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) && PlayerData.Instance.currentState == GameState.CONTINUE)
             TogglePause();
         
         if (Application.platform == RuntimePlatform.Android)
