@@ -4,7 +4,7 @@ public class SummerIdle : MonoBehaviour
 {
     [SerializeField] GameObject cloud = default;
 
-    Vector3 cloudVelocity = new Vector3(-0.1f, 0);
+    public Vector3 cloudVelocity = Vector3.zero;
     private bool isCloudUp;
 
     private GameObject maincamera;
@@ -20,12 +20,7 @@ public class SummerIdle : MonoBehaviour
 
     void Update()
     {
-        // 구름 반복
-        float diff = maincamera.transform.position.x - cloud.transform.position.x;
-        if (diff >= cloudWidth / 4)
-            cloud.transform.position += Vector3.right * cloudWidth / 2;
-        else if (diff <= -cloudWidth / 4)
-            cloud.transform.position -= Vector3.right * cloudWidth / 2;
+        RepeatObject(cloud, cloudWidth);
         
         // 구름 위아래
         if (cloud.transform.position.y > cloudPosY + 0.2f) // down
@@ -34,6 +29,18 @@ public class SummerIdle : MonoBehaviour
             isCloudUp = true;
 
         cloudVelocity.y = isCloudUp ? 0.05f : -0.05f;
+
+        if (PlayerData.Instance.currentState != GameState.CONTINUE)
+            cloudVelocity.x = -0.1f;
         cloud.transform.position += cloudVelocity * Time.deltaTime;
+    }
+    
+    private void RepeatObject(GameObject g, float width)
+    {
+        float diff = maincamera.transform.position.x - g.transform.position.x;
+        if (diff >= width / 4)
+            g.transform.position += Vector3.right * width / 2;
+        else if (diff <= -width / 4)
+            g.transform.position -= Vector3.right * width / 2;
     }
 }

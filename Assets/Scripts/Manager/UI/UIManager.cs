@@ -104,9 +104,9 @@ public class UIManager : MonoBehaviour
     public void WorldSelected(int order)
     {
         SoundManager.instance.PlayBtnSFX(eSFX.BtnClick1);
-        StagesSelected(order);
         isShowStages = true;
         currentWorld = order;
+        StagesSelected(order);
 
         for (int i = 0; i < Environment.childCount; i++)
         {
@@ -134,8 +134,8 @@ public class UIManager : MonoBehaviour
         {
             if (order == i)
             {
-                StartCoroutine(StageFadeIn());
                 stages.GetChild(i).gameObject.SetActive(true);
+                StartCoroutine(StageFadeIn());
             }
             else
                 stages.GetChild(i).gameObject.SetActive(false);
@@ -145,12 +145,16 @@ public class UIManager : MonoBehaviour
     IEnumerator StageFadeIn()
     {
         float alpha = 0f;
+
+        CanvasGroup stageCanvasGroup = stages.GetChild(currentWorld).GetComponent<CanvasGroup>();
         while (alpha < 1)
         {
-            stages.GetChild(currentWorld).GetComponent<CanvasGroup>().alpha = alpha;
-            alpha += 0.05f;
+            stageCanvasGroup.alpha = alpha;
+            alpha += 0.02f;
             yield return null;
         }
+
+        stageCanvasGroup.alpha = 1;
     }
 
     private float GetButtonPosX()

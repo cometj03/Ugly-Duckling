@@ -13,15 +13,19 @@ public class BirdController : MonoBehaviour
 	private Rigidbody2D _birdRigidbody2D;
 	private Vector3 localScale;
 	private float birdSpeed;
-	private bool can_jump = true;
+	private bool can_jump;
 
 	private void Start()
 	{
+		// TODO:
+		PlayerData.Instance.currentState = GameState.CONTINUE;
+		
 		localScale = gameObject.transform.localScale;
 		_birdTransform = gameObject.transform;
 		_birdAnimator = GetComponent<BirdCustomAnimation>();
 		_birdRigidbody2D = GetComponent<Rigidbody2D>();
 		_birdAnimator.isWalking = false;
+		can_jump = true;
 	}
 
 	private void Update()
@@ -53,7 +57,7 @@ public class BirdController : MonoBehaviour
 		}
 	}
 
-	private void OnTriggerEnter2D(Collider2D collision)
+	private void OnTriggerStay2D(Collider2D collision)
 	{
 		can_jump = true;
 	}

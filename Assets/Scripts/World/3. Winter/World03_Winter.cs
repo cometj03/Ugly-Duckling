@@ -43,7 +43,7 @@ public class World03_Winter : MonoBehaviour
     private void MoveBgObject(GameObject gameObject, float offset, float ratio)
     {
         Vector3 pos = gameObject.transform.position;
-        pos.x = Mathf.Lerp(pos.x, cameraValue.cameraTarget.x * ratio + offset, CameraValue.SmoothSpeed);
+        pos.x = Mathf.Lerp(pos.x, cameraValue.backgroundTarget.x * ratio + offset, CameraValue.SmoothSpeed);
         gameObject.transform.position = pos;
     }
 }

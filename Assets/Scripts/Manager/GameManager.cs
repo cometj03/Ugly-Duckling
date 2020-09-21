@@ -12,11 +12,14 @@ public class GameManager : MonoBehaviour
     
     public CameraValue cameraValue;
 
+    private Transform _birdTransform;
+    private Transform _camTransform;
+    
     private UIGamePanel _uiGamePanel;
     
     void Awake()
     {
-        PlayerData.Instance.currentState = GameState.CONTINUE;
+        PlayerData.Instance.currentState = GameState.PAUSE;
 
         if (instance == null)
         {
@@ -33,10 +36,23 @@ public class GameManager : MonoBehaviour
         PlayerData.Instance.Load(eSaveType.eAll);    // 게임 시작시 모든 데이터 불러옴
     }
     
-    void FixedUpdate()
+    void LateUpdate()
     {
         if (Input.GetKeyDown(KeyCode.Space))
             GameClear();
+
+        if (PlayerData.Instance.currentState == GameState.CONTINUE)
+        {
+            if (!_birdTransform)
+                _birdTransform = FindObjectOfType<BirdController>().transform;
+            if (!_camTransform)
+                _camTransform = FindObjectOfType<CameraMovement>().transform;
+            
+            if (_camTransform.position.x - _birdTransform.position.x > 6.5f         // 카메라 밖으로 나감
+                || _camTransform.position.y - _birdTransform.position.y > 10)    // 밑으로 떨어짐 
+                GameOver();
+
+        }
     }
 
     public void GameClear()
@@ -66,6 +82,7 @@ public class GameManager : MonoBehaviour
     
     public void CameraReset()
     {
+        cameraValue.backgroundTarget = Vector3.back * 10;
         cameraValue.cameraTarget = Vector3.back * 10;
     }
 

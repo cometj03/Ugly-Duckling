@@ -1437,6 +1437,7 @@ GameObject:
   - component: {fileID: 5510732383017135303}
   - component: {fileID: 5510732383017135300}
   - component: {fileID: 5510732383017135321}
+  - component: {fileID: 1814262890448225251}
   m_Layer: 0
   m_Name: GamePanel-Canvas
   m_TagString: GamePanel
@@ -1541,6 +1542,18 @@ MonoBehaviour:
   PausePanel: {fileID: 5510732382274879647}
   ClearPanel: {fileID: 5510732382372730988}
   OverPanel: {fileID: 5510732382807506308}
+--- !u!225 &1814262890448225251
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5510732383017135298}
+  m_Enabled: 1
+  m_Alpha: 0
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &5510732383153068878
 GameObject:
   m_ObjectHideFlags: 0

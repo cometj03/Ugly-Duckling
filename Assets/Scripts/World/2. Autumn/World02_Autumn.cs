@@ -7,19 +7,23 @@ public class World02_Autumn : MonoBehaviour
     [SerializeField] GameObject background = default;
     [SerializeField] GameObject sun = default;
     [SerializeField] GameObject floor = default;
+    [SerializeField] GameObject cloud = default;
+    [SerializeField] GameObject backyard = default;
 
     private GameObject maincamera;
-    private float floorWidth, cloudWidth;
-    private float sunOffset;
+    private float floorWidth;
+    private float sunOffset, cloudOffset, backyardOffset;
     
     
     void Start()
     {
-        // 바닥 가로 길이
+        // 가로 길이
         floorWidth = floor.GetComponent<SpriteRenderer>().size.x * floor.transform.localScale.x;
         
         maincamera = GameObject.FindGameObjectWithTag("MainCamera");
-        sunOffset = sun.transform.position.x - cameraValue.cameraTarget.x;
+        sunOffset = sun.transform.position.x - cameraValue.backgroundTarget.x;
+        cloudOffset = cloud.transform.position.x - cameraValue.backgroundTarget.x;
+        backyardOffset = backyard.transform.position.x - cameraValue.backgroundTarget.x;
     }
 
     void FixedUpdate()
@@ -36,12 +40,14 @@ public class World02_Autumn : MonoBehaviour
         bgPos.x = maincamera.transform.position.x;
         background.transform.position = bgPos;
         MoveBgObject(sun, sunOffset, 0.95f);
+        MoveBgObject(cloud, cloudOffset, 0.9f);
+        MoveBgObject(backyard, backyardOffset, 0.5f);
     }
     
     private void MoveBgObject(GameObject gameObject, float offset, float ratio)
     {
         Vector3 pos = gameObject.transform.position;
-        pos.x = Mathf.Lerp(pos.x, cameraValue.cameraTarget.x * ratio + offset, CameraValue.SmoothSpeed);
+        pos.x = Mathf.Lerp(pos.x, cameraValue.backgroundTarget.x * ratio + offset, CameraValue.SmoothSpeed);
         gameObject.transform.position = pos;
     }
 }

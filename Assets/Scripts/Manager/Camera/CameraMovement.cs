@@ -13,7 +13,7 @@ public class CameraMovement : MonoBehaviour
 	{
 		maincamera = gameObject.GetComponent<Camera>();
 		
-		cameraValue.cameraTarget = maincamera.transform.position;	// Initialized cameraTarget
+		cameraValue.cameraTarget = cameraValue.backgroundTarget = maincamera.transform.position;	// Initialized cameraTarget
 		speed = 0.01f;
 	}
 
@@ -27,12 +27,26 @@ public class CameraMovement : MonoBehaviour
 	{
 		// 카메라 이동
 		maincamera.transform.position = Vector3.Lerp(maincamera.transform.position, cameraValue.cameraTarget, CameraValue.SmoothSpeed);
+
 		if (PlayerData.Instance.currentState == GameState.CONTINUE)
+		{
 			cameraValue.cameraTarget += Vector3.right * speed;
-		
-		// 카메라 뒤로 물러남
-		if (_birdTransform.position.x - 3f > cameraValue.cameraTarget.x && PlayerData.Instance.currentState == GameState.CONTINUE)
-			cameraValue.cameraTarget = new Vector3(_birdTransform.position.x + 1f, cameraValue.cameraTarget.y, -10);
-		
+			cameraValue.backgroundTarget += Vector3.right * speed;
+
+
+			// 카메라 뒤로 물러남
+			if (_birdTransform.position.x - 3f > cameraValue.cameraTarget.x)
+			{
+				var position = _birdTransform.position;
+				cameraValue.cameraTarget.x = position.x + 1;
+				cameraValue.backgroundTarget.x = position.x + 1;
+			}
+
+			// 오리가 위로 올라가면 카메라도 위로
+			if (_birdTransform.position.y > 0.5f)
+				cameraValue.cameraTarget.y = 1.2f;
+			else
+				cameraValue.cameraTarget.y = 0;
+		}
 	}
 }

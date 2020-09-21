@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 8791911351687817817}
   - component: {fileID: 7930318817102616465}
   - component: {fileID: 8302689584829118828}
+  - component: {fileID: 8051486177795944622}
   - component: {fileID: 361471131256517321}
   - component: {fileID: 9011055589061116316}
-  - component: {fileID: 8051486177795944622}
   m_Layer: 0
   m_Name: obstacle_Wolf
   m_TagString: Untagged
@@ -104,34 +104,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!70 &361471131256517321
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5420759445633624897}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.14670691, y: 0.000000017488825}
-  m_Size: {x: 2.706596, y: 1.2000026}
-  m_Direction: 1
---- !u!114 &9011055589061116316
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5420759445633624897}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e8c752acb0f1c6d48b2e12b64c8f6080, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!50 &8051486177795944622
 Rigidbody2D:
   serializedVersion: 4
@@ -153,3 +125,31 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!70 &361471131256517321
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5420759445633624897}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.08432588, y: 0.0000000100524264}
+  m_Size: {x: 2.154037, y: 1.2000155}
+  m_Direction: 1
+--- !u!114 &9011055589061116316
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5420759445633624897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8c752acb0f1c6d48b2e12b64c8f6080, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

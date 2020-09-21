@@ -1225,6 +1225,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1201917385984855952, guid: 211510d9c062b9f46a1fff510260c9d8,
+        type: 3}
+      propertyPath: cloudVelocity.x
+      value: -0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 1201917385984855954, guid: 211510d9c062b9f46a1fff510260c9d8,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1642,7 +1647,7 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 491593707}
   m_Enabled: 1
-  m_Alpha: 0
+  m_Alpha: 1
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
@@ -3917,6 +3922,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 920614133}
   m_CullTransparentMesh: 0
+--- !u!1 &921807247 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4626933624010691173, guid: 73af060d12828af4a946c1304f3cd762,
+    type: 3}
+  m_PrefabInstance: {fileID: 4626933624650468438}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &975686607
 GameObject:
   m_ObjectHideFlags: 0
@@ -5292,7 +5303,7 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1355679526}
   m_Enabled: 1
-  m_Alpha: 0
+  m_Alpha: 1
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
@@ -6958,7 +6969,7 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1713189107}
   m_Enabled: 1
-  m_Alpha: 0
+  m_Alpha: 1
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
@@ -8626,6 +8637,12 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 1829982839}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2140018126 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4626933623705312038, guid: 73af060d12828af4a946c1304f3cd762,
+    type: 3}
+  m_PrefabInstance: {fileID: 4626933624650468438}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2779219588805024539
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8826,6 +8843,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 621318954}
     m_Modifications:
+    - target: {fileID: 2769598959757935934, guid: 73af060d12828af4a946c1304f3cd762,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4084470736330488395, guid: 73af060d12828af4a946c1304f3cd762,
+        type: 3}
+      propertyPath: cloud
+      value: 
+      objectReference: {fileID: 2140018126}
+    - target: {fileID: 4084470736330488395, guid: 73af060d12828af4a946c1304f3cd762,
+        type: 3}
+      propertyPath: backyard
+      value: 
+      objectReference: {fileID: 921807247}
     - target: {fileID: 4626933623038613728, guid: 73af060d12828af4a946c1304f3cd762,
         type: 3}
       propertyPath: m_Name
