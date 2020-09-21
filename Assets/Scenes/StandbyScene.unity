@@ -1536,6 +1536,7 @@ GameObject:
   - component: {fileID: 491593711}
   - component: {fileID: 491593710}
   - component: {fileID: 491593709}
+  - component: {fileID: 491593712}
   m_Layer: 0
   m_Name: Summer
   m_TagString: Untagged
@@ -1633,6 +1634,18 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!225 &491593712
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 491593707}
+  m_Enabled: 1
+  m_Alpha: 0
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!224 &508920917 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2779219588316326755, guid: 23548130bb0f28546bd42d02e2d36e92,
@@ -5173,6 +5186,7 @@ GameObject:
   - component: {fileID: 1355679530}
   - component: {fileID: 1355679529}
   - component: {fileID: 1355679528}
+  - component: {fileID: 1355679531}
   m_Layer: 0
   m_Name: Winter
   m_TagString: Untagged
@@ -5270,6 +5284,18 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!225 &1355679531
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1355679526}
+  m_Enabled: 1
+  m_Alpha: 0
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1001 &1410001768
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6826,6 +6852,7 @@ GameObject:
   - component: {fileID: 1713189111}
   - component: {fileID: 1713189110}
   - component: {fileID: 1713189109}
+  - component: {fileID: 1713189112}
   m_Layer: 0
   m_Name: Autumn
   m_TagString: Untagged
@@ -6923,6 +6950,18 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!225 &1713189112
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1713189107}
+  m_Enabled: 1
+  m_Alpha: 0
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!4 &1747059012 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4239654739324789894, guid: 730b426e05c7ed945b838c909fe43444,

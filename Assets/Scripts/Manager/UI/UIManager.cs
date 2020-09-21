@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
@@ -33,8 +34,8 @@ public class UIManager : MonoBehaviour
         mainCanvas.SetActive(true);
         settingsCanvas.SetActive(false);
         customizeCanvas.SetActive(false);
-        for (int i = 0; i < stages.childCount; i++)
-            stages.GetChild(i).gameObject.SetActive(false);
+
+        StagesSelected(-1);    // All stages invisable
     }
     
     public void BtnPlay()
@@ -62,7 +63,7 @@ public class UIManager : MonoBehaviour
         
         mainCanvas.SetActive(false);
         settingsCanvas.SetActive(true);
-        StagesSelected(-1);    // All stages active false
+        StagesSelected(-1);    // All stages invisable
     }
 
     public void BtnSettingsExit()
@@ -113,7 +114,7 @@ public class UIManager : MonoBehaviour
             {
                 Environment.GetChild(i).gameObject.SetActive(true);
                 
-                Debug.Log(GetButtonPosX());
+                // Debug.Log(GetButtonPosX());
                 Transform hole = Environment.GetChild(i).GetChild(0).GetChild(0);
                 hole.position = Vector3.right * GetButtonPosX();
                 hole.localScale = Vector3.zero;
@@ -132,9 +133,23 @@ public class UIManager : MonoBehaviour
         for (int i = 0; i < stages.childCount; i++)
         {
             if (order == i)
+            {
+                StartCoroutine(StageFadeIn());
                 stages.GetChild(i).gameObject.SetActive(true);
+            }
             else
                 stages.GetChild(i).gameObject.SetActive(false);
+        }
+    }
+
+    IEnumerator StageFadeIn()
+    {
+        float alpha = 0f;
+        while (alpha < 1)
+        {
+            stages.GetChild(currentWorld).GetComponent<CanvasGroup>().alpha = alpha;
+            alpha += 0.05f;
+            yield return null;
         }
     }
 
