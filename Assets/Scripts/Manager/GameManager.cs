@@ -66,8 +66,13 @@ public class GameManager : MonoBehaviour
         _uiGamePanel.OpenClearPanel();    // 클리어창 띄움
     }
 
-    public void GameOver() => StartCoroutine(Over());
-    
+    public void GameOver()
+    {
+        if (PlayerData.Instance.currentState == GameState.OVER)
+            return;
+        StartCoroutine(Over());
+    }
+
     IEnumerator Over()
     {
         print("Game Over");

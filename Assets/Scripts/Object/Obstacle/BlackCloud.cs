@@ -18,8 +18,6 @@ public class BlackCloud : MonoBehaviour
     private static readonly int State = Animator.StringToHash("State");
     private float len;
 
-    private bool gameoverOnce;
-
     void Start()
     {
         anim = GetComponent<Animator>();
@@ -27,7 +25,6 @@ public class BlackCloud : MonoBehaviour
 
         anim.SetFloat(State, 0);
         cloudState = CloudState.IDLE;
-        gameoverOnce = false;
     }
 
     void Update()
@@ -70,9 +67,8 @@ public class BlackCloud : MonoBehaviour
                 scanObject = null;
             }
 
-            if (isOver && !gameoverOnce)
+            if (isOver && PlayerData.Instance.currentState != GameState.OVER)
             {
-                gameoverOnce = true;
                 GameManager.instance.GameOver();
             }
         }
