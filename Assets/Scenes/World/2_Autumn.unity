@@ -130,31 +130,6 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4672019441952101617, guid: 1bf2e98a773e901429a3ea968ef5954d,
         type: 3}
-      propertyPath: ExternalForcesModule.enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4672019441952101617, guid: 1bf2e98a773e901429a3ea968ef5954d,
-        type: 3}
-      propertyPath: CollisionModule.enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4672019441952101617, guid: 1bf2e98a773e901429a3ea968ef5954d,
-        type: 3}
-      propertyPath: CollisionModule.quality
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4672019441952101617, guid: 1bf2e98a773e901429a3ea968ef5954d,
-        type: 3}
-      propertyPath: CollisionModule.type
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4672019441952101617, guid: 1bf2e98a773e901429a3ea968ef5954d,
-        type: 3}
-      propertyPath: CollisionModule.collisionMode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4672019441952101617, guid: 1bf2e98a773e901429a3ea968ef5954d,
-        type: 3}
       propertyPath: CollisionModule.radiusScale
       value: 0.1
       objectReference: {fileID: 0}
