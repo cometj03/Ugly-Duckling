@@ -50,7 +50,7 @@ public class MainScene : MonoBehaviour
 
 	private void FixedUpdate()
     {
-		maincamera.position = Vector3.Lerp(maincamera.position, cameraPos, 0.1f);
+		maincamera.position = Vector3.Lerp(maincamera.position, cameraPos, 0.8f);
     }
 
 	private void MovingCloud()
@@ -109,7 +109,7 @@ public class MainScene : MonoBehaviour
 			dir.Normalize();
 		
 		dir.z = -10;
-		cameraPos = dir / 4;
+		cameraPos = dir / 3;
     }
 
 	private void BGDucklings()

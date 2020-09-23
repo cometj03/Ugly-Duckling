@@ -38,9 +38,6 @@ public class GameManager : MonoBehaviour
     
     void LateUpdate()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-            GameClear();
-
         if (PlayerData.Instance.currentState == GameState.CONTINUE)
         {
             if (!_birdTransform)
@@ -51,7 +48,6 @@ public class GameManager : MonoBehaviour
             if (_camTransform.position.x - _birdTransform.position.x > 6.5f         // 카메라 밖으로 나감
                 || _camTransform.position.y - _birdTransform.position.y > 10)    // 밑으로 떨어짐 
                 GameOver();
-
         }
     }
 
