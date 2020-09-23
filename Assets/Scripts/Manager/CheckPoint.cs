@@ -6,7 +6,7 @@ public class CheckPoint : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            PlayerData.Instance.MoneyProperty.Value += 2;    // 깃털 2개 획득
+            GameManager.instance.PlayerMoneyUpdate(2);    // 깃털 2개 획득
             FindObjectOfType<GameManager>().GameClear();
         }
     }

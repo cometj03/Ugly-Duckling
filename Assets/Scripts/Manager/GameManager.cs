@@ -87,5 +87,10 @@ public class GameManager : MonoBehaviour
         cameraValue.cameraTarget = Vector3.back * 10;
     }
 
+    public void PlayerMoneyUpdate(int amount)
+    {
+        PlayerData.Instance.MoneyProperty.Value += amount;
+    }
+
     private void GetGamePanel() => _uiGamePanel = GameObject.FindGameObjectWithTag("GamePanel").GetComponent<UIGamePanel>();
 }
