@@ -2,6 +2,7 @@
 using UniRx;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
@@ -39,12 +40,16 @@ public class UIManager : MonoBehaviour
         StagesSelected(-1);    // All stages invisable
         
         // 보유금액의 변경을 감지하고 변경되면 moneyText에 갱신하기
-        PlayerData.Instance.MoneyProperty.Subscribe(value => moneyText.text = value.ToString());
+        PlayerData.Instance.MoneyProperty.Subscribe(value =>
+        {
+            if (SceneManager.GetActiveScene().buildIndex == 1)
+                moneyText.text = value.ToString();
+        });
     }
     
     public void BtnPlay()
     {
-        SoundManager.instance.PlayBtnSFX(eSFX.BtnClick1);
+        SoundManager.instance.PlaySFX(eSFX.BtnClick1);
 
         // 클릭한 스테이지 버튼 불러옴
         GameObject clickedBtn = EventSystem.current.currentSelectedGameObject;
@@ -60,7 +65,7 @@ public class UIManager : MonoBehaviour
 
     public void BtnSettings()
     {
-        SoundManager.instance.PlayBtnSFX(eSFX.BtnClick1);
+        SoundManager.instance.PlaySFX(eSFX.BtnClick1);
         
         musicSlider.value = PlayerData.Instance.musicVolume;
         sfxSlider.value = PlayerData.Instance.sfxVolume;
@@ -72,7 +77,7 @@ public class UIManager : MonoBehaviour
 
     public void BtnSettingsExit()
     {
-        SoundManager.instance.PlayBtnSFX(eSFX.BtnClick1);
+        SoundManager.instance.PlaySFX(eSFX.BtnClick1);
         
         PlayerData.Instance.Save(eSaveType.eSetting);    // 세팅 정보 저장
         
@@ -84,7 +89,7 @@ public class UIManager : MonoBehaviour
 
     public void BtnCustomize()
     {
-        SoundManager.instance.PlayBtnSFX(eSFX.Crunchy);
+        SoundManager.instance.PlaySFX(eSFX.Crunchy);
         
         moneyText.text = PlayerData.Instance.MoneyProperty.Value.ToString();    // 보유 금액 표시
         gameObject.GetComponent<StandbyScene>().isCamMoving = false;
@@ -93,7 +98,7 @@ public class UIManager : MonoBehaviour
 
     public void BtnCustomizeExit()
     {
-        SoundManager.instance.PlayBtnSFX(eSFX.Crunchy);
+        SoundManager.instance.PlaySFX(eSFX.Crunchy);
         
         PlayerData.Instance.Save(eSaveType.eUser);    // 유저 정보 저장
         StartCoroutine(_cameraZoom.CustomizeZoomOut());    // 줌아웃
@@ -101,13 +106,13 @@ public class UIManager : MonoBehaviour
 
     public void BtnStagesExit()
     {
-        SoundManager.instance.PlayBtnSFX(eSFX.BtnClick1);
+        SoundManager.instance.PlaySFX(eSFX.BtnClick1);
         isShowStages = false;
     }
     
     public void WorldSelected(int order)
     {
-        SoundManager.instance.PlayBtnSFX(eSFX.BtnClick1);
+        SoundManager.instance.PlaySFX(eSFX.BtnClick1);
         isShowStages = true;
         currentWorld = order;
         StagesSelected(order);

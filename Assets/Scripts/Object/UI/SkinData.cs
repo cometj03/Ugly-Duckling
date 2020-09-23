@@ -13,13 +13,13 @@ public class SkinData : MonoBehaviour
 
 	public void SelectSkin()
 	{
-		SoundManager.instance.PlayBtnSFX(eSFX.BtnClick2);
+		SoundManager.instance.PlaySFX(eSFX.BtnClick2);
 		GameObject.FindGameObjectWithTag("Player").GetComponent<BirdCustomAnimation>().ChangeSkin(skinName);
 	}
 
 	public void BuySkin()
 	{
-		SoundManager.instance.PlayBtnSFX(eSFX.BtnClick1);
+		SoundManager.instance.PlaySFX(eSFX.BtnClick1);
 
 		// GameObject buyBtn = EventSystem.current.currentSelectedGameObject;	// 클릭한 버튼 불러옴
 		// var priceString = buyBtn.transform.GetChild(0).GetChild(0).GetComponent<Text>().text;
