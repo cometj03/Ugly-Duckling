@@ -16,5 +16,11 @@
     "displayName": "벌",
     "info": "위이잉",
     "price": 20
+  },
+  {
+    "skinName": "Wizard",
+    "displayName": "마법사",
+    "info": "오리는 마법으로 날 수 있답니다!",
+    "price": 20
   }
 ]
