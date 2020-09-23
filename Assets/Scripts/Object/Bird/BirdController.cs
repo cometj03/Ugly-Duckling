@@ -57,6 +57,11 @@ public class BirdController : MonoBehaviour
 		}
 	}
 
+	public void BirdPush(float dx, float dy)
+    {
+		_birdRigidbody2D.AddForce(new Vector2(dx, dy));
+    }
+
 	private void OnTriggerStay2D(Collider2D collision)
 	{
 		can_jump = true;

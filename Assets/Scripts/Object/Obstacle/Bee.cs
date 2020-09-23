@@ -19,7 +19,8 @@ public class Bee : MonoBehaviour
 
     void LateUpdate()
     {
-        if (Mathf.Abs(_birdTransform.position.x - transform.position.x) > 3 || isExplore)
+        if (Mathf.Abs(_birdTransform.position.x - transform.position.x) > 3 
+            || isExplore || PlayerData.Instance.currentState == GameState.OVER)
             return;
         
         if (_birdTransform.position.y > transform.position.y)
@@ -46,6 +47,9 @@ public class Bee : MonoBehaviour
     {
         isExplore = false;
         if (other.CompareTag("Player"))
+        {
+            other.GetComponent<BirdController>().BirdPush(-30, 80);
             GameManager.instance.GameOver();
+        }
     }
 }
