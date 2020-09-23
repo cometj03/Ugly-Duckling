@@ -29,7 +29,7 @@ public class Wolf : MonoBehaviour
         } else if (other.CompareTag("Player"))
         {
             go = false;
-            other.GetComponent<BirdController>().BirdPush(35, 80);
+            other.GetComponent<BirdController>().BirdPush(45, 80);
             GameManager.instance.GameOver();
         }
     }

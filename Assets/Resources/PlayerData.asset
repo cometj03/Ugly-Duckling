@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: PlayerData
   m_EditorClassIdentifier: 
   currentState: 0
-  currentLevel: 1
+  currentLevel: 6
   currentSkin: Bird
-  musicVolume: 1
-  sfxVolume: 1
+  musicVolume: 0.5760296
+  sfxVolume: 0.8253028

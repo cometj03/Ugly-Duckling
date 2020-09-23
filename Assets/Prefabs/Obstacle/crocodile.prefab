@@ -73,7 +73,7 @@ SpriteRenderer:
   m_SortingLayerID: -369342191
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: cca8067bafd5504409aab0354ba8adf6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7e9c25a7b62190a4ab51130d1c7b69d2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -148,3 +148,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca84b77ddbaf68e47a7fbb026de3590a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  crocodileAnim:
+  - {fileID: 21300000, guid: cca8067bafd5504409aab0354ba8adf6, type: 3}
+  - {fileID: 21300000, guid: 328c2b214d74f6140aa55a665305ae54, type: 3}
+  - {fileID: 21300000, guid: 2e88d9a497f83f24aacd3125abc9a2ce, type: 3}
+  - {fileID: 21300000, guid: 7e9c25a7b62190a4ab51130d1c7b69d2, type: 3}

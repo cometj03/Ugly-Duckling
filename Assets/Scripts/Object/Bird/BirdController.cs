@@ -52,7 +52,7 @@ public class BirdController : MonoBehaviour
 	{
 		if (can_jump)
 		{
-			_birdRigidbody2D.AddForce(Vector2.up * 250);
+			_birdRigidbody2D.AddForce(Vector2.up * 270);
 			can_jump = false;
 		}
 	}

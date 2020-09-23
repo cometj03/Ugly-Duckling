@@ -48,7 +48,7 @@ public class Bee : MonoBehaviour
         isExplore = false;
         if (other.CompareTag("Player"))
         {
-            other.GetComponent<BirdController>().BirdPush(-30, 80);
+            other.GetComponent<BirdController>().BirdPush(-35, 90);
             GameManager.instance.GameOver();
         }
     }

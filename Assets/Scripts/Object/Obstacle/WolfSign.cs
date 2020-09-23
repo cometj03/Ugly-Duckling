@@ -19,14 +19,14 @@ public class WolfSign : MonoBehaviour
         waringMark = transform.GetChild(0).GetComponent<SpriteRenderer>();
     }
 
-    void Update()
+    void LateUpdate()
     {
         if (birdTarget.position.x > transform.position.x && !isAnim)   // 오리가 표지판을 지날 때
         {
             isAnim = true;
             StartCoroutine(DoSignAnim());
         } 
-        else if (birdTarget.position.x < transform.position.x && isAnim)    // 오리가 다시 표지판 밖으로 나갈 때
+        else if (birdTarget.position.x <= transform.position.x && isAnim)    // 오리가 다시 표지판 밖으로 나갈 때
         {
             Debug.Log("밖으로 나감");
             isAnim = false;

@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class BlackCloud : MonoBehaviour
 {
-    public ParticleSystem rain;
+    private ParticleSystem rain;
     
     enum CloudState
     {
@@ -20,6 +20,8 @@ public class BlackCloud : MonoBehaviour
 
     void Start()
     {
+        rain = transform.GetChild(0).GetComponent<ParticleSystem>();
+        
         anim = GetComponent<Animator>();
         targetBird = GameObject.FindGameObjectWithTag("Player").transform;
 
@@ -27,7 +29,7 @@ public class BlackCloud : MonoBehaviour
         cloudState = CloudState.IDLE;
     }
 
-    void Update()
+    void LateUpdate()
     {
         if (Mathf.Abs(gameObject.transform.position.x - targetBird.position.x) < 1.2f)
         {
@@ -83,6 +85,9 @@ public class BlackCloud : MonoBehaviour
     private void OnTriggerStay2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
+        {
+            other.GetComponent<BirdController>().BirdPush(-35, 90);
             GameManager.instance.GameOver();
+        }
     }
 }
