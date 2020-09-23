@@ -7,6 +7,8 @@ using System.IO;
 
 public class PuzzleLoader : MonoBehaviour
 {
+	public string[] puzzleNums;
+	
 	public GameObject puzzle;
 	public GameObject tile;
 	public GameObject block;
@@ -91,6 +93,7 @@ public class PuzzleLoader : MonoBehaviour
 
 	private void Awake()
 	{
-		//FileToPuzzle("newPuzzle");
+		//foreach (var t in puzzleNums)
+		//	FileToPuzzle("newPuzzle" + t);
 	}
 }

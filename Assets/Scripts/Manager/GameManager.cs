@@ -83,8 +83,15 @@ public class GameManager : MonoBehaviour
     
     public void CameraReset()
     {
-        cameraValue.backgroundTarget = Vector3.back * 10;
-        cameraValue.cameraTarget = Vector3.back * 10;
+        if (cameraValue.cameraTarget.x > 50)
+        {
+            cameraValue.backgroundTarget.x -= 50;
+            cameraValue.cameraTarget.x -= 50;
+            return;
+        }
+
+        cameraValue.backgroundTarget.x = 0;
+        cameraValue.cameraTarget.x = 0;
     }
 
     public void PlayerMoneyUpdate(int amount)

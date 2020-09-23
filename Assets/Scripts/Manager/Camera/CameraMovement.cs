@@ -43,7 +43,7 @@ public class CameraMovement : MonoBehaviour
 			}
 
 			// 오리가 위로 올라가면 카메라도 위로
-			if (_birdTransform.position.y > 0.5f)
+			if (_birdTransform.position.y > 1f)
 				cameraValue.cameraTarget.y = 1.2f;
 			else
 				cameraValue.cameraTarget.y = 0;
