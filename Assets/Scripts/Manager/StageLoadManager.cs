@@ -13,11 +13,11 @@ public class StageLoadManager : MonoBehaviour
         else
             stageIndex = 10;
 
-        if (stageIndex > Stages.Length)
-            Debug.LogError("스테이지 인덱스 " + stageIndex + "번이 존재하지 않습니다.");
-
         if (stageIndex >= 6 && stageIndex < 10) // 스테이지 6~10번 선택했을 때
             stageIndex -= 5;
+
+        if (stageIndex > Stages.Length)
+            Debug.LogError("스테이지 인덱스 " + stageIndex + "번이 존재하지 않습니다.");
 
         Debug.Log("현재 스테이지 인덱스 : " + (stageIndex - 1));
         // 스테이지 생성

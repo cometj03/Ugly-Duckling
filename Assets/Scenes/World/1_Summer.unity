@@ -487,6 +487,7 @@ GameObject:
   - component: {fileID: 1616645438}
   - component: {fileID: 1616645440}
   - component: {fileID: 1616645436}
+  - component: {fileID: 1616645439}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Untagged
@@ -508,10 +509,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Stages:
   - {fileID: 7794718541540892176, guid: a028ad563eed84447b1ea60e2e11d740, type: 3}
-  - {fileID: 8006824839155147, guid: b500b888301675f4eb330be968bf9e55, type: 3}
-  - {fileID: 1230921249848939825, guid: f2ba9eb81389fe240bdc97daa1bd6eef, type: 3}
-  - {fileID: 1230921249848939825, guid: f2ba9eb81389fe240bdc97daa1bd6eef, type: 3}
-  - {fileID: 1230921249848939825, guid: f2ba9eb81389fe240bdc97daa1bd6eef, type: 3}
+  - {fileID: 7794718541540892176, guid: a028ad563eed84447b1ea60e2e11d740, type: 3}
+  - {fileID: 7794718541540892176, guid: a028ad563eed84447b1ea60e2e11d740, type: 3}
+  - {fileID: 7794718541540892176, guid: a028ad563eed84447b1ea60e2e11d740, type: 3}
+  - {fileID: 7794718541540892176, guid: a028ad563eed84447b1ea60e2e11d740, type: 3}
 --- !u!4 &1616645437
 Transform:
   m_ObjectHideFlags: 0
@@ -555,6 +556,18 @@ MonoBehaviour:
   outlineTile: {fileID: 1941854243523734639, guid: 40618dc661f869346a3f3d4f40221015,
     type: 3}
   outline: {fileID: 8161142515266273546, guid: 7187dfba4cc046347bfda504a7705a88, type: 3}
+--- !u!114 &1616645439
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1616645435}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cf9e4c37a028ec4599f707f036303dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1616645440
 MonoBehaviour:
   m_ObjectHideFlags: 0
