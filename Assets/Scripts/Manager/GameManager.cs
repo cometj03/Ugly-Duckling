@@ -102,5 +102,10 @@ public class GameManager : MonoBehaviour
         PlayerData.Instance.MoneyProperty.Value += amount;
     }
 
+    public void AddFeather()
+	{
+        PlayerData.Instance.MoneyProperty.Value += 10;
+	}
+
     private void GetGamePanel() => _uiGamePanel = GameObject.FindGameObjectWithTag("GamePanel").GetComponent<UIGamePanel>();
 }
