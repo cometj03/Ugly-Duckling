@@ -72,6 +72,8 @@ public class TutorialManager : MonoBehaviour
                     StartCoroutine(GameAgain());
                 }
             }
+            else
+                Close();
 
             yield return null;
         }
