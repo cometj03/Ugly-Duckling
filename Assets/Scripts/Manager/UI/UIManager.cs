@@ -101,6 +101,7 @@ public class UIManager : MonoBehaviour
         SoundManager.instance.PlaySFX(eSFX.Crunchy);
         
         PlayerData.Instance.Save(eSaveType.eUser);    // 유저 정보 저장
+        PlayerData.Instance.Save(eSaveType.eSkinList);
         StartCoroutine(_cameraZoom.CustomizeZoomOut());    // 줌아웃
     }
 

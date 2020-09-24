@@ -33,6 +33,8 @@ public class SaveData
         {
             string[] splitLoadData = splitData[i].Split(':');
 
+            Debug.Log(splitData[i]);
+
             //Add Data Dictionary
             loadDataDictionary.Add(splitLoadData[0], splitLoadData[1]);
         }

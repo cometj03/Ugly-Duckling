@@ -30,7 +30,7 @@ public class SaveSkinListData : SaveData
             strSave += "/";
 		}
 
-        strSave.Remove(strSave.Length - 1);
+        strSave = strSave.Remove(strSave.Length - 1);
 
         base.Save(saveType);
     }
