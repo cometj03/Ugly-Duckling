@@ -17351,6 +17351,7 @@ GameObject:
   - component: {fileID: 1616645437}
   - component: {fileID: 1616645438}
   - component: {fileID: 1616645440}
+  - component: {fileID: 1616645436}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Untagged
@@ -17358,6 +17359,24 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &1616645436
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1616645435}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 782c2899227554943a5d65acf4f07228, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Stages:
+  - {fileID: 8006824839155147, guid: b500b888301675f4eb330be968bf9e55, type: 3}
+  - {fileID: 8006824839155147, guid: b500b888301675f4eb330be968bf9e55, type: 3}
+  - {fileID: 8006824839155147, guid: b500b888301675f4eb330be968bf9e55, type: 3}
+  - {fileID: 8006824839155147, guid: b500b888301675f4eb330be968bf9e55, type: 3}
+  - {fileID: 8006824839155147, guid: b500b888301675f4eb330be968bf9e55, type: 3}
 --- !u!4 &1616645437
 Transform:
   m_ObjectHideFlags: 0
@@ -17384,6 +17403,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47242a88ab0e03947b8367a8cb485139, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  puzzleNums: []
   puzzle: {fileID: 6704585961636706167, guid: cb4cd6d8d5d7a6f439dcd1e3bcaf8ac7, type: 3}
   tile: {fileID: 3369277916345940223, guid: 301191208b7275b4b81432de477f92c7, type: 3}
   block: {fileID: 8832283550951503127, guid: 6aff72ffdc10ec1418295edba4755ad2, type: 3}
