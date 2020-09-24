@@ -22,6 +22,7 @@ public class BirdCustomAnimation : MonoBehaviour
 	{
 		idle = Resources.LoadAll<Sprite>("Animations/" + PlayerData.Instance.currentSkin + "/Idle");
 		walk = Resources.LoadAll<Sprite>("Animations/" + PlayerData.Instance.currentSkin + "/Walk");
+		fallDown = Resources.LoadAll<Sprite>("Animations/" + PlayerData.Instance.currentSkin + "/FallDown");
 		player = GetComponent<SpriteRenderer>();
 
 		isGameScene = SceneManager.GetActiveScene().buildIndex >= 2;
@@ -43,7 +44,6 @@ public class BirdCustomAnimation : MonoBehaviour
 
 	IEnumerator DoFallDown()
 	{
-		fallDown = Resources.LoadAll<Sprite>("Animations/" + PlayerData.Instance.currentSkin + "/FallDown");
 		foreach (Sprite sp in fallDown)
 		{
 			player.sprite = sp;

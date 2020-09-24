@@ -45,7 +45,14 @@ public class SkinDataManager : MonoBehaviour
 			skinData.price = iter.Value["price"];
 			skinData.UpdateDatas();
 
-			skinData.CanSelect();
+			if (PlayerData.Instance.skinList.ContainsKey(skinData.skinName) && PlayerData.Instance.skinList[skinData.skinName])
+			{
+				skinData.CanSelect();
+			}
+			else
+			{
+				skinData.CanBuy();
+			}
 
 			rectTransform.position = new Vector2(sortX, 0);
 			rectTransform.SetParent(skinContent.transform);

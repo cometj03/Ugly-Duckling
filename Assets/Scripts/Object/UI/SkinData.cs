@@ -28,6 +28,8 @@ public class SkinData : MonoBehaviour
 		if (PlayerData.Instance.MoneyProperty.Value >= price)
 		{
 			PlayerData.Instance.MoneyProperty.Value -= price;
+			PlayerData.Instance.skinList[skinName] = true;
+			CanSelect();
 		}
 	}
 
@@ -35,10 +37,13 @@ public class SkinData : MonoBehaviour
 	{
 		GetComponent<Image>().color = new Color(0.5f, 0.5f, 0.5f, 1);
 		GetComponent<Button>().enabled = false;
+		transform.GetChild(2).gameObject.SetActive(true);
 	}
 
 	public void CanSelect()
 	{
+		GetComponent<Image>().color = new Color(1, 1, 1, 1);
+		GetComponent<Button>().enabled = true;
 		transform.GetChild(2).gameObject.SetActive(false);
 	}
 

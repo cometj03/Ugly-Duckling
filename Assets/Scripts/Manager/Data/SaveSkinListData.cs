@@ -1,11 +1,36 @@
-﻿using UnityEngine;
+﻿using SimpleJSON;
+using UnityEngine;
 
 [System.Serializable]
 public class SaveSkinListData : SaveData
 {
+    private string path = "/Datas/Skins.json";
+
     public override void Save(eSaveType saveType)
     {
         strSave = "";
+        
+        JSONNode data;
+
+        BetterStreamingAssets.Initialize();
+        data = JSON.Parse(BetterStreamingAssets.ReadAllText(path));
+
+        foreach(var iter in data){
+            strSave += iter.Value["skinName"] + ":";
+
+			if (PlayerData.Instance.skinList.ContainsKey(iter.Value["skinName"]))
+			{
+                strSave += PlayerData.Instance.skinList[iter.Value["skinName"]].ToString();
+			}
+			else
+			{
+                strSave += false.ToString();
+			}
+
+            strSave += "/";
+		}
+
+        strSave.Remove(strSave.Length - 1);
 
         base.Save(saveType);
     }

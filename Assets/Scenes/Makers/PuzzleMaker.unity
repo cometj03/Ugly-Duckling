@@ -1642,8 +1642,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1669091154}
   - component: {fileID: 1669091153}
-  - component: {fileID: 1669091155}
-  - component: {fileID: 1669091156}
   m_Layer: 0
   m_Name: Managers
   m_TagString: Untagged
@@ -1658,7 +1656,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1669091152}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d80be6b81b8f35740b8ebee1ed136128, type: 3}
   m_Name: 
@@ -1687,39 +1685,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1669091155
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1669091152}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 47242a88ab0e03947b8367a8cb485139, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  puzzle: {fileID: 6704585961636706167, guid: cb4cd6d8d5d7a6f439dcd1e3bcaf8ac7, type: 3}
-  tile: {fileID: 3369277916345940223, guid: 301191208b7275b4b81432de477f92c7, type: 3}
-  block: {fileID: 8832283550951503127, guid: 6aff72ffdc10ec1418295edba4755ad2, type: 3}
-  outlineTile: {fileID: 1941854243523734639, guid: 40618dc661f869346a3f3d4f40221015,
-    type: 3}
-  outline: {fileID: 8161142515266273546, guid: 7187dfba4cc046347bfda504a7705a88, type: 3}
---- !u!114 &1669091156
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1669091152}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df14affc094531c40b5f28fcd4333c4f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  jumpObject: {fileID: 0}
-  moveObject: {fileID: 0}
-  player: {fileID: 0}
 --- !u!1 &1713090318
 GameObject:
   m_ObjectHideFlags: 0
