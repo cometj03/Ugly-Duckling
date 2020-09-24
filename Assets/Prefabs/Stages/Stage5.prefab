@@ -46108,6 +46108,12 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1230921249848939790}
     m_Modifications:
+    - target: {fileID: 9182849006290811724, guid: 831f25d74be93874ba11dded05092ecd,
+        type: 3}
+      propertyPath: wolfPrefab
+      value: 
+      objectReference: {fileID: 4549989785323293854, guid: c4440a68aff55ed46b632ee65f483236,
+        type: 3}
     - target: {fileID: 9182849006290811725, guid: 831f25d74be93874ba11dded05092ecd,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -46268,6 +46274,27 @@ PrefabInstance:
       propertyPath: TriggerModule.collisionShape0
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 4672019441952101617, guid: 1bf2e98a773e901429a3ea968ef5954d,
+        type: 3}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4672019441952101617, guid: 1bf2e98a773e901429a3ea968ef5954d,
+        type: 3}
+      propertyPath: InitialModule.gravityModifier.scalar
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4672019441952101617, guid: 1bf2e98a773e901429a3ea968ef5954d,
+        type: 3}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4672019441952101617, guid: 1bf2e98a773e901429a3ea968ef5954d,
+        type: 3}
+      propertyPath: UVModule.sprites.Array.data[0].sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: d9e6d73419f41c946ae5eaae2fe29d0e,
+        type: 3}
     - target: {fileID: 5635628415785797376, guid: 1bf2e98a773e901429a3ea968ef5954d,
         type: 3}
       propertyPath: m_Name
@@ -46439,6 +46466,37 @@ PrefabInstance:
       propertyPath: TriggerModule.collisionShape0
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 4672019441952101617, guid: 1bf2e98a773e901429a3ea968ef5954d,
+        type: 3}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4672019441952101617, guid: 1bf2e98a773e901429a3ea968ef5954d,
+        type: 3}
+      propertyPath: InitialModule.gravityModifier.scalar
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4672019441952101617, guid: 1bf2e98a773e901429a3ea968ef5954d,
+        type: 3}
+      propertyPath: lengthInSec
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4672019441952101617, guid: 1bf2e98a773e901429a3ea968ef5954d,
+        type: 3}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4672019441952101617, guid: 1bf2e98a773e901429a3ea968ef5954d,
+        type: 3}
+      propertyPath: InitialModule.startColor.maxColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4672019441952101617, guid: 1bf2e98a773e901429a3ea968ef5954d,
+        type: 3}
+      propertyPath: UVModule.sprites.Array.data[0].sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: d9e6d73419f41c946ae5eaae2fe29d0e,
+        type: 3}
     - target: {fileID: 5635628415785797376, guid: 1bf2e98a773e901429a3ea968ef5954d,
         type: 3}
       propertyPath: m_Name
@@ -46675,6 +46733,12 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1230921249848939790}
     m_Modifications:
+    - target: {fileID: 9182849006290811724, guid: 831f25d74be93874ba11dded05092ecd,
+        type: 3}
+      propertyPath: wolfPrefab
+      value: 
+      objectReference: {fileID: 4549989785323293854, guid: c4440a68aff55ed46b632ee65f483236,
+        type: 3}
     - target: {fileID: 9182849006290811725, guid: 831f25d74be93874ba11dded05092ecd,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -46760,6 +46824,27 @@ PrefabInstance:
       propertyPath: TriggerModule.collisionShape0
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 4672019441952101617, guid: 1bf2e98a773e901429a3ea968ef5954d,
+        type: 3}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4672019441952101617, guid: 1bf2e98a773e901429a3ea968ef5954d,
+        type: 3}
+      propertyPath: InitialModule.gravityModifier.scalar
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4672019441952101617, guid: 1bf2e98a773e901429a3ea968ef5954d,
+        type: 3}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4672019441952101617, guid: 1bf2e98a773e901429a3ea968ef5954d,
+        type: 3}
+      propertyPath: UVModule.sprites.Array.data[0].sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: d9e6d73419f41c946ae5eaae2fe29d0e,
+        type: 3}
     - target: {fileID: 5635628415785797376, guid: 1bf2e98a773e901429a3ea968ef5954d,
         type: 3}
       propertyPath: m_Name
@@ -46856,6 +46941,27 @@ PrefabInstance:
       propertyPath: TriggerModule.collisionShape0
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 4672019441952101617, guid: 1bf2e98a773e901429a3ea968ef5954d,
+        type: 3}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4672019441952101617, guid: 1bf2e98a773e901429a3ea968ef5954d,
+        type: 3}
+      propertyPath: InitialModule.gravityModifier.scalar
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4672019441952101617, guid: 1bf2e98a773e901429a3ea968ef5954d,
+        type: 3}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4672019441952101617, guid: 1bf2e98a773e901429a3ea968ef5954d,
+        type: 3}
+      propertyPath: UVModule.sprites.Array.data[0].sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: d9e6d73419f41c946ae5eaae2fe29d0e,
+        type: 3}
     - target: {fileID: 5635628415785797376, guid: 1bf2e98a773e901429a3ea968ef5954d,
         type: 3}
       propertyPath: m_Name
@@ -47542,6 +47648,12 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1230921249848939790}
     m_Modifications:
+    - target: {fileID: 9182849006290811724, guid: 831f25d74be93874ba11dded05092ecd,
+        type: 3}
+      propertyPath: wolfPrefab
+      value: 
+      objectReference: {fileID: 4549989785323293854, guid: c4440a68aff55ed46b632ee65f483236,
+        type: 3}
     - target: {fileID: 9182849006290811725, guid: 831f25d74be93874ba11dded05092ecd,
         type: 3}
       propertyPath: m_LocalPosition.x
