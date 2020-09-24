@@ -133,6 +133,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Obstacle_BlackCloud
       objectReference: {fileID: 0}
+    - target: {fileID: 5635628415785797376, guid: 1bf2e98a773e901429a3ea968ef5954d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5635628415785797388, guid: 1bf2e98a773e901429a3ea968ef5954d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -171,7 +176,7 @@ PrefabInstance:
     - target: {fileID: 5635628415785797388, guid: 1bf2e98a773e901429a3ea968ef5954d,
         type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5635628415785797388, guid: 1bf2e98a773e901429a3ea968ef5954d,
         type: 3}
@@ -820,6 +825,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: CheckPoint
+      objectReference: {fileID: 0}
+    - target: {fileID: 9111792670663299140, guid: 125c6478d05d05e49a176dcfbe6a74c4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 125c6478d05d05e49a176dcfbe6a74c4, type: 3}
@@ -8810,6 +8820,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: crocodile
       objectReference: {fileID: 0}
+    - target: {fileID: 5763302998219665048, guid: 2fb9a75909c226f4cb9277de4238ed47,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2fb9a75909c226f4cb9277de4238ed47, type: 3}
 --- !u!1 &836396799
@@ -12270,6 +12285,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: WolfSign
+      objectReference: {fileID: 0}
+    - target: {fileID: 9182849006290811731, guid: 831f25d74be93874ba11dded05092ecd,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 831f25d74be93874ba11dded05092ecd, type: 3}
@@ -19039,7 +19059,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1790841942
 GameObject:
@@ -21466,7 +21486,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1989082890
 Transform:
   m_ObjectHideFlags: 0
