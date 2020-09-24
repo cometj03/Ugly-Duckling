@@ -734,10 +734,10 @@ PlayerSettings:
     m_VersionCode: 1
     m_VersionName: 
   apiCompatibilityLevel: 6
-  cloudProjectId: bba8cd89-bc1e-47ec-9e8e-1196ce0c412c
+  cloudProjectId: 10b5e9b0-3c40-4021-bc7b-a31e407986ba
   framebufferDepthMemorylessMode: 0
   projectName: Ugly Duckling
-  organizationId: woodongkyan0509
+  organizationId: junghaesung
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
   disableOldInputManagerSupport: 0
