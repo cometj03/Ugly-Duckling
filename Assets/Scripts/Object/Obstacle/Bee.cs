@@ -23,7 +23,7 @@ public class Bee : MonoBehaviour
             || isExplore || PlayerData.Instance.currentState == GameState.OVER)
             return;
         
-        if (_birdTransform.position.y > transform.position.y)
+        if (_birdTransform.position.y > transform.position.y - 0.2f)
         {
             StartCoroutine(Searching());
         }

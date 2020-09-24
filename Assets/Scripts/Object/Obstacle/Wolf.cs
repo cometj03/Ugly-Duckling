@@ -18,7 +18,10 @@ public class Wolf : MonoBehaviour
         if (go)
             transform.position += Vector3.right * (speed * Time.deltaTime);
         else if (_camTransform.position.x - transform.position.x > 7)
+        {
+            FindObjectOfType<WolfSign>().isInstance = false;
             Destroy(gameObject);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other)

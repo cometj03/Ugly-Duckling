@@ -10,7 +10,7 @@ public class WolfSign : MonoBehaviour
     private Transform birdTarget;
     SpriteRenderer waringMark;
 
-    bool isInstance, isAnim;
+    public bool isInstance, isAnim;
 
     
     void Start()
@@ -36,7 +36,7 @@ public class WolfSign : MonoBehaviour
         if (birdTarget.position.x - transform.position.x > 4 && !isInstance)    // 늑대 생성될 때
         {
             Vector3 wolfPos = transform.position;
-            wolfPos.x -= 6;
+            wolfPos.x -= 4.5f;
             Instantiate(wolfPrefab, wolfPos, Quaternion.identity);
             isInstance = true;
 
