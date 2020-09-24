@@ -3,7 +3,7 @@ using UnityEngine;
 
 public enum eSaveType
 {
-    eAll, eUser, eSetting
+    eAll, eUser, eSetting, eSkinList
 }
 
 public class SaveData

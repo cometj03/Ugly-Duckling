@@ -1,6 +1,7 @@
 ﻿using System.Runtime.InteropServices;
 using UniRx;
 using UnityEngine;
+using System.Collections.Generic;
 
 #if UNITY_EDITOR
 using UnityEditor;
@@ -49,8 +50,10 @@ public class PlayerData : ScriptableObject
     // saved data variable
     public SaveUserData userData;
     public SaveSettingData settingData;
+    public SaveSkinListData skinListData;
     
     public ReactiveProperty<int> MoneyProperty = new ReactiveProperty<int>();
+    public Dictionary<string, bool> skinList = new Dictionary<string, bool>();
     public string currentSkin;
     public float musicVolume, sfxVolume;
 
@@ -61,12 +64,16 @@ public class PlayerData : ScriptableObject
             case eSaveType.eAll:
                 userData.Save(eSaveType.eUser);
                 settingData.Save(eSaveType.eSetting);
+                skinListData.Save(eSaveType.eSkinList);
                 break;
             case eSaveType.eUser:
                 userData.Save(saveType);
                 break;
             case eSaveType.eSetting:
                 settingData.Save(eSaveType.eSetting);
+                break;
+            case eSaveType.eSkinList:
+                skinListData.Save(eSaveType.eSkinList);
                 break;
         }
     }
@@ -78,12 +85,16 @@ public class PlayerData : ScriptableObject
             case eSaveType.eAll:
                 userData.Load(eSaveType.eUser);
                 settingData.Load(eSaveType.eSetting);
+                skinListData.Load(eSaveType.eSkinList);
                 break;
             case eSaveType.eUser:
                 userData.Load(saveType);
                 break;
             case eSaveType.eSetting:
                 settingData.Load(eSaveType.eSetting);
+                break;
+            case eSaveType.eSkinList:
+                skinListData.Load(eSaveType.eSkinList);
                 break;
         }
     }

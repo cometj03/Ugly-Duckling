@@ -31,6 +31,17 @@ public class SkinData : MonoBehaviour
 		}
 	}
 
+	public void CanBuy()
+	{
+		GetComponent<Image>().color = new Color(0.5f, 0.5f, 0.5f, 1);
+		GetComponent<Button>().enabled = false;
+	}
+
+	public void CanSelect()
+	{
+		transform.GetChild(2).gameObject.SetActive(false);
+	}
+
 	public void UpdateDatas()
 	{
 		transform.GetChild(0).GetChild(0).GetComponent<Text>().text = displayName;

@@ -9,7 +9,7 @@ public enum eMusic
 
 public enum eSFX
 {
-    BtnClick1, BtnClick2, Crunchy, Clear, Over, Jump
+    BtnClick1, BtnClick2, Crunchy, Clear, Over, Jump, BlockMove
 }
 
 public class SoundManager : MonoBehaviour

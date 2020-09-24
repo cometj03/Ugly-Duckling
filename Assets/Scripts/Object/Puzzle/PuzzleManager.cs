@@ -110,6 +110,8 @@ public class PuzzleManager : MonoBehaviour
 
 					perMousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 					perBlockPosition = selectBlock.position;
+
+					GameObject.Find("SoundManager").GetComponent<SoundManager>().PlaySFX(eSFX.BlockMove);
 				}
 			}
 			else if (Input.GetMouseButtonUp(0))
