@@ -4325,6 +4325,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: crocodile
       objectReference: {fileID: 0}
+    - target: {fileID: 5763302998219665048, guid: 2fb9a75909c226f4cb9277de4238ed47,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2fb9a75909c226f4cb9277de4238ed47, type: 3}
 --- !u!1 &366551993
@@ -18327,6 +18332,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: CheckPoint
       objectReference: {fileID: 0}
+    - target: {fileID: 9111792670663299140, guid: 125c6478d05d05e49a176dcfbe6a74c4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 125c6478d05d05e49a176dcfbe6a74c4, type: 3}
 --- !u!1 &1503091639
@@ -26306,7 +26316,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2121695267
 Transform:
   m_ObjectHideFlags: 0
@@ -26744,6 +26754,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Obstacle_BlackCloud
+      objectReference: {fileID: 0}
+    - target: {fileID: 5635628415785797376, guid: 1bf2e98a773e901429a3ea968ef5954d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5635628415785797388, guid: 1bf2e98a773e901429a3ea968ef5954d,
         type: 3}
