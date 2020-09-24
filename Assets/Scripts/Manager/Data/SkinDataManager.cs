@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using Boo.Lang;
+using Newtonsoft.Json;
 using SimpleJSON;
 using System.IO;
 using UnityEngine;
@@ -9,6 +10,8 @@ public class SkinDataManager : MonoBehaviour
 
 	public GameObject skinContent;
 	public GameObject skinBox;
+
+	public List<SkinData> skindatas = new List<SkinData>();
 
 	private string path = "/Datas/Skins.json";
 
@@ -28,7 +31,7 @@ public class SkinDataManager : MonoBehaviour
 		data = JSON.Parse(BetterStreamingAssets.ReadAllText(path));
 	}
 
-	public void UpdateContent()
+	public void CreateContent()
 	{
 		int sortX = 250;
 
@@ -44,6 +47,10 @@ public class SkinDataManager : MonoBehaviour
 			skinData.info = iter.Value["info"];
 			skinData.price = iter.Value["price"];
 			skinData.UpdateDatas();
+
+			skinData.CanBuy();
+
+			skindatas.Add(skinData);
 
 			rectTransform.position = new Vector2(sortX, 0);
 			rectTransform.SetParent(skinContent.transform);
@@ -61,6 +68,6 @@ public class SkinDataManager : MonoBehaviour
 		BetterStreamingAssets.Initialize();
 
 		FileToData();
-		UpdateContent();
+		CreateContent();
 	}
 };
