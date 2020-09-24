@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
-using UnityEngine.Serialization;
 
 public enum eMusic
 {
@@ -12,7 +9,7 @@ public enum eMusic
 
 public enum eSFX
 {
-    BtnClick1, BtnClick2, Crunchy
+    BtnClick1, BtnClick2, Crunchy, Clear, Over, Jump
 }
 
 public class SoundManager : MonoBehaviour
@@ -76,8 +73,9 @@ public class SoundManager : MonoBehaviour
     }
 
     public void ChangeBGM(eMusic musicIndex) => StartCoroutine(ChangeMusic(dictBGM[musicIndex]));
+    public void StopBGM() => StartCoroutine(SmoothStopMusic());
 
-    public void PlayBtnSFX(eSFX sfxIndex)
+    public void PlaySFX(eSFX sfxIndex)
     {
         SFX_BtnSource.clip = dictSFX[sfxIndex];
         SFX_BtnSource.Play();
@@ -108,6 +106,21 @@ public class SoundManager : MonoBehaviour
             yield return null;
         }
 
+        BGM_Source.volume = originVol;
+    }
+    
+    // 배경음악 중지
+    IEnumerator SmoothStopMusic()
+    {
+        float originVol = PlayerData.Instance.musicVolume;
+        float volume = originVol;
+        while (volume > 0)
+        {
+            volume -= 0.003f;
+            BGM_Source.volume = volume;
+            yield return null;
+        }
+        BGM_Source.Stop();
         BGM_Source.volume = originVol;
     }
 }

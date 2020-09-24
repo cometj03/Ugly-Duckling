@@ -55,6 +55,7 @@ public class GameManager : MonoBehaviour
     {
         print("Game Clear!");
         PlayerData.Instance.currentState = GameState.CLEAR;
+        SoundManager.instance.PlaySFX(eSFX.Clear);
         
         if (!_uiGamePanel)
             GetGamePanel();
@@ -67,6 +68,7 @@ public class GameManager : MonoBehaviour
         if (PlayerData.Instance.currentState == GameState.OVER)
             return;
         StartCoroutine(Over());
+        SoundManager.instance.PlaySFX(eSFX.Over);
     }
 
     IEnumerator Over()
@@ -79,6 +81,7 @@ public class GameManager : MonoBehaviour
             GetGamePanel();
         
         _uiGamePanel.OpenOverPanel();    // 게임 오버창 띄움
+        SoundManager.instance.StopBGM();
     }
     
     public void CameraReset()

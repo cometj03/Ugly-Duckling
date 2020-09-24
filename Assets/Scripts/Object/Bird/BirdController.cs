@@ -52,6 +52,7 @@ public class BirdController : MonoBehaviour
 	{
 		if (can_jump)
 		{
+			SoundManager.instance.PlaySFX(eSFX.Jump);
 			_birdRigidbody2D.AddForce(Vector2.up * 270);
 			can_jump = false;
 		}
