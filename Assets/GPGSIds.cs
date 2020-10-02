@@ -24,7 +24,7 @@
 
 public static class GPGSIds
 {
-        public const string leaderboard_1 = "CgkImteWzZQREAIQAg"; // <GPGSID>
+        public const string leaderboard_ugly_duckling = "CgkI2brDtuUOEAIQAg"; // <GPGSID>
 
 }
 

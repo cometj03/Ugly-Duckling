@@ -1,9 +1,9 @@
 lastUpgrade=01011
 proj.pluginVersion=0.10.11
-proj.AppId=589646113690
+proj.AppId=508262669657
 and.BundleId=com.STAC.UglyDuckling
 proj.classDir=Assets
 proj.ConstantsClassName=GPGSIds
-and.ResourceData=%3c%3fxml+version%3d%221.0%22+encoding%3d%22utf-8%22%3f%3e%0d%0a%3c%21--%0d%0aGoogle+Play+game+services+IDs.%0d%0aSave+this+file+as+res%2fvalues%2fgames-ids.xml+in+your+project.%0d%0a--%3e%0d%0a%3cresources%3e%0d%0a++%3c%21--+app_id+--%3e%0d%0a++%3cstring+name%3d%22app_id%22+translatable%3d%22false%22%3e589646113690%3c%2fstring%3e%0d%0a++%3c%21--+package_name+--%3e%0d%0a++%3cstring+name%3d%22package_name%22+translatable%3d%22false%22%3ecom.STAC.UglyDuckling%3c%2fstring%3e%0d%0a++%3c%21--+leaderboard+1+--%3e%0d%0a++%3cstring+name%3d%22leaderboard_1%22+translatable%3d%22false%22%3eCgkImteWzZQREAIQAg%3c%2fstring%3e%0d%0a%3c%2fresources%3e%0d%0a
-and.ClientId=589646113690-ag7o4gasclj7f62q8crth97onctmk6l9.apps.googleusercontent.com
+and.ResourceData=%3c%3fxml+version%3d%221.0%22+encoding%3d%22utf-8%22%3f%3e%0d%0a%3c%21--Google+Play+game+services+IDs.+Save+this+file+as+res%2fvalues%2fgames-ids.xml+in+your+project.--%3e%0d%0a%3cresources%3e%0d%0a++%3c%21--app_id--%3e%0d%0a++%3cstring+name%3d%22app_id%22+translatable%3d%22false%22%3e508262669657%3c%2fstring%3e%0d%0a++%3c%21--package_name--%3e%0d%0a++%3cstring+name%3d%22package_name%22+translatable%3d%22false%22%3ecom.STAC.UglyDuckling%3c%2fstring%3e%0d%0a++%3c%21--leaderboard+Ugly+Duckling--%3e%0d%0a++%3cstring+name%3d%22leaderboard_ugly_duckling%22+translatable%3d%22false%22%3eCgkI2brDtuUOEAIQAg%3c%2fstring%3e%0d%0a%3c%2fresources%3e
+and.ClientId=508262669657-far2en47seglrsvh1mtb07lu0pnn018k.apps.googleusercontent.com
 android.SetupDone=true
