@@ -2,6 +2,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Random = UnityEngine.Random;
 
 public class StandbyScene : MonoBehaviour
 {
@@ -79,5 +80,10 @@ public class StandbyScene : MonoBehaviour
         StartCoroutine(gameObject.GetComponent<UIMovement>().ButtonsAway());
     }
 
-    
+    public void ClickToEarn()
+    {
+        var r = Random.Range(1, 7);
+        if (r == 1)
+            GameManager.instance.PlayerMoneyUpdate(1);
+    }
 }
