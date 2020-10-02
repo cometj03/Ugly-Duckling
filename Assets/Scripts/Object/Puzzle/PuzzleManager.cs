@@ -2,6 +2,7 @@
 using System.Runtime.CompilerServices;
 using Unity.Mathematics;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class PuzzleManager : MonoBehaviour
@@ -138,6 +139,16 @@ public class PuzzleManager : MonoBehaviour
 
 	private void Update()
 	{
+		// 블럭과 버튼 겹치는 상태에서 누르면 생기는 버그 해결
+		if (Input.touchCount > 0)
+			if (EventSystem.current.IsPointerOverGameObject(Input.GetTouch(0).fingerId))
+				return;
+		
+		if (Input.GetMouseButtonDown(0))
+			if (EventSystem.current.IsPointerOverGameObject())
+				return;
+
+
 		PuzzleMovement();
 	}
 }
