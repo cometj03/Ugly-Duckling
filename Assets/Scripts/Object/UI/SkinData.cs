@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -31,6 +32,10 @@ public class SkinData : MonoBehaviour
 			PlayerData.Instance.skinList[skinName] = true;
 			CanSelect();
 		}
+		else
+		{
+			GameObject.Find("Customize-Canvas").transform.GetChild(3).gameObject.SetActive(true);
+		}
 	}
 
 	public void CanBuy()
@@ -53,6 +58,13 @@ public class SkinData : MonoBehaviour
 		transform.GetChild(0).GetChild(0).GetChild(0).GetComponent<Text>().text = info;
 		transform.GetChild(2).GetChild(0).GetChild(0).GetComponent<Text>().text = price.ToString();
 
-		transform.GetChild(1).GetComponent<Image>().sprite = Resources.LoadAll<Sprite>("Animations/" + skinName + "/Idle")[0];
+		try
+		{
+			transform.GetChild(1).GetComponent<Image>().sprite = Resources.LoadAll<Sprite>("Animations/" + skinName + "/Idle")[0];
+		}
+		catch(Exception e)
+		{
+			Debug.LogError(e);
+		}
 	}
 }

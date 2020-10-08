@@ -4,9 +4,15 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GooglePlay : MonoBehaviour
 {
+	const string googleLoginText = "Sign in with Google";
+	const string googleLogoutText = "Sign out";
+
+	public Text googleLoginButtonText;
+
     public void DoAutoLogin()
 	{
 		if (!Social.localUser.authenticated)
@@ -16,10 +22,12 @@ public class GooglePlay : MonoBehaviour
 				if (bSuccess)
 				{
 					Debug.Log("Google Login Success : " + Social.localUser.userName);
+					googleLoginButtonText.text = googleLogoutText;
 				}
 				else
 				{
 					Debug.Log("Google Login Fail");
+					googleLoginButtonText.text = googleLoginText;
 				}
 			});
 		}
@@ -27,7 +35,32 @@ public class GooglePlay : MonoBehaviour
 
 	public void DoLogOut()
 	{
-		((PlayGamesPlatform)Social.Active).SignOut();	
+		((PlayGamesPlatform)Social.Active).SignOut();
+		googleLoginButtonText.text = googleLoginText;
+	}
+
+	public void OnBtnLoginClicked()
+	{
+		if (Social.localUser.authenticated)
+		{
+			((PlayGamesPlatform)Social.Active).SignOut();
+			googleLoginButtonText.text = googleLogoutText;
+		}
+		else
+		{
+			Social.localUser.Authenticate((bool success) =>
+			{
+				if (success)
+				{
+					googleLoginButtonText.text = googleLogoutText;
+				}
+				else
+				{
+					Debug.Log("Login Failed");
+					googleLoginButtonText.text = googleLoginText;
+				}
+			});
+		}
 	}
 
 	private void Awake()
