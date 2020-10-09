@@ -18,6 +18,8 @@ public class BirdCustomAnimation : MonoBehaviour
 	private Coroutine co_doAnim;
 	private bool isGameScene;
 
+	private float idleTime = 0.6f, walkTime = 0.12f, fallDownTime = 0.2f;
+
 	private void Start()
 	{
 		idle = Resources.LoadAll<Sprite>("Animations/" + PlayerData.Instance.currentSkin + "/Idle");
@@ -47,7 +49,7 @@ public class BirdCustomAnimation : MonoBehaviour
 		foreach (Sprite sp in fallDown)
 		{
 			player.sprite = sp;
-			yield return new WaitForSeconds(0.2f);
+			yield return new WaitForSeconds(fallDownTime);
 		}
 	}
 
@@ -76,7 +78,7 @@ public class BirdCustomAnimation : MonoBehaviour
 			}
 
 			animationPhase++;
-			yield return new WaitForSeconds(isWalking ? 0.15f : 0.6f);
+			yield return new WaitForSeconds(isWalking ? walkTime : idleTime);
 		}
 	}
 }

@@ -50,7 +50,7 @@ public class MainScene : MonoBehaviour
 
 	private void FixedUpdate()
     {
-		maincamera.position = Vector3.Lerp(maincamera.position, cameraPos, 0.8f);
+		maincamera.position = Vector3.Lerp(maincamera.position, cameraPos, 0.3f);
     }
 
 	private void MovingCloud()

@@ -14,6 +14,8 @@ public class BirdController : MonoBehaviour
 	private Vector3 localScale;
 	private float birdSpeed;
 	private bool can_jump;
+	
+	Vector3 spawnPosition = new Vector3(-3, -0.2f, 0);
 
 	private void Start()
 	{
@@ -26,9 +28,11 @@ public class BirdController : MonoBehaviour
 		_birdRigidbody2D = GetComponent<Rigidbody2D>();
 		_birdAnimator.isWalking = false;
 		can_jump = true;
+
+		_birdTransform.position = spawnPosition;
 	}
 
-	private void Update()
+	private void FixedUpdate()
 	{
 		birdSpeed = 0;	// 임시로 해놓음 (키보드)
 		birdSpeed += Input.GetAxisRaw("Horizontal") * 2;

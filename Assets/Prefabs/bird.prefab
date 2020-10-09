@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4828437648805022391}
   - component: {fileID: 4828437648805022384}
   - component: {fileID: 3304110852046278954}
-  - component: {fileID: 4151077358329668769}
+  - component: {fileID: 1224886984187173662}
   - component: {fileID: 3995767088827045422}
   - component: {fileID: 1357023676818277345}
   - component: {fileID: -859489190359942644}
@@ -107,8 +107,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!70 &4151077358329668769
-CapsuleCollider2D:
+--- !u!61 &1224886984187173662
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -120,9 +120,19 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0492523, y: -0.33071268}
-  m_Size: {x: 0.9762947, y: 0.99776196}
-  m_Direction: 0
+  m_Offset: {x: -0.04071477, y: -0.35745037}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.6, y: 1.8}
+    newSize: {x: 1.6, y: 1.8}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.7229925, y: 0.8771286}
+  m_EdgeRadius: 0
 --- !u!70 &3995767088827045422
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -136,8 +146,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.27145132, y: 0.32325345}
-  m_Size: {x: 0.5408775, y: 0.6641146}
+  m_Offset: {x: 0.27145132, y: 0.23850405}
+  m_Size: {x: 0.5408775, y: 0.8336134}
   m_Direction: 0
 --- !u!61 &1357023676818277345
 BoxCollider2D:
@@ -177,5 +187,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7498b4e335a3bc942b0d40986ce5e670, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skinName: Bird
   isWalking: 0
