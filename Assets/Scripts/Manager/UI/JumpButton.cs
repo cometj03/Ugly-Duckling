@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
+using UnityEngine.EventSystems;
 
-public class JumpButton : MonoBehaviour
+public class JumpButton : MonoBehaviour, IPointerDownHandler
 {
     private BirdController _birdController;
     
@@ -8,7 +9,8 @@ public class JumpButton : MonoBehaviour
     {
         _birdController = FindObjectOfType<BirdController>();
     }
-
-    // 점프 버튼 누름
-    public void JumpBtn() => _birdController.BirdJump();
+    public void OnPointerDown(PointerEventData eventData)
+    {
+        _birdController.BirdJump();
+    }
 }

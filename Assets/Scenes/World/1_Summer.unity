@@ -172,7 +172,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -190,7 +190,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: "\uC624\uB9AC\uAC00 \uC6C0\uC9C1\uC77C \uC218 \uC788\uAC8C \uB3C4\uC640\uC8FC\uC138\uC694"
+  m_Text: "\uC624\uB9AC\uAC00 \uC55E\uC73C\uB85C \uB098\uC544\uAC08 \uC218 \uC788\uAC8C
+    \uB3C4\uC640\uC8FC\uC138\uC694."
 --- !u!222 &213228190
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1120,7 +1121,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 0.50980395}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:

@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -39,30 +40,30 @@ public class TutorialManager : MonoBehaviour
 
 
             if (birdPosX < 0)
-                ChangeText("오리가 움직일 수 있게 도와주세요.");
-            else if (birdPosX < 1.5f)   // 0 ~ 1.5
+                ChangeText("오리가 앞으로 나아갈 수 있게 도와주세요.");
+            else if (birdPosX < 1.5f)
                 Close();
-            else if (birdPosX < 3)      // 1.5 ~ 3
+            else if (birdPosX < 4)
                 ChangeText("스와이프를 통해 앞에 있는 퍼즐을 움직여주세요.");
-            else if (birdPosX < 6)      // 3 ~ 6
+            else if (birdPosX < 5.5f)
                 Close();
-            else if (birdPosX < 7.5f)   // 6 ~ 7.5
+            else if (birdPosX < 8f)
                 ChangeText("잘했어요!");
-            else if (birdPosX < 11.5f)     // 7.5 ~ 11.5
+            else if (birdPosX < 11.5f)
                 Close();
-            else if (birdPosX < 13.5f)     // 11.5 ~ 13.5
+            else if (birdPosX < 13f)
                 ChangeText("이번엔 점프 버튼을 눌러 블럭 위로 올라가세요.");
-            else if (birdPosX < 14.5f)         // 13.5 ~ 14.5
+            else if (birdPosX < 14f)
                 Close();
-            else if (birdPosX < 15.3f) // 14.5 ~ 15.4
+            else if (birdPosX < 14.8f)
                 ChangeText("조심! 앞에 악어가 있어요!");
-            else if (birdPosX < 15.6f)         // 15.4 ~ 15.8
+            else if (birdPosX < 15f)
                 Close();
-            else if (birdPosX < 17f)         // 15.8 ~ 17
-                ChangeText("가장자리에서 점프를 하면 언덕으로 올라갈 수 있어요.");
-            else if (birdPosX < 18.5f)  // 17 ~ 18.5
+            else if (birdPosX < 17f)
+                ChangeText("가장자리에서 언덕으로 점프해보세요.");
+            else if (birdPosX < 18.5f)
                 Close();
-            else if (birdPosX < 20) // 18.5 ~ 20
+            else if (birdPosX < 20)
             {
                 if (birdTransform.position.y > 0)   // 언덕 위로 올라감
                     ChangeText("잘했어요!");
@@ -72,9 +73,18 @@ public class TutorialManager : MonoBehaviour
                     StartCoroutine(GameAgain());
                 }
             }
-            else
+            else if (birdPosX < 21.5f)
                 Close();
-
+            else if (birdPosX < 23f)
+                ChangeText("블럭으로 구름 밑을 가려서 비를 피할 수 있게 도와주세요.");
+            else if (birdPosX < 24.8f)
+                Close();
+            else if (birdPosX < 26f)
+                ChangeText("잘했어요!");
+            else if (true)
+                Close();
+            
+                
             yield return null;
         }
     }
@@ -85,7 +95,11 @@ public class TutorialManager : MonoBehaviour
             StartCoroutine(ShowCanvas(dialog)); 
     }
 
-    void Close() => StartCoroutine(CloseCanvas());
+    void Close()
+    {
+        if (isCanvasOpen)
+            StartCoroutine(CloseCanvas());
+    }
 
     IEnumerator GameAgain()
     {
@@ -96,11 +110,17 @@ public class TutorialManager : MonoBehaviour
     IEnumerator ShowCanvas(string dialog)
     {
         isCanvasOpen = true;
-        tutorialCanvas.GetChild(0).GetChild(0).GetComponent<Text>().text = dialog;
-
-        while (cg.alpha < 1)
+        while (cg.alpha > 0)
         {
-            cg.alpha += 0.01f;
+            cg.alpha -= 0.02f;
+            yield return null;
+        }
+
+        tutorialCanvas.GetChild(0).GetChild(0).GetComponent<Text>().text = dialog;
+        
+        while (cg.alpha < 1 && isCanvasOpen)
+        {
+            cg.alpha += 0.02f;
             yield return null;
         }
         cg.alpha = 1;
@@ -109,10 +129,15 @@ public class TutorialManager : MonoBehaviour
     IEnumerator CloseCanvas()
     {
         isCanvasOpen = false;
-
-        while (cg.alpha > 0)
+        while (cg.alpha < 1)
         {
-            cg.alpha -= 0.001f;
+            cg.alpha += 0.02f;
+            yield return null;
+        }
+
+        while (cg.alpha > 0 && !isCanvasOpen)
+        {
+            cg.alpha -= 0.015f;
             yield return null;
         }
         cg.alpha = 0;
