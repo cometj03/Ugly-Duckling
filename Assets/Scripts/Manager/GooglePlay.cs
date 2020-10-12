@@ -35,16 +35,16 @@ public class GooglePlay : MonoBehaviour
 
 	public void DoLogOut()
 	{
-		((PlayGamesPlatform)Social.Active).SignOut();
 		googleLoginButtonText.text = googleLoginText;
+		((PlayGamesPlatform)Social.Active).SignOut();
 	}
 
 	public void OnBtnLoginClicked()
 	{
 		if (Social.localUser.authenticated)
 		{
+			googleLoginButtonText.text = googleLoginText;
 			((PlayGamesPlatform)Social.Active).SignOut();
-			googleLoginButtonText.text = googleLogoutText;
 		}
 		else
 		{
